@@ -1,0 +1,55 @@
+.mobile-bar {
+  display: none;
+}
+
+/* Matches Header.css's own collapse breakpoint exactly: below that
+   width the header hides its phone number and consultation button
+   behind the hamburger menu, so this bar has to cover the same range
+   or a visitor in that gap would have no persistent, un-hidden way
+   to call or start a consultation. */
+@media (max-width: 1320px) {
+  .mobile-bar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    background: var(--ink);
+    border-top: 1px solid var(--hairline-on-ink);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+    box-shadow: 0 -12px 24px -16px rgba(28, 25, 23, 0.35);
+  }
+
+  .mobile-bar__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    padding: 0.65em 0.5em;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--text-on-ink-soft);
+  }
+
+  .mobile-bar__item svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .mobile-bar__item--primary {
+    color: var(--text-on-ink);
+    background: var(--seal);
+    margin: 0.4em;
+    border-radius: var(--radius-sm);
+  }
+
+  .mobile-bar__item.is-disabled {
+    opacity: 0.45;
+  }
+}
+

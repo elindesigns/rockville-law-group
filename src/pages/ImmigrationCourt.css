@@ -1,0 +1,45 @@
+.immigration-court__caveat {
+  margin-top: var(--space-lg);
+  max-width: 60ch;
+}
+
+.court-pullquote {
+  text-align: center;
+}
+
+.court-pullquote__seal {
+  color: var(--text-on-ink);
+  opacity: 0.8;
+  margin-inline: auto;
+  margin-bottom: var(--space-md);
+}
+
+.court-resource-card {
+  padding: var(--space-md);
+}
+
+.court-resource-card__title {
+  font-size: 1.1rem;
+  margin-bottom: 0.4em;
+}
+
+.court-resource-card__desc {
+  color: var(--text-soft);
+  font-size: var(--text-small);
+  line-height: 1.6;
+}
+
+.court-resource-card__cta {
+  margin-top: var(--space-sm);
+}
+
+.court-pullquote__text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+  line-height: 1.4;
+  color: var(--text-on-ink);
+  max-width: 26ch;
+  margin-inline: auto;
+}

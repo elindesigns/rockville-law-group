@@ -1,0 +1,249 @@
+/* Shared layout for content-driven pages: Immigration Services,
+   Immigration Court, For Attorneys. */
+
+.service-hero {
+  padding-bottom: var(--space-md);
+}
+
+.service-hero__title {
+  font-size: clamp(2.1rem, 4.4vw, 3rem);
+  margin-top: var(--space-sm);
+  max-width: 22ch;
+}
+
+.service-hero__zh {
+  margin-top: 0.5em;
+  font-size: 1.1rem;
+}
+
+.service-hero__lede {
+  margin-top: var(--space-md);
+}
+
+/* priority services — featured, larger editorial treatment */
+.priority-detail__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg) var(--space-xl);
+}
+
+.priority-detail__item {
+  scroll-margin-top: 100px;
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--ink);
+}
+
+.priority-detail__index {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--brass-text);
+  letter-spacing: 0.04em;
+}
+
+.priority-detail__title {
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  margin: 0.4em 0 0;
+}
+
+.priority-detail__zh {
+  font-size: 0.95rem;
+  margin-bottom: 0.6em;
+}
+
+.priority-detail__desc {
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.priority-detail__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 780px) {
+  .priority-detail__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* practice-area / topic list */
+.service-areas__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.service-areas__item {
+  scroll-margin-top: 100px;
+  padding: var(--space-md);
+  background: var(--card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.service-areas__title {
+  font-size: 1.2rem;
+  margin-bottom: 0.3em;
+}
+
+.service-areas__zh {
+  font-size: 0.88rem;
+  margin-bottom: 0.6em;
+}
+
+.service-areas__desc {
+  color: var(--text-soft);
+  line-height: 1.65;
+  font-size: var(--text-small);
+}
+
+.service-areas__relevant {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--hairline);
+  font-size: var(--text-small);
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+.service-areas__relevant strong {
+  color: var(--text-soft);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.3em;
+}
+
+/* FAQ */
+.service-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.service-faq__item {
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--hairline-strong);
+}
+
+.service-faq__item:last-child {
+  border-bottom: none;
+}
+
+.service-faq__item dt {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 0.5em;
+}
+
+.service-faq__item dd {
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+/* generic content block used across service pages */
+.service-block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.service-block > * {
+  min-width: 0;
+}
+
+.service-block--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.service-step {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background: var(--card);
+  box-shadow: var(--shadow-card);
+}
+
+.service-step__index {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--seal);
+  letter-spacing: 0.04em;
+}
+
+.service-step__title {
+  font-size: 1.05rem;
+  margin: 0.5em 0 0.4em;
+}
+
+.service-step__zh {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.service-step__desc {
+  color: var(--text-soft);
+  font-size: var(--text-small);
+  line-height: 1.6;
+}
+
+/* attorney connector callout */
+.court-connector {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border-left: 3px solid var(--seal);
+}
+
+.court-connector__icon {
+  width: 32px;
+  height: 32px;
+  color: var(--seal);
+  flex-shrink: 0;
+}
+
+.court-connector h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25em;
+}
+
+.court-connector p {
+  color: var(--text-soft);
+  font-size: var(--text-small);
+}
+
+.court-connector .btn {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .court-connector {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .court-connector .btn {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .service-areas__list,
+  .service-block {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .service-areas__list,
+  .service-block,
+  .service-block--2col {
+    grid-template-columns: 1fr;
+  }
+}

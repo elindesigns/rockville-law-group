@@ -1,0 +1,226 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ink);
+  border-bottom: 1px solid var(--hairline-on-ink);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 76px;
+  padding-block: 0.6em;
+  /* Wider than the standard .container — nav chrome (brand + 6 links +
+     phone + language switch + CTA) needs more room than the 1180px
+     reading-width cap used for body content. */
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 5vw, 3rem);
+}
+
+.header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  color: var(--text-on-ink);
+  margin-right: auto;
+}
+
+.header__seal {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.header__wordmark {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 1.4vw, 1.4rem);
+}
+
+.header__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15em;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-on-ink-soft);
+  padding: 0.4em 0;
+  position: relative;
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-soft);
+}
+
+.header__link-zh {
+  font-size: 0.66rem;
+  font-weight: 400;
+  color: var(--text-on-ink-faint);
+}
+
+.header__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: var(--seal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-fast) var(--ease-soft);
+}
+
+.header__link:hover {
+  color: var(--text-on-ink);
+}
+
+.header__link.is-active {
+  color: var(--text-on-ink);
+}
+
+.header__link.is-active::after {
+  transform: scaleX(1);
+}
+
+.header__actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.7rem, 1.4vw, 1.25rem);
+}
+
+.header__phone {
+  color: var(--text-on-ink-soft);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.header__phone:hover {
+  color: var(--text-on-ink);
+}
+
+.header__phone svg {
+  width: 1em;
+  height: 1em;
+  opacity: 0.85;
+}
+
+.header__menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-on-ink);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.header__mobile {
+  display: none;
+}
+
+@media (max-width: 1320px) {
+  .header__nav,
+  .header__actions {
+    display: none;
+  }
+
+  .header__menu-toggle {
+    display: inline-flex;
+  }
+
+  .header__inner {
+    height: 68px;
+  }
+
+  .header__mobile {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    background: var(--ink);
+    transition: max-height var(--dur-med) var(--ease-soft);
+  }
+
+  .header__mobile.is-open {
+    /* Fixed pixel caps go stale as nav items get added — this one did:
+       480px was already clipping the language switcher off the bottom
+       of the panel with the current 5-link nav. Scale with the
+       viewport instead, with overflow-y as a safety net for anything
+       still taller than that on a short screen. */
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+  }
+
+  .header__mobile-nav {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-sm) clamp(1.5rem, 5vw, 3rem) 0;
+    border-top: 1px solid var(--hairline-on-ink);
+  }
+
+  .header__mobile-link {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6em;
+    padding: 0.9em 0;
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-on-ink-soft);
+    border-bottom: 1px solid var(--hairline-on-ink);
+  }
+
+  .header__mobile-link-zh {
+    font-size: 0.8rem;
+    color: var(--text-on-ink-faint);
+  }
+
+  .header__mobile-link.is-active {
+    color: var(--text-on-ink);
+  }
+
+  .header__mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    padding: var(--space-md) clamp(1.5rem, 5vw, 3rem) var(--space-lg);
+  }
+
+  .header__mobile-actions .btn {
+    width: 100%;
+  }
+
+  .header__mobile-phone {
+    justify-content: center;
+    color: var(--text-on-ink-soft);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5em 0;
+  }
+
+  .header__mobile-phone svg {
+    width: 1.1em;
+    height: 1.1em;
+    opacity: 0.85;
+  }
+
+  .header__mobile-lang {
+    justify-content: center;
+    padding-top: 0.5em;
+    border-top: 1px solid var(--hairline-on-ink);
+    margin-top: 0.25em;
+  }
+}

@@ -1,0 +1,10 @@
+.practice-hub__attorney-lede {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.practice-hub__attorney-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-md);
+}

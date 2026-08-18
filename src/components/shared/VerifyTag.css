@@ -1,0 +1,15 @@
+.verify-tag {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  color: var(--seal-deep);
+  background: var(--seal-mist);
+  border: 1px dashed var(--seal);
+  border-radius: var(--radius-sm);
+  padding: 0.25em 0.55em;
+  white-space: normal;
+  line-height: 1.4;
+}

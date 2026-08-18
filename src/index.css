@@ -1,0 +1,591 @@
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root {
+  /* color — true white + warm near-black ink, one warm accent (seal red) */
+  --ink: #1c1917;
+  --ink-soft: #2a2521;
+  --ink-softer: #3a332c;
+  --paper: #ffffff;
+  --paper-deep: #f4f2ef;
+  --card: #fdfcfa;
+
+  --seal: #9e3324;
+  --seal-deep: #7e281c;
+  --seal-mist: #f2e3df;
+
+  /* restrained tertiary accent — used sparingly: hairlines, labels, credential marks */
+  --brass: #ab8f5c;
+  --brass-soft: rgba(171, 143, 92, 0.4);
+  /* --brass fails AA as text on --paper (3.08:1) — use this darker
+     variant for actual text (index numerals, small labels); keep raw
+     --brass for hairlines/icons/decorative marks only. */
+  --brass-text: #8a7248;
+
+  --text: #221e1a;
+  --text-soft: #5c554d;
+  --text-faint: #756e62;
+  --text-on-ink: #f7f5f2;
+  --text-on-ink-soft: rgba(247, 245, 242, 0.72);
+  /* 0.65, not a rounder 0.5 — the lower alpha read fine on plain --ink
+     but dropped to ~3:1 against the lighter --ink-soft (e.g. footer),
+     failing AA. This value clears 4.5:1 on both. */
+  --text-on-ink-faint: rgba(247, 245, 242, 0.65);
+
+  --hairline: rgba(28, 25, 23, 0.12);
+  --hairline-strong: rgba(28, 25, 23, 0.24);
+  --hairline-on-ink: rgba(247, 245, 242, 0.14);
+  --hairline-on-ink-strong: rgba(247, 245, 242, 0.28);
+
+  --shadow-soft: 0 20px 40px -22px rgba(28, 25, 23, 0.24);
+  --shadow-card: 0 14px 32px -18px rgba(28, 25, 23, 0.18);
+  --shadow-lift: 0 26px 52px -20px rgba(28, 25, 23, 0.28);
+  --shadow-image: 0 30px 60px -24px rgba(28, 25, 23, 0.32);
+
+  /* type */
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-body: 'Public Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  /* brush-calligraphy display face — decorative Chinese marks only,
+     never the small functional zh-label glosses (legibility). */
+  --font-zh-script: 'Ma Shan Zheng', 'Xingkai SC', 'STXingkai', cursive;
+
+  --text-body: 1.05rem;
+  --text-small: 0.92rem;
+  --text-label: 0.74rem;
+
+  /* layout */
+  --container: 1180px;
+  --container-narrow: 760px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.85rem;
+  --space-sm: 1.25rem;
+  --space-md: 2rem;
+  --space-lg: 3.25rem;
+  --space-xl: 5rem;
+  --space-2xl: 7.25rem;
+
+  /* motion */
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.2s;
+  --dur-med: 0.5s;
+  --dur-slow: 0.9s;
+
+  color-scheme: light;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+body {
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+::selection {
+  background: rgba(158, 51, 36, 0.18);
+  color: var(--ink);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--hairline-strong);
+  border-radius: 6px;
+  border: 2px solid var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--seal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.app {
+  position: relative;
+  isolation: isolate;
+}
+
+main {
+  position: relative;
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 5vw, 3rem);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+.section {
+  padding-block: var(--space-2xl);
+  position: relative;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding-block: var(--space-xl);
+  }
+
+  body {
+    padding-bottom: 72px;
+  }
+}
+
+.section--tight {
+  padding-block: var(--space-lg);
+}
+
+.section--ink {
+  background: var(--ink);
+  color: var(--text-on-ink);
+}
+
+.section--deep {
+  background: var(--paper-deep);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -60px;
+  background: var(--ink);
+  color: var(--text-on-ink);
+  padding: 0.75em 1.25em;
+  border-radius: var(--radius-sm);
+  z-index: 200;
+  transition: top var(--dur-fast) var(--ease-soft);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-small);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ============================================================
+   TYPE UTILITIES
+   ============================================================ */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--seal);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 0.5em;
+  height: 0.5em;
+  border: 1.5px solid currentColor;
+  border-radius: 1px;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.eyebrow--on-ink {
+  color: #d99a8c;
+}
+
+.eyebrow-line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.eyebrow-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--hairline);
+}
+
+.section--ink .eyebrow-line::after {
+  background: var(--hairline-on-ink);
+}
+
+.eyebrow-line--center {
+  justify-content: center;
+}
+.eyebrow-line--center::after {
+  display: none;
+}
+
+.lede {
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  color: var(--text-soft);
+  line-height: 1.65;
+  max-width: 46ch;
+}
+
+.section--ink .lede {
+  color: var(--text-on-ink-soft);
+}
+
+.lede--wide {
+  max-width: 68ch;
+}
+
+/* ============================================================
+   CHINESE LABELS
+   Short Chinese glosses shown next to headings/nav/CTAs — not a
+   full translation layer. Falls back to the system CJK font since
+   Fraunces/Public Sans don't cover Chinese glyphs.
+   ============================================================ */
+.zh-label {
+  display: inline-block;
+  font-family: 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, sans-serif;
+  font-weight: 400;
+  color: var(--text-soft);
+  opacity: 0.82;
+}
+
+.section--ink .zh-label,
+.zh-label--on-ink {
+  color: var(--text-on-ink-soft);
+}
+
+/* ============================================================
+   PHOTO FRAMES & SCRIMS
+   Consistent treatment for real photography: a frame with image
+   shadow, and gradient scrims so overlaid text stays readable
+   without flattening the photo under a solid wash.
+   ============================================================ */
+.photo-frame {
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-image);
+}
+
+.photo-frame--lg {
+  border-radius: var(--radius-lg);
+}
+
+.photo-frame--md {
+  border-radius: var(--radius-md);
+}
+
+.scrim-bottom {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(28, 25, 23, 0) 45%, rgba(28, 25, 23, 0.82) 100%);
+  pointer-events: none;
+}
+
+.scrim-side {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(28, 25, 23, 0.85) 0%, rgba(28, 25, 23, 0.5) 38%, rgba(28, 25, 23, 0.08) 62%);
+  pointer-events: none;
+}
+
+.photo-caption {
+  position: absolute;
+  right: var(--space-sm);
+  bottom: var(--space-2xs);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.03em;
+  color: rgba(245, 246, 240, 0.55);
+  z-index: 1;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 0.9em 1.6em;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid transparent;
+  transition:
+    transform var(--dur-fast) var(--ease-soft),
+    box-shadow var(--dur-fast) var(--ease-soft),
+    background var(--dur-fast) var(--ease-soft),
+    border-color var(--dur-fast) var(--ease-soft),
+    color var(--dur-fast) var(--ease-soft);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--seal);
+  color: var(--text-on-ink);
+  box-shadow: var(--shadow-card);
+}
+.btn-primary:hover {
+  background: var(--seal-deep);
+  box-shadow: var(--shadow-lift);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--hairline-strong);
+}
+.btn-outline:hover {
+  border-color: var(--ink);
+  background: rgba(28, 25, 23, 0.04);
+}
+
+.btn-outline--on-ink {
+  color: var(--text-on-ink);
+  border-color: var(--hairline-on-ink-strong);
+}
+.btn-outline--on-ink:hover {
+  border-color: var(--text-on-ink);
+  background: rgba(245, 246, 240, 0.06);
+}
+
+.btn-quiet {
+  padding: 0.4em 0;
+  color: var(--ink);
+  font-weight: 600;
+  position: relative;
+}
+.btn-quiet::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.15em;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0.3);
+  transform-origin: left;
+  opacity: 0.4;
+  transition: transform var(--dur-fast) var(--ease-soft), opacity var(--dur-fast) var(--ease-soft);
+}
+.btn-quiet:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+.btn-quiet:hover {
+  transform: none;
+}
+
+.btn-sm {
+  padding: 0.65em 1.15em;
+  font-size: 0.88rem;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+  background: var(--card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--dur-fast) var(--ease-soft), box-shadow var(--dur-fast) var(--ease-soft);
+}
+
+/* ============================================================
+   FORMS
+   ============================================================ */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.field label {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--card);
+  border: 1.5px solid var(--hairline-strong);
+  border-radius: var(--radius-sm);
+  padding: 0.85em 1em;
+  font-size: 0.98rem;
+  color: var(--text);
+  transition: border-color var(--dur-fast) var(--ease-soft);
+  width: 100%;
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  border-color: var(--seal);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+.field-note {
+  font-size: var(--text-small);
+  color: var(--text-faint);
+}
+
+/* ============================================================
+   CONTACT LINKS
+   ============================================================ */
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65em;
+  transition: color var(--dur-fast) var(--ease-soft);
+}
+
+.contact-link svg {
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+a.contact-link:hover {
+  color: var(--seal);
+}
+
+.contact-link--pending {
+  opacity: 0.6;
+  cursor: default;
+  font-style: italic;
+}
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

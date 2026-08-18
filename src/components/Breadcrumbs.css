@@ -1,0 +1,50 @@
+.breadcrumbs {
+  padding-block: var(--space-xs);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4em;
+  font-size: var(--text-small);
+  color: var(--text-faint);
+}
+
+.breadcrumbs__item {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.breadcrumbs__item a {
+  color: var(--text-faint);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.breadcrumbs__item a:hover {
+  color: var(--seal);
+}
+
+.breadcrumbs__item [aria-current='page'] {
+  color: var(--text-soft);
+}
+
+.breadcrumbs__sep {
+  color: var(--hairline-strong);
+}
+
+/* On narrow screens the deepest paths (Home > Practice Areas >
+   Immigration Services > Employment-Based Green Cards) wrapped to
+   three rows and pushed the H1 ~140px down the page. Trim the visible
+   trail to the immediate parent plus the current page — the full
+   hierarchy still ships in each page's BreadcrumbList JSON-LD, which
+   is generated separately from this list, and the header logo already
+   provides the route home. */
+@media (max-width: 700px) {
+  .breadcrumbs__item:not(:nth-last-child(-n + 2)) {
+    display: none;
+  }
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1c1917" />
+    <meta
+      name="description"
+      content="Rockville Law Group is a New York law firm representing individuals, families, and businesses across immigration, family law, estate planning, and business law, led by attorney Li Weng. Consultations in English and Mandarin Chinese."
+    />
+    <title>New York Law Firm | Rockville Law Group</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rockville Law Group LLC" />
+    <meta property="og:title" content="New York Law Firm | Rockville Law Group" />
+    <meta
+      property="og:description"
+      content="A New York law firm representing individuals, families, and businesses across immigration, family law, estate planning, and business law. English &amp; Mandarin Chinese."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1170" />
+    <meta property="og:image:height" content="570" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="New York Law Firm | Rockville Law Group" />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Ma+Shan+Zheng&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- The homepage hero photo (its LCP element) is hotlinked from
+         Unsplash. Only preconnect here, not preload: this <head> is
+         shared by all ~35 routes, and most real traffic to this site
+         lands on a specific practice-area page from search, not the
+         homepage — a preload would be wasted bandwidth (and a console
+         warning) on every one of those landings. Preconnecting is
+         cheap even when unused, so it stays unconditional. -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

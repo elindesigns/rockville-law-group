@@ -1,0 +1,31 @@
+.trust-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9em 1.6em;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--text-on-ink-soft);
+}
+
+.trust-bar--light {
+  color: var(--text-soft);
+}
+
+.trust-bar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  max-width: 100%;
+}
+
+.trust-bar__item:not(:last-child)::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  margin-left: 1.6em;
+  background: currentColor;
+  opacity: 0.4;
+  border-radius: 50%;
+}

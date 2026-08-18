@@ -1,0 +1,91 @@
+/* Attorney teaser (Li Weng profile block) */
+.attorneyZh__inner {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.attorneyZh__photo {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: center;
+  background: var(--paper-deep);
+}
+
+.attorneyZh__name {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin: 0.4em 0 0.5em;
+}
+
+.attorneyZh__desc {
+  color: var(--text-soft);
+  line-height: 1.8;
+  max-width: 58ch;
+}
+
+.attorneyZh__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.4em;
+  margin: var(--space-md) 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+.attorneyZh__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.attorneyZh__profiles {
+  display: flex;
+  gap: 1em;
+  font-size: 0.82rem;
+}
+
+.attorneyZh__profiles a {
+  color: var(--text-faint);
+  transition: color var(--dur-fast) var(--ease-soft);
+}
+
+.attorneyZh__profiles a:hover {
+  color: var(--seal);
+}
+
+@media (max-width: 780px) {
+  .attorneyZh__inner {
+    grid-template-columns: 1fr;
+  }
+  .attorneyZh__photo {
+    max-width: 220px;
+  }
+}
+
+/* Immigration court / attorney-coverage teaser cards */
+.matterZh__card {
+  padding: var(--space-lg);
+}
+
+.matterZh__title {
+  font-size: 1.3rem;
+  margin: 0.5em 0 0.5em;
+}
+
+.matterZh__desc {
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.matterZh__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75em 1.25em;
+  margin-top: var(--space-md);
+}

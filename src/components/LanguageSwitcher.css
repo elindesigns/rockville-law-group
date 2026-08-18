@@ -1,0 +1,26 @@
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-on-ink-faint);
+  white-space: nowrap;
+}
+
+.lang-switch a {
+  display: inline-block;
+  padding: 0.4em 0.35em;
+  margin: -0.4em -0.35em;
+  color: var(--text-on-ink-soft);
+  transition: color var(--dur-fast) var(--ease-soft);
+}
+
+.lang-switch a:hover {
+  color: var(--text-on-ink);
+}
+
+.lang-switch a.is-active {
+  color: var(--text-on-ink);
+  font-weight: 600;
+}

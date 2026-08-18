@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  <xhtml:link> entries declare the English/Chinese equivalent of each
+  page directly in the sitemap, in addition to the hreflang tags each
+  page already emits at runtime — the two methods reinforce each
+  other and Google accepts either.
+
+  lastmod is maintained by hand: bump the affected <url> entries when a
+  page's content materially changes.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.rockvillelawgroup.com/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/practice-areas</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/practice-areas" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/practice-areas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/practice-areas" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/family-law</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/family-law" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/family-law" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/family-law" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/estate-planning</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/estate-planning" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/estate-planning" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/estate-planning" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/business-law</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/business-law" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/business-law" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/business-law" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/ipo-securities</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/ipo-securities" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/ipo-securities" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/ipo-securities" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/escrow-services</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/escrow-services" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/escrow-services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/escrow-services" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/family-based-green-cards</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/family-based-green-cards" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/family-based-green-cards" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/family-based-green-cards" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/asylum</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/asylum" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/asylum" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/asylum" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/eb1a</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/eb1a" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/eb1a" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/eb1a" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/employment-based-green-cards</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/employment-based-green-cards" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/employment-based-green-cards" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/employment-based-green-cards" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/immigration-court</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/immigration-court" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/immigration-court" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/immigration-court" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/for-attorneys</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/for-attorneys" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/attorney-hearing-coverage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/for-attorneys" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/immigration-services</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/immigration-services" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/immigration-services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/immigration-services" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/contact</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/contact" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/contact" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/about</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/about" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/about" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/privacy</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/privacy" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/terms</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/terms" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/terms" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/resources</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/resources/green-card-through-marriage</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/resources/notice-to-appear-what-happens-next</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/resources/master-calendar-vs-individual-hearing</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/resources/adjustment-of-status-vs-consular-processing</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/resources/immigration-court-hearing-coverage-guide</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/practice-areas</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/practice-areas" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/practice-areas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/practice-areas" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/family-law</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/family-law" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/family-law" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/family-law" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/estate-planning</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/estate-planning" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/estate-planning" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/estate-planning" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/business-law</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/business-law" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/business-law" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/business-law" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/ipo-securities</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/ipo-securities" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/ipo-securities" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/ipo-securities" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/escrow-services</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/escrow-services" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/escrow-services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/escrow-services" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/immigration-services</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/immigration-services" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/immigration-services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/immigration-services" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/family-based-green-cards</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/family-based-green-cards" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/family-based-green-cards" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/family-based-green-cards" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/asylum</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/asylum" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/asylum" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/asylum" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/eb1a</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/eb1a" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/eb1a" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/eb1a" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/employment-based-green-cards</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/employment-based-green-cards" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/employment-based-green-cards" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/employment-based-green-cards" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/immigration-court</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/immigration-court" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/immigration-court" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/immigration-court" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/attorney-hearing-coverage</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/for-attorneys" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/attorney-hearing-coverage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/for-attorneys" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/contact</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/contact" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/contact" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/about</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/about" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/about" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/privacy</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/privacy" />
+  </url>
+  <url>
+    <loc>https://www.rockvillelawgroup.com/zh/terms</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.rockvillelawgroup.com/terms" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.rockvillelawgroup.com/zh/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rockvillelawgroup.com/terms" />
+  </url>
+</urlset>
