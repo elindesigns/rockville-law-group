@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Button from '../components/Button.jsx'
@@ -67,7 +68,7 @@ export default function BusinessLaw() {
       <section className="section service-hero">
         <div className="container container--narrow">
           <span className="eyebrow">Business & Corporate Law</span>
-          <h1 className="service-hero__title">Business & Corporate Law</h1>
+          <h1 className="service-hero__title">Business & Corporate Lawyer in Queens, New York</h1>
           <p className="zh-label service-hero__zh">商业与公司法</p>
           <p className="lede service-hero__lede">
             Rockville Law Group advises business owners in New York from formation through the transactions,
@@ -98,7 +99,7 @@ export default function BusinessLaw() {
           <p className="lede lede--wide">
             Some business transactions — raising capital, bringing on new investors, or restructuring ownership —
             also involve securities law considerations.{' '}
-            <a href="/ipo-securities">Rockville Law Group's securities law practice</a> works alongside its
+            <Link to="/ipo-securities">Rockville Law Group's securities law practice</Link> works alongside its
             business law practice on these matters.
           </p>
         </div>
@@ -110,7 +111,7 @@ export default function BusinessLaw() {
           <p className="lede lede--wide">
             Business transactions — a merger, an acquisition, or a large contract — often call for a neutral third
             party to hold funds or documents until closing conditions are met.{' '}
-            <a href="/escrow-services">Rockville Law Group's escrow services</a> work alongside its business law
+            <Link to="/escrow-services">Rockville Law Group's escrow services</Link> work alongside its business law
             practice on these matters.
           </p>
         </div>

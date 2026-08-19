@@ -51,8 +51,12 @@ const FAQS = [
 
 export default function EstatePlanningZh() {
   useDocumentTitle(
-    '纽约遗产规划律师 | Rockville Law Group',
-    '遗嘱、信托、医疗指示、监护安排及遗产管理——由精通英文与普通话的纽约律师 Li Weng 为您讲解遗产规划相关事宜。',
+    // 遗嘱 / 信托 lead the title on purpose: they are the terms
+    // Chinese-speaking clients actually search. 遗产规划 is closer to a
+    // literal rendering of "estate planning" and pulls far less search
+    // traffic on its own, so it stays in the description instead.
+    '纽约遗嘱与信托律师 | 遗产规划 | Rockville Law Group',
+    '遗嘱、信托、医疗指示与遗产管理——Rockville Law Group 提供中英文遗产规划咨询，办公室位于纽约法拉盛。',
     { lang: 'zh-Hans', alternatePath: '/estate-planning' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])

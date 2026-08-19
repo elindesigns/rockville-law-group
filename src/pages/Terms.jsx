@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs.jsx'
 import useDocumentTitle from '../lib/useDocumentTitle.js'
 import useStructuredData from '../lib/useStructuredData.js'
@@ -28,7 +29,7 @@ export default function Terms() {
           <h1 className="service-hero__title">Terms &amp; Disclaimer</h1>
           <p className="lede service-hero__lede">
             These terms govern your use of this website. Please read them alongside the{' '}
-            <a href="/privacy">Privacy Policy</a>.
+            <Link to="/privacy">Privacy Policy</Link>.
           </p>
         </div>
       </section>

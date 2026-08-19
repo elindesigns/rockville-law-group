@@ -171,7 +171,7 @@ export default function ImmigrationCourtZh() {
         title="讨论您的移民法庭事务"
         description="预约咨询，讨论您的案件及可能面对的情况。"
         primary={{ label: '预约移民咨询', to: '/zh/contact#consultation' }}
-        secondary={{ label: '浏览全部移民服务', to: '/zh' }}
+        secondary={{ label: '浏览全部移民服务', to: '/zh/immigration-services' }}
       />
     </>
   )

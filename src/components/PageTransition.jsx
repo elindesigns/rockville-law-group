@@ -1,16 +1,22 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { motion, useReducedMotion } from 'framer-motion'
+import './PageTransition.css'
 
 // Restrained fade/rise on route change — no exit animation, so
 // navigation never feels delayed. Also owns scroll restoration: top
 // of page on a plain route change, or smooth-scroll to the target
 // element when the URL carries a #hash (e.g. /contact#consultation).
+//
+// The animation itself lives in PageTransition.css; keying the div on
+// pathname remounts it per route so the keyframe replays.
 export default function PageTransition({ children }) {
   const location = useLocation()
-  const reduceMotion = useReducedMotion()
 
   useEffect(() => {
+    // Read the motion preference at call time instead of subscribing to
+    // it — this only affects the one-off scroll behaviour below.
+    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
+
     if (location.hash) {
       const id = location.hash.slice(1)
       requestAnimationFrame(() => {
@@ -20,16 +26,11 @@ export default function PageTransition({ children }) {
     } else {
       window.scrollTo(0, 0)
     }
-  }, [location.pathname, location.hash, reduceMotion])
+  }, [location.pathname, location.hash])
 
   return (
-    <motion.div
-      key={location.pathname}
-      initial={reduceMotion ? false : { opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-    >
+    <div key={location.pathname} className="page-transition">
       {children}
-    </motion.div>
+    </div>
   )
 }

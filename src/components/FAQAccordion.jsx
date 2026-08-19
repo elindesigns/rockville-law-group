@@ -2,10 +2,14 @@ import { useId, useState } from 'react'
 import { ChevronIcon } from './shared/Icons.jsx'
 import './FAQAccordion.css'
 
-function FAQItem({ q, a, qZh, paragraphs, headingLevel: Heading = 'h3' }) {
+// `aNode` renders instead of `a` when present, so an answer can contain
+// real elements — a tel:/mailto: link, most importantly. `a` stays a
+// plain string because faqPageSchema() serialises it into JSON-LD,
+// which cannot hold markup. Keep the two saying the same thing.
+function FAQItem({ q, a, aNode, qZh, paragraphs, headingLevel: Heading = 'h3' }) {
   const [open, setOpen] = useState(false)
   const id = useId()
-  const bodyParagraphs = paragraphs || (a ? [a] : [])
+  const bodyParagraphs = paragraphs || (aNode ? [aNode] : a ? [a] : [])
 
   return (
     <div className={`faq-item${open ? ' is-open' : ''}`}>

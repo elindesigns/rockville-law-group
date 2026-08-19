@@ -37,7 +37,7 @@ const POINTS = [
     zh: '实际出庭经验',
     title: 'Regular Courtroom Experience',
     description:
-      'Li Weng appears in immigration court and in federal and state courts across New York, D.C., and Maryland, and is regularly asked by other attorneys to cover immigration hearings on their behalf.',
+      'Li Weng appears in immigration court, in federal court in New York and Maryland, and in New York and D.C. state courts — and also covers immigration hearings for other attorneys.',
   },
   {
     kicker: 'Built for Access',

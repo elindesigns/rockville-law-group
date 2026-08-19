@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading.jsx'
 import CTABand from '../components/CTABand.jsx'
 import FAQAccordion from '../components/FAQAccordion.jsx'
@@ -47,7 +48,7 @@ export default function IpoSecurities() {
       <section className="section service-hero">
         <div className="container container--narrow">
           <span className="eyebrow">Securities Law</span>
-          <h1 className="service-hero__title">Securities Law</h1>
+          <h1 className="service-hero__title">Securities Law Attorney in New York</h1>
           <p className="zh-label service-hero__zh">证券法</p>
           <p className="lede service-hero__lede">
             Securities law questions come up whenever a business raises money by offering an ownership stake —
@@ -77,7 +78,7 @@ export default function IpoSecurities() {
             Securities law questions frequently arise alongside other business matters — bringing on new
             investors, restructuring ownership, or raising capital as part of a larger transaction. Rockville Law
             Group's securities law practice works alongside its{' '}
-            <a href="/business-law">business and corporate law practice</a> on these matters. Every engagement is
+            <Link to="/business-law">business and corporate law practice</Link> on these matters. Every engagement is
             scoped to the specific transaction — a consultation is the best way to discuss whether a particular
             matter is a fit.
           </p>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Button from '../components/Button.jsx'
@@ -69,6 +70,14 @@ const FAQS = [
   {
     q: 'How do I set up an escrow arrangement?',
     a: `Escrow is typically set up as part of a larger transaction. The most direct way to discuss whether it fits a specific deal is to reach out directly — by phone at ${contact.phone} or by email at ${contact.email} — or schedule a consultation.`,
+    aNode: (
+      <>
+        Escrow is typically set up as part of a larger transaction. The most direct way to discuss whether it fits
+        a specific deal is to reach out directly — by phone at{' '}
+        <a href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}>{contact.phone}</a> or by email at{' '}
+        <a href={`mailto:${contact.email}`}>{contact.email}</a> — or schedule a consultation.
+      </>
+    ),
   },
   {
     q: 'Can escrow matters be handled in Mandarin Chinese?',
@@ -90,7 +99,7 @@ export default function EscrowServices() {
       <section className="section service-hero">
         <div className="container container--narrow">
           <span className="eyebrow">Escrow Services</span>
-          <h1 className="service-hero__title">Escrow Services</h1>
+          <h1 className="service-hero__title">Escrow Services for Business & Real Estate Transactions</h1>
           <p className="zh-label service-hero__zh">托管服务</p>
           <p className="lede service-hero__lede">
             Escrow protects both sides of a transaction — funds, documents, or property are held by a neutral third
@@ -137,7 +146,7 @@ export default function EscrowServices() {
           <p className="lede lede--wide">
             Escrow arrangements often come up alongside business transactions — a merger, an acquisition, or a large
             contract.{' '}
-            <a href="/business-law">Rockville Law Group's business law practice</a> works alongside its escrow
+            <Link to="/business-law">Rockville Law Group's business law practice</Link> works alongside its escrow
             services on these matters.
           </p>
         </div>

@@ -18,17 +18,38 @@
       property="og:description"
       content="A New York law firm representing individuals, families, and businesses across immigration, family law, estate planning, and business law. English &amp; Mandarin Chinese."
     />
-    <meta property="og:image" content="/og-image.png" />
+    <!-- Absolute URL required: Facebook, LinkedIn, X and WeChat all
+         refuse to resolve a site-relative og:image, so a relative path
+         means no preview card anywhere. -->
+    <meta property="og:image" content="https://www.rockvillelawgroup.com/og-image.png" />
+    <meta property="og:image:alt" content="Rockville Law Group LLC — a New York law firm in Flushing, Queens" />
     <meta property="og:image:width" content="1170" />
     <meta property="og:image:height" content="570" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="New York Law Firm | Rockville Law Group" />
-    <meta name="twitter:image" content="/og-image.png" />
+    <meta name="twitter:image" content="https://www.rockvillelawgroup.com/og-image.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Ma+Shan+Zheng&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Ma Shan Zheng is a Chinese brush face used for exactly four
+         decorative glyphs — the vertical 移民 / 商法 marks on the English
+         homepage's MatterTeaser cards. Requested as a full family it
+         ships 92 unicode-range @font-face blocks (~107KB of CSS) on
+         every page of the site. The `text=` parameter asks Google for a
+         subset containing only those glyphs instead: ~0.6KB of CSS and
+         a 2.7KB font file.
+
+         IMPORTANT: if a new `markZh` value is ever added to a
+         MatterTeaser, its characters must be appended to `text=` below
+         or they will silently fall back to a system font. Currently
+         text=移民商法 (percent-encoded). -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&text=%E7%A7%BB%E6%B0%91%E5%95%86%E6%B3%95&display=swap"
       rel="stylesheet"
     />
 

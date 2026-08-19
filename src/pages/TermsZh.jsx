@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs.jsx'
 import useDocumentTitle from '../lib/useDocumentTitle.js'
 import useStructuredData from '../lib/useStructuredData.js'
@@ -28,7 +29,7 @@ export default function TermsZh() {
           <span className="eyebrow">条款</span>
           <h1 className="service-hero__title">条款与免责声明</h1>
           <p className="lede service-hero__lede">
-            以下条款适用于您对本网站的使用，请一并阅读 <a href="/zh/privacy">隐私政策</a>。
+            以下条款适用于您对本网站的使用，请一并阅读 <Link to="/zh/privacy">隐私政策</Link>。
           </p>
         </div>
       </section>

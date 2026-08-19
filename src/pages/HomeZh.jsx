@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from 'framer-motion'
 import SealMark from '../components/SealMark.jsx'
 import Button from '../components/Button.jsx'
 import TrustBar from '../components/shared/TrustBar.jsx'
@@ -44,7 +43,7 @@ const WHY_POINTS = [
   {
     kicker: '活跃的出庭执业',
     title: '具有实际出庭经验',
-    desc: 'Li Weng 律师出庭移民法庭，亦在纽约州、哥伦比亚特区及马里兰州的联邦与州法院代理案件，并经常受其他律师委托代为出庭处理移民听证。',
+    desc: 'Li Weng 律师出庭移民法庭，并在纽约州及马里兰州的联邦法院、以及纽约州法院与哥伦比亚特区法院代理案件，同时也为其他律师提供移民听证出庭代理。',
   },
   {
     kicker: '交通便利的办公地点',
@@ -54,8 +53,6 @@ const WHY_POINTS = [
 ]
 
 export default function HomeZh() {
-  const reduceMotion = useReducedMotion()
-
   useDocumentTitle(
     '纽约律师事务所 | Rockville Law Group',
     'Rockville Law Group 是一家位于纽约的律师事务所，由 Li Weng 律师创办，为中文客户提供移民法、家庭法、遗产规划及商业与证券法方面的法律协助，同时为律师提供移民法庭出庭代理服务。',
@@ -72,12 +69,7 @@ export default function HomeZh() {
             <span className="eyebrow hero__eyebrow">Rockville Law Group LLC</span>
             <h1 className="hero__title">纽约律师事务所</h1>
 
-            <motion.div
-              className="hero__rule"
-              initial={reduceMotion ? false : { scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-            />
+            <div className="hero__rule" />
 
             <p className="lede hero__lede">
               Rockville Law Group 是一家位于纽约法拉盛的律师事务所，协助个人、家庭与企业处理移民法、家庭法、遗产规划及商业法律事务，可直接以英文及普通话为您提供咨询。

@@ -153,7 +153,7 @@ export default function FamilyBasedGreenCardsZh() {
         title="讨论您的亲属移民案件"
         description="每个家庭的情况都不同。预约咨询，与我们的团队直接讨论您的具体情况。"
         primary={{ label: '预约移民咨询', to: '/zh/contact#consultation' }}
-        secondary={{ label: '浏览全部移民服务', to: '/zh' }}
+        secondary={{ label: '浏览全部移民服务', to: '/zh/immigration-services' }}
       />
     </>
   )

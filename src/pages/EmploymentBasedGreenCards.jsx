@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Button from '../components/Button.jsx'
@@ -95,7 +96,7 @@ export default function EmploymentBasedGreenCards() {
       <section className="section service-hero">
         <div className="container container--narrow">
           <span className="eyebrow">Employment-Based Green Cards</span>
-          <h1 className="service-hero__title">Employment-Based Green Cards</h1>
+          <h1 className="service-hero__title">Employment-Based Green Card Lawyer in New York</h1>
           <p className="zh-label service-hero__zh">职业绿卡</p>
           <p className="lede service-hero__lede">
             Employment-based green cards allow qualifying individuals to become lawful permanent residents based on
@@ -153,7 +154,7 @@ export default function EmploymentBasedGreenCards() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="A Related Path" title="How This Differs From EB-1A" zh="与 EB-1A 的区别" />
           <p className="lede lede--wide">
-            <a href="/eb1a">EB-1A</a> is a separate employment-based category reserved for individuals who can
+            <Link to="/eb1a">EB-1A</Link> is a separate employment-based category reserved for individuals who can
             demonstrate extraordinary ability and sustained acclaim in their field, and it does not require a
             sponsoring employer. For most employees whose green card depends on a job offer and an employer's
             sponsorship, EB-2 or EB-3 — not EB-1A — is the applicable path.

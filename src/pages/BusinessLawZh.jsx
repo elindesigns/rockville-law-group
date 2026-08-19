@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Button from '../components/Button.jsx'
@@ -91,7 +92,7 @@ export default function BusinessLawZh() {
           <SectionHeading eyebrow="相关业务" title="商业交易中的证券事务" />
           <p className="lede lede--wide">
             部分商业交易——例如融资、引入新投资人，或调整股权结构——也会涉及证券法相关事务。
-            <a href="/zh/ipo-securities">Rockville Law Group 的证券法业务</a>
+            <Link to="/zh/ipo-securities">Rockville Law Group 的证券法业务</Link>
             与商业法业务协同办理此类事宜。
           </p>
         </div>
@@ -102,7 +103,7 @@ export default function BusinessLawZh() {
           <SectionHeading eyebrow="相关业务" title="商业交易中的托管事务" />
           <p className="lede lede--wide">
             并购、大型合同等商业交易，往往需要由中立的第三方保管资金或文件，直至成交条件达成。
-            <a href="/zh/escrow-services">Rockville Law Group 的托管服务</a>
+            <Link to="/zh/escrow-services">Rockville Law Group 的托管服务</Link>
             与商业法业务协同办理此类事宜。
           </p>
         </div>

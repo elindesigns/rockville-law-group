@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from 'framer-motion'
 import SealMark from '../SealMark.jsx'
 import Button from '../Button.jsx'
 import TrustBar from '../shared/TrustBar.jsx'
@@ -9,8 +8,6 @@ import { trackEvent } from '../../lib/analytics.js'
 import './Hero.css'
 
 export default function Hero() {
-  const reduceMotion = useReducedMotion()
-
   return (
     <section className="hero">
       <div className="hero__grid">
@@ -22,12 +19,7 @@ export default function Hero() {
           <h1 className="hero__title">New York Law Firm</h1>
           <p className="zh-label hero__title-zh">{firm.heroTitleZh}</p>
 
-          <motion.div
-            className="hero__rule"
-            initial={reduceMotion ? false : { scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-          />
+          <div className="hero__rule" />
 
           <p className="lede hero__lede">
             Representing individuals, families, and businesses in New York across immigration, family law, estate

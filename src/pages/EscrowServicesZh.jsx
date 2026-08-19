@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Button from '../components/Button.jsx'
@@ -115,7 +116,7 @@ export default function EscrowServicesZh() {
           <SectionHeading eyebrow="相关业务" title="商业交易中的托管事务" />
           <p className="lede lede--wide">
             并购、大型合同等商业交易，往往需要由中立的第三方保管资金或文件，直至成交条件达成。
-            <a href="/zh/business-law">Rockville Law Group 的商业法业务</a>
+            <Link to="/zh/business-law">Rockville Law Group 的商业法业务</Link>
             与托管服务协同办理此类事宜。
           </p>
         </div>

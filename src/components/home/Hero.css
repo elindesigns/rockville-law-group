@@ -39,12 +39,28 @@
   font-size: 1.2rem;
 }
 
+@keyframes hero-rule-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 .hero__rule {
   width: 84px;
   height: 2px;
   background: var(--seal);
   transform-origin: left;
   margin: var(--space-sm) 0;
+  animation: hero-rule-draw 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__rule {
+    animation: none;
+  }
 }
 
 .hero__lede {

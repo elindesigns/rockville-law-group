@@ -3,7 +3,6 @@ import Reveal from '../components/Reveal.jsx'
 import Button from '../components/Button.jsx'
 import CTABand from '../components/CTABand.jsx'
 import FAQAccordion from '../components/FAQAccordion.jsx'
-import PracticeAreas from '../components/PracticeAreas.jsx'
 import Breadcrumbs from '../components/Breadcrumbs.jsx'
 import { QuestionIcon, ArrowIcon } from '../components/shared/Icons.jsx'
 import useDocumentTitle from '../lib/useDocumentTitle.js'
@@ -118,8 +117,17 @@ export default function ImmigrationServices() {
         </div>
       </section>
 
-      <PracticeAreas />
+      {/* The full visa-type directory (components/PracticeAreas.jsx +
+          data/practiceAreas.js) used to render here. It was removed: it
+          repeated, at length, the exact subjects of this hub's own child
+          pages — asylum, EB-2/EB-3, the F-preference categories — so the
+          hub competed with the pages it exists to funnel into. The
+          Chinese hub never included it, and reads better for it.
 
+          Those files are intentionally left in the repo: nothing imports
+          them, so they add nothing to the bundle, and the content is
+          worth redistributing into the relevant child pages or giving
+          its own URL later. */}
       <section className="section service-areas">
         <div className="container">
           <SectionHeading eyebrow="Additional Services" title="Other Immigration Matters" zh="其他移民事务" />

@@ -13,6 +13,7 @@ const practiceLinks = [
   { label: 'Estate Planning', zh: '遗产规划', to: '/estate-planning' },
   { label: 'Business & Corporate Law', zh: '商业与公司法', to: '/business-law' },
   { label: 'Securities Law', zh: '证券法', to: '/ipo-securities' },
+  { label: 'Escrow Services', zh: '托管服务', to: '/escrow-services' },
   { label: 'For Attorneys — Hearing Coverage', zh: '律师出庭代理', to: '/for-attorneys' },
   { label: 'Resources & Guides', zh: '资源与指南', to: '/resources' },
 ]
@@ -24,6 +25,7 @@ const practiceLinksZh = [
   { label: '遗产规划', to: '/zh/estate-planning' },
   { label: '商业与公司法', to: '/zh/business-law' },
   { label: '证券法', to: '/zh/ipo-securities' },
+  { label: '托管服务', to: '/zh/escrow-services' },
   { label: '律师出庭代理', to: '/zh/attorney-hearing-coverage' },
 ]
 

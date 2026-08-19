@@ -43,6 +43,14 @@ const FAQS = [
   {
     q: '如何申请代理？',
     a: `请填写下方的申请表格，或直接致电 ${contact.phone}，或发送邮件至 ${contact.email} 与我们联系。代理安排需逐案确认，须视代理范围、时间安排及可行性而定。`,
+    aNode: (
+      <>
+        请填写下方的申请表格，或直接致电{' '}
+        <a href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}>{contact.phone}</a>，或发送邮件至{' '}
+        <a href={`mailto:${contact.email}`}>{contact.email}</a>{' '}
+        与我们联系。代理安排需逐案确认，须视代理范围、时间安排及可行性而定。
+      </>
+    ),
   },
 ]
 

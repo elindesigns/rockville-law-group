@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import CTABand from '../components/CTABand.jsx'
@@ -94,7 +95,7 @@ export default function Asylum() {
       <section className="section service-hero">
         <div className="container container--narrow">
           <span className="eyebrow">Asylum</span>
-          <h1 className="service-hero__title">Asylum</h1>
+          <h1 className="service-hero__title">Asylum Lawyer in New York</h1>
           <p className="zh-label service-hero__zh">庇护申请</p>
           <p className="lede service-hero__lede">
             Asylum offers protection to people who cannot safely return to their home country because of
@@ -154,7 +155,7 @@ export default function Asylum() {
           <p className="lede lede--wide">
             Asylum claims that are denied affirmatively, or that arise after a Notice to Appear has been issued, are
             generally decided in{' '}
-            <a href="/immigration-court">immigration court</a> rather than by USCIS. Representation in these
+            <Link to="/immigration-court">immigration court</Link> rather than by USCIS. Representation in these
             proceedings looks different from the affirmative process — it involves formal hearings before an
             immigration judge, with the government represented as well. Rockville Law Group represents clients in
             both settings.

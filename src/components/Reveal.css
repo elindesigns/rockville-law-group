@@ -1,0 +1,29 @@
+/* Scroll-reveal entrance. Pure CSS transition driven by a class that
+   Reveal.jsx toggles from an IntersectionObserver — no animation
+   library, and only compositor-friendly properties (opacity/transform)
+   so reveals never trigger layout.
+
+   Reduced motion is handled here rather than in JS: the element simply
+   renders in its final state, matching the previous behaviour where
+   reduced-motion users got a plain static element. */
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 16px));
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0s),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0s);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading.jsx'
 import CTABand from '../components/CTABand.jsx'
 import FAQAccordion from '../components/FAQAccordion.jsx'
@@ -70,7 +71,7 @@ export default function IpoSecuritiesZh() {
           <SectionHeading eyebrow="业务关联" title="商业事务中的证券问题" />
           <p className="lede lede--wide">
             证券法问题经常与其他商业事务同时出现——例如引入新投资人、调整股权结构，或作为更大交易的一部分进行融资。Rockville Law Group
-            的证券法业务与<a href="/zh/business-law">商业与公司法业务</a>协同办理此类事宜。每项委托都会根据具体交易情况进行评估——预约咨询是了解某项事务是否适合委托本所处理的最佳方式。
+            的证券法业务与<Link to="/zh/business-law">商业与公司法业务</Link>协同办理此类事宜。每项委托都会根据具体交易情况进行评估——预约咨询是了解某项事务是否适合委托本所处理的最佳方式。
           </p>
         </div>
       </section>

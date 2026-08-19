@@ -31,10 +31,22 @@ export function personId() {
 // alone.
 const knownPracticeAreas = attorney.practiceAreas
 
+// Canonical URL of the firm's Google Business Profile, derived from its
+// CID. Emitted in both `sameAs` and `hasMap` so Google can tie this site
+// to that specific listing — the firm shares a name with an unrelated
+// Maryland practice, so explicit entity disambiguation matters here.
+function googleListingUrl() {
+  return office.mapCid ? `https://www.google.com/maps?cid=${office.mapCid}` : null
+}
+
 export function legalServiceSchema() {
+  const listing = googleListingUrl()
   return {
     '@context': 'https://schema.org',
-    '@type': ['LegalService', 'Attorney'],
+    // LocalBusiness is included because it is the type Google actually
+    // documents support for; LegalService and Attorney are retained as
+    // the accurate, specific descriptions of what the business is.
+    '@type': ['LegalService', 'Attorney', 'LocalBusiness'],
     '@id': organizationId(),
     name: firm.legalName,
     alternateName: firm.shortName,
@@ -50,14 +62,24 @@ export function legalServiceSchema() {
       postalCode: office.zip,
       addressCountry: 'US',
     },
+    // Real, staffed office in Flushing — so the neighbourhood and
+    // borough are stated as fact, not as keyword padding. Nothing here
+    // claims an office anywhere the firm does not have one.
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: office.lat,
+      longitude: office.lng,
+    },
+    ...(listing ? { hasMap: listing } : {}),
     areaServed: [
       { '@type': 'City', name: 'New York City' },
+      { '@type': 'AdministrativeArea', name: 'Queens' },
       { '@type': 'State', name: 'New York' },
     ],
     knowsAbout: knownPracticeAreas,
     knowsLanguage: ['English', 'Mandarin Chinese'],
     founder: { '@type': 'Person', '@id': personId(), name: attorney.name },
-    sameAs: [attorney.profiles.justia, attorney.profiles.linkedin],
+    sameAs: [attorney.profiles.justia, attorney.profiles.linkedin, ...(listing ? [listing] : [])],
   }
 }
 

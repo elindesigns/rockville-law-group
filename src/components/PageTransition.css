@@ -1,0 +1,25 @@
+/* Route-change entrance. A CSS keyframe replaces what framer-motion
+   was doing here; the element is keyed on pathname in PageTransition.jsx,
+   so React remounts it per route and the animation replays.
+
+   No exit animation on purpose — navigation should never feel delayed. */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.page-transition {
+  animation: page-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}

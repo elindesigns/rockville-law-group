@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import CTABand from '../components/CTABand.jsx'
@@ -118,7 +119,7 @@ export default function EmploymentBasedGreenCardsZh() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="相关类别说明" title="与 EB-1A 的区别" />
           <p className="lede lede--wide">
-            <a href="/zh/eb1a">EB-1A</a>{' '}
+            <Link to="/zh/eb1a">EB-1A</Link>{' '}
             是另一个独立的职业移民类别，适用于能够证明杰出能力及持续声誉的申请人，且不需要雇主担保。对于大多数需要依靠工作机会及雇主担保才能申请绿卡的雇员而言，适用的通常是 EB-2 或
             EB-3，而非 EB-1A。
           </p>

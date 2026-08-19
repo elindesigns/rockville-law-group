@@ -99,7 +99,7 @@ export default function Eb1a() {
       <section className="section service-hero">
         <div className="container container--narrow">
           <span className="eyebrow">EB-1A Extraordinary Ability</span>
-          <h1 className="service-hero__title">EB-1A Extraordinary Ability</h1>
+          <h1 className="service-hero__title">EB-1A Extraordinary Ability Lawyer in New York</h1>
           <p className="zh-label service-hero__zh">EB-1A 杰出人才移民</p>
           <p className="lede service-hero__lede">
             EB-1A is an employment-based immigrant classification for individuals who can demonstrate extraordinary

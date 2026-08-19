@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import CTABand from '../components/CTABand.jsx'
@@ -122,7 +123,7 @@ export default function AsylumZh() {
           <SectionHeading eyebrow="移民法庭相关事宜" title="庇护案件何时会进入移民法庭" />
           <p className="lede lede--wide">
             如果主动申请被拒绝，或是在收到出庭通知书（Notice to
-            Appear）之后才提出庇护申请，此类案件通常会转由<a href="/zh/immigration-court">移民法庭</a>
+            Appear）之后才提出庇护申请，此类案件通常会转由<Link to="/zh/immigration-court">移民法庭</Link>
             审理，而非由移民局处理。这一阶段的代理方式与主动申请程序有所不同——需要经过正式的听证程序，政府一方也会派代表出席。Rockville Law Group 同时代理这两种类型的案件。
           </p>
         </div>

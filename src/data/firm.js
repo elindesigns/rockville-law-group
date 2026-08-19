@@ -76,6 +76,22 @@ export const offices = [
     description:
       "In the heart of downtown Flushing, Queens — one of New York City's most vibrant Asian-American communities — with convenient access to the Flushing–Main Street subway and LIRR station.",
     descriptionZh: '位于皇后区法拉盛市中心，纽约市最具活力的亚裔社区之一，交通便利，靠近法拉盛地铁站及长岛铁路车站。',
+    // The firm's Google Business Profile CID — the stable numeric id
+    // for its Maps listing. Prefer this over any text query: a CID
+    // resolves to exactly one place, so the map shows the firm's own
+    // named pin. Text search does NOT work here and must not be
+    // reintroduced — querying the firm name returns a scatter of
+    // *other* Flushing law firms, and querying the bare address drops
+    // an unnamed generic marker.
+    // Derived from the listing's share link (maps.app.goo.gl/xKKG9qxJjU81Vx6w9):
+    // hex CID 0x1f8bda1bd2ac7d66 → decimal 2273150249972039014.
+    mapCid: '2273150249972039014',
+    // Coordinates as Google itself places the listing (read from the
+    // Business Profile share link), so schema geo and the map pin agree.
+    lat: 40.7625318,
+    lng: -73.8319419,
+    // Fallback only, used if mapCid is ever cleared. Address alone
+    // still geocodes to the right building, just without the name.
     mapQuery: '36-16 Main St, Suite 803, Flushing, NY 11354',
   },
 ]

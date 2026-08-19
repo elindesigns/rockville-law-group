@@ -66,7 +66,7 @@ export default function EstatePlanning() {
       <section className="section service-hero">
         <div className="container container--narrow">
           <span className="eyebrow">Estate Planning</span>
-          <h1 className="service-hero__title">Estate Planning</h1>
+          <h1 className="service-hero__title">Estate Planning Lawyer in Flushing, Queens</h1>
           <p className="zh-label service-hero__zh">遗产规划</p>
           <p className="lede service-hero__lede">
             Estate planning puts a person's own wishes in writing — for their assets, their health care, and the
