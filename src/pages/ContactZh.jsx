@@ -11,7 +11,7 @@ import { BriefcaseIcon, ArrowIcon, PinIcon } from '../components/shared/Icons.js
 import useDocumentTitle from '../lib/useDocumentTitle.js'
 import useStructuredData from '../lib/useStructuredData.js'
 import { legalServiceSchema, breadcrumbSchema } from '../lib/structuredData.js'
-import { contact, offices, attorney } from '../data/firm.js'
+import { contact, offices, attorney, hours } from '../data/firm.js'
 import { disclaimerZh } from '../data/firmZh.js'
 import headshot from '../assets/li-weng-headshot.jpg'
 import './Contact.css'
@@ -84,6 +84,9 @@ export default function ContactZh() {
                 <ContactLink type="address" value={offices[0].address} source="contact_page" />
               </li>
             </ul>
+
+            <h3 className="contact-info__subheading">办公时间</h3>
+            <p className="contact-info__hours">{hours.labelZh}</p>
 
             <h3 className="contact-info__subheading">咨询方式</h3>
             <ul className="contact-info__tags">

@@ -422,6 +422,18 @@ main {
     border-color var(--dur-fast) var(--ease-soft),
     color var(--dur-fast) var(--ease-soft);
   white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Descriptive link text ("Adjustment of Status vs. Consular Processing")
+   is better for readers and for search than a generic "Read the Guide",
+   but at nowrap it overflows a phone. Below the tablet breakpoint let
+   button labels wrap and centre instead of pushing past the viewport. */
+@media (max-width: 640px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+  }
 }
 
 .btn:hover {

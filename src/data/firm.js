@@ -58,6 +58,19 @@ export const attorney = {
   },
 }
 
+// Office hours. `days` uses schema.org DayOfWeek values so this can feed
+// openingHoursSpecification directly.
+// NOTE: confirmed as 9-6; the Monday-Friday range is an assumption —
+// check with Li before launch, and update the Google Business Profile
+// to match (it currently advertises "Open 24 hours").
+export const hours = {
+  days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+  opens: '09:00',
+  closes: '18:00',
+  label: 'Monday–Friday, 9:00 AM – 6:00 PM',
+  labelZh: '周一至周五 上午 9:00 – 下午 6:00',
+}
+
 export const contact = {
   phone: '516-846-2242',
   phoneSecondary: '929-708-2307',

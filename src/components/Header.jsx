@@ -5,7 +5,7 @@ import ContactLink from './shared/ContactLink.jsx'
 import LanguageSwitcher from './LanguageSwitcher.jsx'
 import { MenuIcon, CloseIcon } from './shared/Icons.jsx'
 import { firm, nav, ctas, contact, practiceAreaActivePaths } from '../data/firm.js'
-import { navZh, ctasZh } from '../data/firmZh.js'
+import { navZh, ctasZh, getZhEquivalent, getEnEquivalent } from '../data/firmZh.js'
 import logoMark from '../assets/rockville-logo-mark-white.png'
 import './Header.css'
 
@@ -86,6 +86,22 @@ export default function Header() {
             {consultation.label}
           </Button>
         </div>
+
+        {/* Always-visible language toggle. The full switcher lives in
+            .header__actions, which is hidden below 1320px — so on every
+            phone, tablet and small laptop the only way to reach the
+            other language was to open the menu or scroll to the footer.
+            A Chinese-speaking visitor landing on an English page should
+            not have to hunt for that, so this shows the *other*
+            language as a single tap target. */}
+        <Link
+          to={isZh ? getEnEquivalent(location.pathname) : getZhEquivalent(location.pathname)}
+          className="header__lang-toggle"
+          lang={isZh ? 'en' : 'zh-Hans'}
+          aria-label={isZh ? 'Switch to English' : '切换到中文版网站'}
+        >
+          {isZh ? 'EN' : '中文'}
+        </Link>
 
         <button
           ref={menuToggleRef}

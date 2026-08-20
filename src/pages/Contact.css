@@ -90,6 +90,11 @@
   border-bottom: 1px solid var(--hairline);
 }
 
+.contact-info__hours {
+  font-size: var(--text-body);
+  color: var(--text-muted);
+}
+
 .contact-info__subheading {
   font-family: var(--font-mono);
   font-size: var(--text-label);

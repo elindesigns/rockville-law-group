@@ -11,7 +11,7 @@ import { BriefcaseIcon, ArrowIcon, PinIcon } from '../components/shared/Icons.js
 import useDocumentTitle from '../lib/useDocumentTitle.js'
 import useStructuredData from '../lib/useStructuredData.js'
 import { legalServiceSchema, breadcrumbSchema } from '../lib/structuredData.js'
-import { contact, offices, attorney, disclaimer } from '../data/firm.js'
+import { contact, offices, attorney, disclaimer, hours } from '../data/firm.js'
 import headshot from '../assets/li-weng-headshot.jpg'
 import './Contact.css'
 
@@ -85,6 +85,12 @@ export default function Contact() {
                 <ContactLink type="address" value={offices[0].address} />
               </li>
             </ul>
+
+            {/* Stated visibly because openingHoursSpecification is
+                emitted in the LegalService schema — structured data has
+                to match what a visitor can actually see on the page. */}
+            <h3 className="contact-info__subheading">Office Hours</h3>
+            <p className="contact-info__hours">{hours.label}</p>
 
             <h3 className="contact-info__subheading">Consultation Methods</h3>
             <ul className="contact-info__tags">

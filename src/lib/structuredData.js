@@ -6,7 +6,7 @@
 // elsewhere on the site.
 // ============================================================
 
-import { firm, attorney, contact, offices } from '../data/firm.js'
+import { firm, attorney, contact, offices, hours } from '../data/firm.js'
 
 const office = offices[0]
 
@@ -71,6 +71,14 @@ export function legalServiceSchema() {
       longitude: office.lng,
     },
     ...(listing ? { hasMap: listing } : {}),
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: hours.days,
+        opens: hours.opens,
+        closes: hours.closes,
+      },
+    ],
     areaServed: [
       { '@type': 'City', name: 'New York City' },
       { '@type': 'AdministrativeArea', name: 'Queens' },
