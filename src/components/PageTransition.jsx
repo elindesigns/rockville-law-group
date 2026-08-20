@@ -24,7 +24,13 @@ export default function PageTransition({ children }) {
         if (el) el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })
       })
     } else {
-      window.scrollTo(0, 0)
+      // `behavior: 'instant'` is deliberate. The two-argument
+      // window.scrollTo(0, 0) inherits `scroll-behavior: smooth` from
+      // html, which made every route change animate a slow glide back
+      // to the top — nearly a second from deep in a long page. A new
+      // page should simply start at the top. Smooth scrolling is still
+      // used for in-page #hash targets above, where it's wanted.
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     }
   }, [location.pathname, location.hash])
 
