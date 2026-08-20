@@ -190,7 +190,7 @@ export default function ForAttorneys() {
               <p>Read a fuller walkthrough of how coverage requests, scope, and remote appearance typically work.</p>
             </div>
             <Button to="/resources/immigration-court-hearing-coverage-guide" variant="outline">
-              Read the Guide <ArrowIcon width={16} height={16} />
+              How Hearing Coverage Works <ArrowIcon width={16} height={16} />
             </Button>
           </Reveal>
         </div>

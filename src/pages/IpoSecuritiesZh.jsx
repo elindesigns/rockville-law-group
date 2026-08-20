@@ -84,7 +84,7 @@ export default function IpoSecuritiesZh() {
         title="为非上市企业提供证券法咨询"
         description="预约咨询，与我们的团队讨论您的交易，确认是否适合委托办理。"
         primary={{ label: '讨论您的证券法事务', to: '/zh/contact#consultation' }}
-        secondary={{ label: '商业与公司法', to: '/zh/business-law' }}
+        secondary={{ label: '托管服务', to: '/zh/escrow-services' }}
       />
     </>
   )

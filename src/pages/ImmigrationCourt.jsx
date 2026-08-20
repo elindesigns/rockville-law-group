@@ -209,14 +209,14 @@ export default function ImmigrationCourt() {
               <h3 className="court-resource-card__title">What Happens After a Notice to Appear</h3>
               <p className="court-resource-card__desc">A step-by-step look at what generally happens once removal proceedings begin.</p>
               <Button to="/resources/notice-to-appear-what-happens-next" variant="quiet" className="court-resource-card__cta">
-                Read the Guide <ArrowIcon width={16} height={16} />
+                What Happens After an NTA <ArrowIcon width={16} height={16} />
               </Button>
             </Reveal>
             <Reveal as="article" delay={0.06} className="card court-resource-card">
               <h3 className="court-resource-card__title">Master Calendar vs. Individual Hearing</h3>
               <p className="court-resource-card__desc">What actually happens at each type of hearing, side by side.</p>
               <Button to="/resources/master-calendar-vs-individual-hearing" variant="quiet" className="court-resource-card__cta">
-                Read the Guide <ArrowIcon width={16} height={16} />
+                Compare the Two Hearings <ArrowIcon width={16} height={16} />
               </Button>
             </Reveal>
           </div>

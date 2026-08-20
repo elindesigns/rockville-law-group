@@ -179,7 +179,7 @@ export default function FamilyBasedGreenCards() {
               <p>Can You Get a Green Card Through Marriage? — a closer look at the process, including the conditional two-year card.</p>
             </div>
             <Button to="/resources/green-card-through-marriage" variant="outline">
-              Read the Guide <ArrowIcon width={16} height={16} />
+              Green Cards Through Marriage <ArrowIcon width={16} height={16} />
             </Button>
           </Reveal>
         </div>

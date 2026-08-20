@@ -190,7 +190,7 @@ export default function EmploymentBasedGreenCards() {
               <p>Adjustment of Status vs. Consular Processing — which applies once your petition is approved.</p>
             </div>
             <Button to="/resources/adjustment-of-status-vs-consular-processing" variant="outline">
-              Read the Guide <ArrowIcon width={16} height={16} />
+              Adjustment of Status vs. Consular Processing <ArrowIcon width={16} height={16} />
             </Button>
           </Reveal>
         </div>

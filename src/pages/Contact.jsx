@@ -3,6 +3,7 @@ import Reveal from '../components/Reveal.jsx'
 import Button from '../components/Button.jsx'
 import ContactLink from '../components/shared/ContactLink.jsx'
 import ConsultationForm from '../components/ConsultationForm.jsx'
+import WhatHappensNext from '../components/WhatHappensNext.jsx'
 import LocationMap from '../components/LocationMap.jsx'
 import WeChatCard from '../components/WeChatCard.jsx'
 import Breadcrumbs from '../components/Breadcrumbs.jsx'
@@ -114,6 +115,8 @@ export default function Contact() {
           </Reveal>
         </div>
       </section>
+
+      <WhatHappensNext />
 
       <section className="section section--deep">
         <div className="container">

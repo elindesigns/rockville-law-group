@@ -180,7 +180,7 @@ export default function EscrowServices() {
         title="Escrow for Your Transaction"
         description="Escrow is usually tied to a specific transaction. Schedule a consultation to talk through yours with our team."
         primary={{ label: 'Discuss Your Escrow Matter', to: '/contact#consultation' }}
-        secondary={{ label: 'Business & Corporate Law', to: '/business-law' }}
+        secondary={{ label: 'Securities Law', to: '/ipo-securities' }}
       />
     </>
   )

@@ -144,7 +144,7 @@ export default function EscrowServicesZh() {
         title="为您的交易提供托管服务"
         description="托管通常与具体交易相关联。预约咨询，与我们的团队讨论您的安排。"
         primary={{ label: '讨论您的托管事务', to: '/zh/contact#consultation' }}
-        secondary={{ label: '商业与公司法', to: '/zh/business-law' }}
+        secondary={{ label: '证券法', to: '/zh/ipo-securities' }}
       />
     </>
   )

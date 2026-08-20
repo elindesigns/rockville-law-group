@@ -4,6 +4,7 @@ import Button from '../components/Button.jsx'
 import ContactLink from '../components/shared/ContactLink.jsx'
 import ConsultationForm from '../components/ConsultationForm.jsx'
 import LocationMap from '../components/LocationMap.jsx'
+import WhatHappensNext from '../components/WhatHappensNext.jsx'
 import WeChatCard from '../components/WeChatCard.jsx'
 import Breadcrumbs from '../components/Breadcrumbs.jsx'
 import { BriefcaseIcon, ArrowIcon, PinIcon } from '../components/shared/Icons.jsx'
@@ -112,6 +113,8 @@ export default function ContactZh() {
           </Reveal>
         </div>
       </section>
+
+      <WhatHappensNext />
 
       <section className="section section--deep">
         <div className="container">

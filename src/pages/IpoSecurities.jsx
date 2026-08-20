@@ -99,7 +99,7 @@ export default function IpoSecurities() {
         title="Securities Counsel for Closely-Held Businesses"
         description="Schedule a consultation to talk through your transaction and confirm it's a fit with our team."
         primary={{ label: 'Discuss Your Securities Matter', to: '/contact#consultation' }}
-        secondary={{ label: 'Business & Corporate Law', to: '/business-law' }}
+        secondary={{ label: 'Escrow Services', to: '/escrow-services' }}
       />
     </>
   )
