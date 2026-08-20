@@ -48,10 +48,6 @@ const FAQS = [
     q: 'What happens in a partnership or shareholder dispute?',
     a: 'These disputes vary widely depending on the governing documents, the relationship between the parties, and what each side is seeking — options can range from negotiation to litigation. A consultation is the best way to evaluate a specific situation.',
   },
-  {
-    q: 'Can business matters be handled in Mandarin Chinese?',
-    a: 'Yes. Rockville Law Group offers consultations in both English and Mandarin Chinese.',
-  },
 ]
 
 export default function BusinessLaw() {
@@ -146,7 +142,7 @@ export default function BusinessLaw() {
 
       <CTABand
         eyebrow="Next Step"
-        title="Discuss Your Business Matter"
+        title="Business & Corporate Counsel in Queens"
         description="Schedule a consultation to talk through your business's specific needs with our team."
         primary={{ label: 'Discuss Your Business Matter', to: '/contact#consultation' }}
         secondary={{ label: 'Practice Areas', to: '/practice-areas' }}

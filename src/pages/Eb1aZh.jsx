@@ -49,13 +49,12 @@ const FAQS = [
     q: '需要满足十项标准中的几项？',
     a: '大多数申请人需要满足十项标准中的至少三项，但满足三项只是一个门槛，并非自动获批——移民局还会综合评估整体材料。',
   },
-  { q: '是否可以用中文咨询 EB-1A 案件？', a: '是的。Rockville Law Group 提供英文与普通话咨询服务。' },
 ]
 
 export default function Eb1aZh() {
   useDocumentTitle(
     '纽约 EB-1A 杰出人才移民律师 | Rockville Law Group',
-    'EB-1A 资格条件、证据准备与申请流程——由精通英文与普通话的纽约移民律师 Li Weng 为具有杰出能力的申请人讲解自行申请（self-petition）绿卡的途径。',
+    'EB-1A 杰出人才移民：资格条件、证据准备与自行申请（self-petition）流程。纽约法拉盛，可中文咨询。',
     { lang: 'zh-Hans', alternatePath: '/eb1a' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])

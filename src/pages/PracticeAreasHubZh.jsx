@@ -19,7 +19,7 @@ const BREADCRUMB_ITEMS = [
 export default function PracticeAreasHubZh() {
   useDocumentTitle(
     '业务领域 | Rockville Law Group',
-    'Rockville Law Group 是一家位于纽约的律师事务所，为个人、家庭及企业提供移民法、家庭法、遗产规划、商业与公司法及证券法方面的法律服务，由 Li Weng 律师主理。',
+    '移民、家庭法、遗产规划、商业与公司法、证券法及托管服务——六大业务领域，各设专属页面。',
     { lang: 'zh-Hans', alternatePath: '/practice-areas' },
   )
   useStructuredData(breadcrumbSchema(BREADCRUMB_ITEMS))

@@ -46,10 +46,6 @@ const FAQS = [
     q: 'Do prenuptial agreements need to be complicated?',
     a: 'Not necessarily — the right scope depends on the couple’s specific assets, goals, and circumstances. A consultation can help clarify what a particular agreement should and shouldn’t address.',
   },
-  {
-    q: 'Can family law matters be handled in Mandarin Chinese?',
-    a: 'Yes. Rockville Law Group offers consultations in both English and Mandarin Chinese.',
-  },
 ]
 
 export default function FamilyLaw() {

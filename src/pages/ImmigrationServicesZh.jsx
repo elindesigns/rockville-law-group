@@ -52,11 +52,13 @@ const OTHER_MATTERS = [
     title: '移民法庭与遣返辩护',
     description: '代理当事人出席移民法官的听证——包括针对出庭通知书（Notice to Appear）的应对、评估可能适用的救济方式，以及法庭辩护式庇护申请。',
     to: '/zh/immigration-court',
+    cta: '了解移民法庭代理',
   },
   {
     title: '移民上诉',
     description: '案件结果不如预期时，可能仍有上诉的空间——包括向移民上诉委员会（BIA）提出上诉。',
     to: '/zh/immigration-court#appeals',
+    cta: '了解移民上诉',
   },
 ]
 
@@ -64,10 +66,6 @@ const FAQS = [
   {
     q: '联系 Rockville Law Group 是否会建立委托代理关系？',
     a: '不会。浏览本网站或提交联系表单，并不会建立委托代理（律师-客户）关系。该关系仅在双方明确同意后才会成立，通常是在完成咨询之后。',
-  },
-  {
-    q: '是否提供中文咨询？',
-    a: '是的。Rockville Law Group 提供英文与普通话咨询服务。',
   },
   {
     q: '咨询时会了解哪些内容？',
@@ -82,7 +80,7 @@ const FAQS = [
 export default function ImmigrationServicesZh() {
   useDocumentTitle(
     '纽约移民服务 | Rockville Law Group',
-    'Rockville Law Group 在纽约提供亲属移民、庇护、EB-1A 杰出人才移民及职业移民法律服务——每个领域均有专属页面，说明申请资格、办理流程及常见问题。',
+    '亲属移民、庇护、EB-1A 杰出人才移民、职业移民及移民法庭代理——纽约法拉盛，可中文咨询。',
     { lang: 'zh-Hans', alternatePath: '/immigration-services' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -138,7 +136,7 @@ export default function ImmigrationServicesZh() {
                 <h3 className="service-areas__title">{area.title}</h3>
                 <p className="service-areas__desc">{area.description}</p>
                 <Button to={area.to} variant="quiet" className="priority-detail__cta">
-                  了解详情 <ArrowIcon width={16} height={16} />
+                  {area.cta} <ArrowIcon width={16} height={16} />
                 </Button>
               </Reveal>
             ))}

@@ -75,11 +75,6 @@ const FAQS = [
     qZh: '职业移民绿卡需要多长时间？',
     a: 'Timelines vary by category, the employer’s PERM process, and visa availability for the employee’s country of birth, which can add significant waiting time in some categories. A consultation is the most reliable way to get a realistic estimate for a specific case.',
   },
-  {
-    q: 'Can I discuss my case in Mandarin Chinese?',
-    qZh: '可以用中文咨询吗？',
-    a: 'Yes. Rockville Law Group offers consultations in both English and Mandarin Chinese.',
-  },
 ]
 
 export default function EmploymentBasedGreenCards() {

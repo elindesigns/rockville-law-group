@@ -55,7 +55,7 @@ const WHY_POINTS = [
 export default function HomeZh() {
   useDocumentTitle(
     '纽约律师事务所 | Rockville Law Group',
-    'Rockville Law Group 是一家位于纽约的律师事务所，由 Li Weng 律师创办，为中文客户提供移民法、家庭法、遗产规划及商业与证券法方面的法律协助，同时为律师提供移民法庭出庭代理服务。',
+    '纽约法拉盛律师事务所，提供移民、家庭法、遗产规划及商业法律服务，可直接以中文咨询。',
     { lang: 'zh-Hans', alternatePath: '/' },
   )
   useStructuredData([legalServiceSchema(), websiteSchema()])

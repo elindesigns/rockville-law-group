@@ -11,7 +11,7 @@ import useDocumentTitle from '../lib/useDocumentTitle.js'
 import useStructuredData from '../lib/useStructuredData.js'
 import { breadcrumbSchema, faqPageSchema } from '../lib/structuredData.js'
 import { attorney, contact } from '../data/firm.js'
-import { remoteCaveatZh } from '../data/firmZh.js'
+import { remoteCaveatZh, JURISDICTION_ZH } from '../data/firmZh.js'
 import '../pages/ServicePage.css'
 import '../pages/ForAttorneys.css'
 
@@ -57,7 +57,7 @@ const FAQS = [
 export default function AttorneyHearingCoverageZh() {
   useDocumentTitle(
     '移民法庭出庭代理 | Rockville Law Group 律师专区',
-    '为需要移民法庭听证代理的律师提供协助，涵盖主审听证、主日历听证及 BIA 事务，符合条件的案件可提供远程出庭服务。Li Weng 律师持有纽约州及哥伦比亚特区执业资格。',
+    '为律师提供移民法庭出庭代理：主审听证、主日历听证及 BIA 事务，符合条件的案件可远程出庭。',
     { lang: 'zh-Hans', alternatePath: '/for-attorneys' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -130,8 +130,13 @@ export default function AttorneyHearingCoverageZh() {
               <h3>经验与执业资格</h3>
               <ul>
                 <li>{attorney.yearsExperience} 年执业经验</li>
-                <li>执业资格：纽约州（自 2012 年起）</li>
-                <li>执业资格：哥伦比亚特区（自 2017 年起）</li>
+                {/* Mapped from firm.js so admissions can never drift
+                    from the single source of truth. */}
+                {attorney.bar.map((b) => (
+                  <li key={b.jurisdiction}>
+                    执业资格：{JURISDICTION_ZH[b.jurisdiction] || b.jurisdiction}（自 {b.since} 年起）
+                  </li>
+                ))}
                 <li>美国纽约南区联邦地区法院（SDNY）</li>
                 <li>美国纽约东区联邦地区法院（EDNY）</li>
               </ul>

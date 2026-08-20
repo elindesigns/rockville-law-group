@@ -45,10 +45,6 @@ const FAQS = [
     q: '合伙或股东出现争议时会怎样处理？',
     a: '具体情况因公司章程、各方关系及诉求不同而有很大差异——处理方式可能从协商到诉讼不等。通过咨询是评估具体情况的最佳方式。',
   },
-  {
-    q: '商业事务是否可以用中文办理？',
-    a: '是的。Rockville Law Group 提供英文与普通话咨询服务。',
-  },
 ]
 
 export default function BusinessLawZh() {
@@ -132,7 +128,7 @@ export default function BusinessLawZh() {
 
       <CTABand
         eyebrow="联系律师"
-        title="讨论您的商业事务"
+        title="皇后区商业与公司法律顾问"
         description="预约咨询，与我们的团队直接讨论您企业的具体需求。"
         primary={{ label: '讨论您的商业事务', to: '/zh/contact#consultation' }}
         secondary={{ label: '业务领域', to: '/zh/practice-areas' }}

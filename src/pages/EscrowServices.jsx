@@ -79,16 +79,12 @@ const FAQS = [
       </>
     ),
   },
-  {
-    q: 'Can escrow matters be handled in Mandarin Chinese?',
-    a: 'Yes. Rockville Law Group offers consultations in both English and Mandarin Chinese.',
-  },
 ]
 
 export default function EscrowServices() {
   useDocumentTitle(
     'Escrow Services Attorney in New York | Rockville Law Group',
-    'Escrow agent services in New York for business and real estate transactions — holding funds, deeds, or closing documents until financing, inspection, or other deal conditions are met — from attorney Li Weng in Flushing, New York.',
+    'Escrow agent services for business and real estate transactions — holding funds, deeds, or documents until closing conditions are met. Flushing, New York.',
     { lang: 'en-US', alternatePath: '/zh/escrow-services' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -181,7 +177,7 @@ export default function EscrowServices() {
 
       <CTABand
         eyebrow="Next Step"
-        title="Discuss Your Escrow Matter"
+        title="Escrow for Your Transaction"
         description="Escrow is usually tied to a specific transaction. Schedule a consultation to talk through yours with our team."
         primary={{ label: 'Discuss Your Escrow Matter', to: '/contact#consultation' }}
         secondary={{ label: 'Business & Corporate Law', to: '/business-law' }}

@@ -17,7 +17,7 @@ import { legalServiceSchema, websiteSchema } from '../lib/structuredData.js'
 export default function Home() {
   useDocumentTitle(
     'New York Law Firm | Rockville Law Group',
-    'Rockville Law Group is a New York law firm representing individuals, families, and businesses across immigration, family law, estate planning, and business law, led by attorney Li Weng. Consultations in English and Mandarin Chinese.',
+    'A law firm in Flushing, Queens handling immigration, family law, estate planning, business, securities, and escrow matters — in English and Mandarin Chinese.',
     { lang: 'en-US', alternatePath: '/zh' },
   )
   useStructuredData([legalServiceSchema(), websiteSchema()])

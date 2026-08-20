@@ -52,7 +52,6 @@ const FAQS = [
     q: '职业移民绿卡通常需要多长时间？',
     a: '办理时间因类别、雇主的劳工证办理进度，以及雇员原籍国的签证名额情况而有很大差异，部分类别的等待时间可能相当长。想要了解具体案件的合理时间预期，咨询是最可靠的方式。',
   },
-  { q: '是否可以用中文咨询？', a: '是的。Rockville Law Group 提供英文与普通话咨询服务。' },
 ]
 
 export default function EmploymentBasedGreenCardsZh() {

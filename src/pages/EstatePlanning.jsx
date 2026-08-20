@@ -46,10 +46,6 @@ const FAQS = [
     q: 'When should someone start estate planning?',
     a: 'There is no single right time — significant life events such as marriage, having children, or acquiring property are common reasons people put a plan in place or revisit an existing one. A consultation can help clarify what makes sense for a specific situation.',
   },
-  {
-    q: 'Can estate planning matters be handled in Mandarin Chinese?',
-    a: 'Yes. Rockville Law Group offers consultations in both English and Mandarin Chinese.',
-  },
 ]
 
 export default function EstatePlanning() {

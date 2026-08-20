@@ -53,16 +53,12 @@ const FAQS = [
     q: '如何安排托管服务？',
     a: `托管通常是更大交易的一部分。了解是否适合具体交易，最直接的方式是与我们联系——可致电 ${contact.phone}，或发送邮件至 ${contact.email}——也可以直接预约咨询。`,
   },
-  {
-    q: '托管事务是否可以用中文办理？',
-    a: '是的。Rockville Law Group 提供英文与普通话咨询服务。',
-  },
 ]
 
 export default function EscrowServicesZh() {
   useDocumentTitle(
     '纽约托管服务律师 | Rockville Law Group',
-    '为商业及房地产交易提供托管代理服务——保管资金、契据或交易文件，直至融资、验房或其他交易条件达成——由精通英文与普通话的纽约律师 Li Weng 为您讲解托管服务相关事宜。',
+    '为商业及房地产交易担任托管代理人，保管资金、契据或文件，直至成交条件达成。纽约法拉盛，可中文咨询。',
     { lang: 'zh-Hans', alternatePath: '/escrow-services' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -145,7 +141,7 @@ export default function EscrowServicesZh() {
 
       <CTABand
         eyebrow="联系律师"
-        title="讨论您的托管事务"
+        title="为您的交易提供托管服务"
         description="托管通常与具体交易相关联。预约咨询，与我们的团队讨论您的安排。"
         primary={{ label: '讨论您的托管事务', to: '/zh/contact#consultation' }}
         secondary={{ label: '商业与公司法', to: '/zh/business-law' }}

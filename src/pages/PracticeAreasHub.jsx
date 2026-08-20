@@ -19,7 +19,7 @@ const BREADCRUMB_ITEMS = [
 export default function PracticeAreasHub() {
   useDocumentTitle(
     'Practice Areas | Rockville Law Group',
-    'Rockville Law Group is a New York law firm serving individuals, families, and businesses across immigration, family law, estate planning, business law, and securities law — led by attorney Li Weng.',
+    "Compare Rockville Law Group's six practice areas — immigration, family law, estate planning, business, securities, and escrow — to find where your matter fits.",
     { lang: 'en-US', alternatePath: '/zh/practice-areas' },
   )
   useStructuredData(breadcrumbSchema(BREADCRUMB_ITEMS))

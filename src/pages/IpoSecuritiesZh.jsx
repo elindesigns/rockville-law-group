@@ -28,10 +28,6 @@ const FAQS = [
     q: '什么是非公开发行（Private Placement）或豁免发行？',
     a: '许多私营企业依据相关法律的豁免条款进行融资，无需按照公开发行的要求进行完整注册——这类做法通常被称为非公开发行或豁免发行。即便如此，这类发行仍须满足特定的法律要求。',
   },
-  {
-    q: '证券法事务是否可以用中文讨论？',
-    a: '是的。Rockville Law Group 提供英文与普通话咨询服务。',
-  },
 ]
 
 export default function IpoSecuritiesZh() {
@@ -85,7 +81,7 @@ export default function IpoSecuritiesZh() {
 
       <CTABand
         eyebrow="联系律师"
-        title="讨论您的证券法事务"
+        title="为非上市企业提供证券法咨询"
         description="预约咨询，与我们的团队讨论您的交易，确认是否适合委托办理。"
         primary={{ label: '讨论您的证券法事务', to: '/zh/contact#consultation' }}
         secondary={{ label: '商业与公司法', to: '/zh/business-law' }}

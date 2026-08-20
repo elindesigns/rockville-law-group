@@ -59,11 +59,6 @@ const FAQS = [
     qZh: '可以对移民法官的裁决提出上诉吗？',
     a: 'In many cases, yes — generally by filing a Notice of Appeal with the Board of Immigration Appeals within 30 days of the decision. Not every issue is appealable, and a consultation can help clarify the options after a specific ruling.',
   },
-  {
-    q: 'Do you represent clients in Mandarin Chinese?',
-    qZh: '可以用中文代理案件吗？',
-    a: 'Yes. Rockville Law Group offers consultations in both English and Mandarin Chinese.',
-  },
 ]
 
 export default function ImmigrationCourt() {

@@ -43,10 +43,6 @@ const FAQS = [
     q: '婚前协议一定很复杂吗？',
     a: '不一定——协议的具体范围取决于夫妻双方的资产、目标及具体情况。通过咨询可以进一步明确一份协议应当涵盖哪些内容。',
   },
-  {
-    q: '家庭法事务是否可以用中文办理？',
-    a: '是的。Rockville Law Group 提供英文与普通话咨询服务。',
-  },
 ]
 
 export default function FamilyLawZh() {

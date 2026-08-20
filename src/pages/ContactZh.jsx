@@ -23,7 +23,7 @@ const BREADCRUMB_ITEMS = [
 export default function ContactZh() {
   useDocumentTitle(
     '联系我们 | Rockville Law Group 纽约法拉盛办公室',
-    '联系 Rockville Law Group 纽约法拉盛办公室，预约咨询讨论您的移民、家庭法、遗产规划或商业法律事务，或了解移民法庭出庭代理服务。电话、邮件及面谈咨询均可。',
+    '联系 Rockville Law Group 纽约法拉盛办公室：电话、邮件或面谈预约咨询，可直接以中文沟通。',
     { lang: 'zh-Hans', alternatePath: '/contact' },
   )
   useStructuredData([legalServiceSchema(), breadcrumbSchema(BREADCRUMB_ITEMS)])

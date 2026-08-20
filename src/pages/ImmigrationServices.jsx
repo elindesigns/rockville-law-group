@@ -34,12 +34,14 @@ const OTHER_MATTERS = [
     description:
       'Representation before an immigration judge — including responding to a Notice to Appear, identifying available forms of relief, and defensive asylum.',
     to: '/immigration-court',
+    cta: 'Explore Immigration Court',
   },
   {
     title: 'Immigration Appeals',
     zh: '移民上诉',
     description: "When a case doesn't go as hoped, there may be options to appeal — including to the Board of Immigration Appeals.",
     to: '/immigration-court#appeals',
+    cta: 'Explore Immigration Appeals',
   },
 ]
 
@@ -48,11 +50,6 @@ const FAQS = [
     q: 'Does contacting Rockville Law Group create an attorney-client relationship?',
     qZh: '联系我们是否会建立委托关系？',
     a: 'No. Visiting this website or submitting a contact form does not create an attorney-client relationship. That relationship begins only once both sides agree to it, typically after a consultation.',
-  },
-  {
-    q: 'Do you offer consultations in Mandarin Chinese?',
-    qZh: '是否提供中文咨询？',
-    a: 'Yes. Rockville Law Group offers consultations in both English and Mandarin Chinese.',
   },
   {
     q: 'What should I expect at a consultation?',
@@ -138,7 +135,7 @@ export default function ImmigrationServices() {
                 {area.zh && <p className="zh-label service-areas__zh">{area.zh}</p>}
                 <p className="service-areas__desc">{area.description}</p>
                 <Button to={area.to} variant="quiet" className="priority-detail__cta">
-                  Learn More <ArrowIcon width={16} height={16} />
+                  {area.cta} <ArrowIcon width={16} height={16} />
                 </Button>
               </Reveal>
             ))}

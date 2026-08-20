@@ -74,11 +74,6 @@ const FAQS = [
     qZh: '配偶及子女是否可以被列入庇护申请？',
     a: 'A spouse and unmarried children under 21 may be included on an asylum application in some circumstances, whether they are already in the United States or apply to join later. Whether this applies to a specific family depends on the individual case.',
   },
-  {
-    q: 'Do you offer asylum consultations in Mandarin Chinese?',
-    qZh: '是否提供中文庇护咨询？',
-    a: 'Yes. Rockville Law Group offers consultations in both English and Mandarin Chinese.',
-  },
 ]
 
 export default function Asylum() {

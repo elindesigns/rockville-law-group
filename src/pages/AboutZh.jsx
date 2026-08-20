@@ -9,6 +9,7 @@ import useDocumentTitle from '../lib/useDocumentTitle.js'
 import useStructuredData from '../lib/useStructuredData.js'
 import { personSchema, breadcrumbSchema } from '../lib/structuredData.js'
 import { attorney } from '../data/firm.js'
+import { mainPracticeAreas } from '../data/firmZh.js'
 import headshot from '../assets/li-weng-headshot.jpg'
 import './About.css'
 
@@ -31,7 +32,7 @@ const EDUCATION_ZH = {
 export default function AboutZh() {
   useDocumentTitle(
     'Li Weng 律师 — 纽约律师简介 | Rockville Law Group',
-    'Li Weng 律师是 Rockville Law Group 的创始人，执业于纽约法拉盛，从业超过 14 年，业务涵盖移民法、家庭法、遗产规划及商业法律事务，持有纽约州及哥伦比亚特区执业资格，精通英文与普通话。',
+    'Rockville Law Group 创始律师 Li Weng，执业逾 14 年，持纽约州及哥伦比亚特区执业资格，办公室位于纽约法拉盛。',
     { lang: 'zh-Hans', alternatePath: '/about' },
   )
   useStructuredData([personSchema(), breadcrumbSchema(BREADCRUMB_ITEMS)])
@@ -102,12 +103,13 @@ export default function AboutZh() {
 
             <Reveal as="div" delay={0.2} className="card about-credentials__card about-credentials__card--wide">
               <h3>执业领域</h3>
+              {/* Mapped from firm.js rather than hardcoded — the
+                  hardcoded list had silently gone stale and was missing
+                  托管服务 (Escrow) after it became a practice area. */}
               <ul className="about-credentials__tags">
-                <li>移民法</li>
-                <li>遗产规划</li>
-                <li>商业法律</li>
-                <li>证券法律</li>
-                <li>家庭法</li>
+                {mainPracticeAreas.map((area) => (
+                  <li key={area.id}>{area.nameZh}</li>
+                ))}
               </ul>
             </Reveal>
           </div>

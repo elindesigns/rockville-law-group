@@ -74,11 +74,6 @@ const FAQS = [
     qZh: '亲属移民绿卡需要多长时间？',
     a: "Timelines vary significantly by category, the beneficiary's country of birth, and current visa availability. Immediate relative cases are generally faster than family preference categories, which can involve a multi-year wait for a visa to become available. A consultation is the most reliable way to get a realistic sense of a specific case.",
   },
-  {
-    q: 'Do you handle family-based cases in Mandarin Chinese?',
-    qZh: '可以用中文办理家庭移民案件吗？',
-    a: 'Yes. Rockville Law Group offers consultations in both English and Mandarin Chinese.',
-  },
 ]
 
 export default function FamilyBasedGreenCards() {

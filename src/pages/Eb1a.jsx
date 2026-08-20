@@ -78,17 +78,12 @@ const FAQS = [
     qZh: '需要满足十项标准中的几项？',
     a: 'Most applicants need to meet at least three of the ten regulatory criteria, though meeting three is a threshold rather than an automatic approval — USCIS also considers the record as a whole in a final merits review.',
   },
-  {
-    q: 'Can I discuss an EB-1A case in Mandarin Chinese?',
-    qZh: '可以用中文咨询 EB-1A 案件吗？',
-    a: 'Yes. Rockville Law Group offers consultations in both English and Mandarin Chinese.',
-  },
 ]
 
 export default function Eb1a() {
   useDocumentTitle(
     'EB-1A Lawyer in New York | Rockville Law Group',
-    'EB-1A eligibility, evidence, and the petition process explained by a bilingual immigration attorney in Flushing, New York — for individuals with extraordinary ability in their field considering a self-petitioned green card.',
+    'EB-1A eligibility, evidence, and the self-petition process — for individuals with extraordinary ability. Bilingual immigration counsel in Flushing, New York.',
     { lang: 'en-US', alternatePath: '/zh/eb1a' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])

@@ -28,10 +28,6 @@ const FAQS = [
     q: 'What is a private placement or exempt offering?',
     a: 'Many private businesses raise capital under exemptions from full public registration requirements — commonly known as private placements or exempt offerings. These still have to satisfy specific legal requirements, even though they aren’t registered the way a public offering would be.',
   },
-  {
-    q: 'Can securities law matters be discussed in Mandarin Chinese?',
-    a: 'Yes. Rockville Law Group offers consultations in both English and Mandarin Chinese.',
-  },
 ]
 
 export default function IpoSecurities() {
@@ -100,7 +96,7 @@ export default function IpoSecurities() {
 
       <CTABand
         eyebrow="Next Step"
-        title="Discuss Your Securities Law Matter"
+        title="Securities Counsel for Closely-Held Businesses"
         description="Schedule a consultation to talk through your transaction and confirm it's a fit with our team."
         primary={{ label: 'Discuss Your Securities Matter', to: '/contact#consultation' }}
         secondary={{ label: 'Business & Corporate Law', to: '/business-law' }}
