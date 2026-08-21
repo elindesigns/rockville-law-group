@@ -1,257 +1,225 @@
 // ============================================================
-// PRERENDER
-// Runs after `vite build`. Serves dist/ locally, loads every route
-// in a real headless Chrome, and writes the finished HTML back into
-// dist/ as <route>/index.html.
+// PRERENDER (browserless)
+// Runs after `vite build`. Writes one HTML file per route into dist/,
+// each carrying that route's own title, description, canonical, Open
+// Graph tags and hreflang links.
 //
-// Why a real browser rather than renderToString: this app sets its
-// title, description, canonical, Open Graph and hreflang tags from
-// inside useEffect (lib/useDocumentTitle.js), and effects do not run
-// during server rendering. A browser runs them, so what gets captured
-// is exactly what a visitor sees — metadata included.
+// WHY NO BROWSER
+// This previously drove headless Chrome, which captured the fully
+// rendered page including body content. Vercel's build container
+// cannot launch Chromium (it lacks the system libraries Chrome needs),
+// so that step silently degraded to nothing on every deploy. Pure Node
+// always works, everywhere, in about a second.
 //
-// The routes come from public/sitemap.xml so there is one list to keep
-// current, and it is already the list submitted to Search Console.
+// WHAT THIS DOES AND DOESN'T FIX
+// Fixes the verified problem: without it every route served the same
+// title and description, so Facebook, LinkedIn, X and WeChat — none of
+// which run JavaScript when scraping — previewed all 42 pages as the
+// homepage. Search engines also get per-route metadata in the raw HTML
+// rather than only after rendering.
 //
-// Vercel serves these files directly: its docs state "precedence is
-// given to the filesystem prior to rewrites being applied", so the
-// SPA catch-all in vercel.json only handles paths with no prerendered
-// file (and the client router renders NotFound for those).
+// Does not fix: page bodies are still client-rendered. Google runs
+// JavaScript, so it indexes them; a non-rendering client sees an empty
+// <div id="root">. Rendering bodies without a browser is possible via
+// React 19's react-dom/static prerender API, but needs the metadata in
+// this file's useDocumentTitle calls hoisted out of useEffect first.
+//
+// HOW METADATA IS FOUND
+// Routes come from public/sitemap.xml. Each route is mapped to its page
+// component through App.jsx, and the component's useDocumentTitle call
+// is read from source. Article routes take their metadata from
+// data/articles.js instead. Any route that cannot be resolved is
+// reported and falls back to the default shell, so a parse failure
+// degrades rather than ships something wrong.
 // ============================================================
 
-import { createServer } from 'node:http'
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
-import { existsSync } from 'node:fs'
-import { join, extname, dirname } from 'node:path'
+import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import puppeteer from 'puppeteer'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = join(root, 'dist')
-const PORT = 5273
+const src = join(root, 'src')
 
-const MIME = {
-  '.html': 'text/html; charset=utf-8',
-  '.js': 'text/javascript; charset=utf-8',
-  '.css': 'text/css; charset=utf-8',
-  '.json': 'application/json; charset=utf-8',
-  '.svg': 'image/svg+xml',
-  '.png': 'image/png',
-  '.jpg': 'image/jpeg',
-  '.jpeg': 'image/jpeg',
-  '.webp': 'image/webp',
-  '.woff2': 'font/woff2',
-  '.xml': 'application/xml; charset=utf-8',
-  '.txt': 'text/plain; charset=utf-8',
-}
+const problems = []
 
-/**
- * Static server over dist/ with SPA fallback, so the client router can
- * resolve any route.
- *
- * `shell` is the ORIGINAL index.html, read once before prerendering
- * starts. It must be held in memory: prerendering "/" overwrites
- * dist/index.html, and if the fallback were re-read from disk every
- * later route would boot from the homepage's already-rendered DOM and
- * inherit its title and hreflang tags on top of its own.
- */
-function serve(shell) {
-  return new Promise((resolve) => {
-    const server = createServer(async (req, res) => {
-      const urlPath = decodeURIComponent(req.url.split('?')[0])
-      const filePath = join(dist, urlPath)
-      try {
-        if (extname(urlPath) && existsSync(filePath)) {
-          res.writeHead(200, { 'Content-Type': MIME[extname(urlPath)] || 'application/octet-stream' })
-          res.end(await readFile(filePath))
-          return
-        }
-        res.writeHead(200, { 'Content-Type': MIME['.html'] })
-        res.end(shell)
-      } catch {
-        res.writeHead(404).end('Not found')
-      }
-    })
-    server.listen(PORT, () => resolve(server))
-  })
-}
-
-/**
- * Routes and the production origin both come from the sitemap, so there
- * is a single list to keep current and the canonical URLs written here
- * cannot drift from the ones submitted to Search Console.
- */
+/** Routes and the production origin, both from the sitemap. */
 async function readSitemap() {
   const xml = await readFile(join(root, 'public', 'sitemap.xml'), 'utf8')
-  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
-  const urls = locs
-    .map((loc) => {
+  const urls = [...xml.replace(/<!--[\s\S]*?-->/g, '').matchAll(/<loc>([^<]+)<\/loc>/g)]
+    .map((m) => {
       try {
-        return new URL(loc)
+        return new URL(m[1])
       } catch {
         return null
       }
     })
     .filter(Boolean)
   if (!urls.length) throw new Error('No usable <loc> entries in public/sitemap.xml')
-  const routes = [...new Set(urls.map((u) => u.pathname))].sort()
-  return { routes, origin: urls[0].origin }
+  return { routes: [...new Set(urls.map((u) => u.pathname))].sort(), origin: urls[0].origin }
+}
+
+/** path -> page source file, read out of App.jsx's lazy imports and <Route> elements. */
+async function readRouteMap() {
+  const app = await readFile(join(src, 'App.jsx'), 'utf8')
+  const files = {}
+  // Lazy routes, which is most of them.
+  for (const m of app.matchAll(/const\s+(\w+)\s*=\s*lazy\(\(\)\s*=>\s*import\('([^']+)'\)\)/g)) {
+    files[m[1]] = m[2].replace(/^\.\//, '')
+  }
+  // The two homepages are imported eagerly rather than lazily, so they
+  // need picking up separately — missing them left / and /zh on the
+  // default shell, which are the two most important pages on the site.
+  for (const m of app.matchAll(/^import\s+(\w+)\s+from\s+'(\.\/pages\/[^']+)'/gm)) {
+    files[m[1]] = m[2].replace(/^\.\//, '')
+  }
+  const routes = {}
+  for (const m of app.matchAll(/<Route\s+path="([^"]+)"\s+element=\{<(\w+)\s*\/>\}/g)) {
+    routes[m[1]] = files[m[2]] || null
+  }
+  return routes
+}
+
+/**
+ * Pull the arguments out of a page's useDocumentTitle(...) call. The
+ * calls are written to one shape across every page, so a targeted read
+ * is enough and avoids adding a JSX parser to the build.
+ */
+function parseDocumentTitle(source) {
+  const call = source.match(/useDocumentTitle\(([\s\S]*?)\n\s*\)/)
+  if (!call) return null
+  // Strip comments before reading strings. Several of these calls carry
+  // an explanatory comment above the title, and quoted phrases inside
+  // one ("Per diem" on ForAttorneys) were being picked up as the title.
+  const body = call[1].replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '')
+  const strings = [...body.matchAll(/(?<!\\)'((?:[^'\\]|\\.)*)'|"((?:[^"\\]|\\.)*)"/g)]
+    .map((m) => (m[1] ?? m[2]).replace(/\\'/g, "'").replace(/\\"/g, '"'))
+    // Drop the option-object values so only title and description remain.
+    .filter((s) => !/^(en-US|zh-Hans)$/.test(s))
+  const alternate = body.match(/alternatePath:\s*'([^']+)'/)
+  const lang = body.match(/lang:\s*'([^']+)'/)
+  if (!strings.length) return null
+  return {
+    title: strings[0],
+    description: strings[1] || null,
+    lang: lang ? lang[1] : 'en-US',
+    alternatePath: alternate ? alternate[1] : null,
+  }
+}
+
+/** Article routes get their metadata from the articles data file. */
+async function readArticleMeta() {
+  const source = await readFile(join(src, 'data', 'articles.js'), 'utf8')
+  const out = {}
+  for (const m of source.matchAll(/slug:\s*'([^']+)'/g)) {
+    const after = source.slice(m.index, m.index + 2000)
+    const title = after.match(/metaTitle:\s*\n?\s*'((?:[^'\\]|\\.)*)'/)
+    const desc = after.match(/metaDescription:\s*\n?\s*'((?:[^'\\]|\\.)*)'/)
+    if (title) {
+      out[`/resources/${m[1]}`] = {
+        title: title[1].replace(/\\'/g, "'"),
+        description: desc ? desc[1].replace(/\\'/g, "'") : null,
+        lang: 'en-US',
+        alternatePath: null,
+      }
+    }
+  }
+  return out
+}
+
+const escapeAttr = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+const escapeText = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+/** Rewrite the shell's head for one route. */
+function buildHtml(shell, { route, meta, origin }) {
+  const canonical = `${origin}${route === '/' ? '/' : route}`
+  let html = shell
+
+  html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeText(meta.title)}</title>`)
+
+  if (meta.description) {
+    html = html.replace(
+      /<meta\s+name="description"\s+content="[^"]*"\s*\/>/,
+      `<meta name="description" content="${escapeAttr(meta.description)}" />`,
+    )
+    html = html.replace(
+      /<meta\s+property="og:description"\s+content="[^"]*"\s*\/>/,
+      `<meta property="og:description" content="${escapeAttr(meta.description)}" />`,
+    )
+  }
+  html = html.replace(
+    /<meta\s+property="og:title"\s+content="[^"]*"\s*\/>/,
+    `<meta property="og:title" content="${escapeAttr(meta.title)}" />`,
+  )
+  html = html.replace(
+    /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/>/,
+    `<meta name="twitter:title" content="${escapeAttr(meta.title)}" />`,
+  )
+
+  // hreflang is emitted here as well as in the sitemap. Google documents
+  // HTML tags, HTTP headers and sitemaps as the three supported methods
+  // and does not mention JavaScript-injected tags, which is all the app
+  // could offer before this.
+  const head = []
+  head.push(`<link rel="canonical" href="${escapeAttr(canonical)}" />`)
+  head.push(`<meta property="og:url" content="${escapeAttr(canonical)}" />`)
+  head.push(`<meta property="og:locale" content="${meta.lang === 'zh-Hans' ? 'zh_CN' : 'en_US'}" />`)
+  if (meta.alternatePath) {
+    const other = `${origin}${meta.alternatePath}`
+    const otherLang = meta.lang === 'zh-Hans' ? 'en-US' : 'zh-Hans'
+    head.push(`<link rel="alternate" hreflang="${meta.lang}" href="${escapeAttr(canonical)}" />`)
+    head.push(`<link rel="alternate" hreflang="${otherLang}" href="${escapeAttr(other)}" />`)
+    head.push(
+      `<link rel="alternate" hreflang="x-default" href="${escapeAttr(meta.lang === 'zh-Hans' ? other : canonical)}" />`,
+    )
+  }
+  html = html.replace('</head>', `  ${head.join('\n    ')}\n  </head>`)
+
+  // The document language should match the page, not the shell default.
+  html = html.replace(/<html lang="[^"]*"/, `<html lang="${meta.lang === 'zh-Hans' ? 'zh-Hans' : 'en'}"`)
+
+  return html
 }
 
 async function main() {
   const { routes, origin } = await readSitemap()
+  const routeMap = await readRouteMap()
+  const articleMeta = await readArticleMeta()
+  const shell = await readFile(join(dist, 'index.html'), 'utf8')
 
-  // useDocumentTitle builds canonical, og:url and hreflang from
-  // window.location.origin, which during prerendering is this local
-  // server. Those three have to become absolute production URLs —
-  // shipping localhost canonicals would point Google at nothing.
-  //
-  // Everything else carrying the local origin is an asset reference the
-  // browser absolutised while rendering (modulepreload links, injected
-  // stylesheets). Those must go back to root-relative, NOT to the
-  // production domain: hardcoding the domain into asset URLs would make
-  // preview deployments and local runs fetch production assets
-  // cross-origin, with mismatched build hashes.
-  const localOrigin = `http://localhost:${PORT}`
-  const ABSOLUTE_URL_TAGS = /<(?:link|meta)\b[^>]*>/gi
-  const NEEDS_ABSOLUTE = /rel="canonical"|rel="alternate"|property="og:url"/i
-
-  const toProductionOrigin = (html) => {
-    const withAbsoluteSeoUrls = html.replace(ABSOLUTE_URL_TAGS, (tag) =>
-      NEEDS_ABSOLUTE.test(tag) ? tag.split(localOrigin).join(origin) : tag,
-    )
-    // Any remaining occurrence is an asset path.
-    return withAbsoluteSeoUrls.split(localOrigin).join('')
-  }
-
-  const shell = await readFile(join(dist, 'index.html'))
-  const server = await serve(shell)
-
-  // Chromium needs system libraries (libnss3 and friends) that are not
-  // guaranteed to exist in every CI image — Vercel's build container has
-  // broken this exact pattern for other projects. A missing browser
-  // should not fail the deploy: the SPA build in dist/ is already valid
-  // and is what the site shipped before prerendering existed. So warn
-  // loudly, leave that build in place, and carry on.
-  //
-  // Set PRERENDER_STRICT=1 to turn this into a hard failure instead.
-  let browser
-  try {
-    browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage'] })
-  } catch (err) {
-    server.close()
-    const message = [
-      '',
-      '='.repeat(72),
-      'PRERENDER SKIPPED — could not launch Chromium.',
-      '',
-      `  ${err.message.split('\n')[0]}`,
-      '',
-      'dist/ still contains a valid single-page build, so the deploy is',
-      'usable, but every route will serve the same title and an empty body',
-      'to crawlers and social scrapers.',
-      '',
-      'Verify after deploying:',
-      '  curl -s https://www.rockvillelawgroup.com/estate-planning | grep -o "<title>[^<]*"',
-      '  Expect: Estate Planning Lawyer in New York',
-      '  If it says "New York Law Firm", prerendering did not run.',
-      '='.repeat(72),
-      '',
-    ].join('\n')
-    if (process.env.PRERENDER_STRICT === '1') {
-      throw new Error(message)
-    }
-    console.warn(message)
-    return
-  }
-
-  const page = await browser.newPage()
-  await page.setViewport({ width: 1280, height: 900 })
-
+  const metaCache = {}
   let written = 0
-  const problems = []
 
   for (const route of routes) {
-    await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: 'networkidle0', timeout: 45000 })
+    let meta = articleMeta[route]
 
-    // The route chunk is lazy-loaded and useDocumentTitle sets the title
-    // in an effect, so wait for real content rather than a fixed delay.
-    await page
-      .waitForFunction(
-        () => {
-          const main = document.querySelector('main') || document.getElementById('root')
-          return document.querySelector('h1') && main && main.textContent.trim().length > 100
-        },
-        { timeout: 20000 },
-      )
-      .catch(() => problems.push(`${route}: content did not settle`))
-
-    // Every below-fold section starts at opacity 0 until its
-    // IntersectionObserver fires, so a naive snapshot would hand crawlers
-    // a page of invisible text. Scroll the whole page to trigger the
-    // observers naturally, then mark anything still unrevealed — a real
-    // visitor reaches that state by scrolling, and the fully-revealed
-    // page is the honest thing to serialize.
-    await page.evaluate(async () => {
-      const height = () => document.documentElement.scrollHeight
-      const step = Math.round(window.innerHeight * 0.75)
-      for (let y = 0; y < height(); y += step) {
-        window.scrollTo(0, y)
-        await new Promise((r) => setTimeout(r, 90))
+    if (!meta) {
+      const file = routeMap[route]
+      if (!file) {
+        problems.push(`${route}: no component found in App.jsx`)
+        continue
       }
-      window.scrollTo(0, 0)
-
-      // Reveals use a transition with a per-item delay; give the ones
-      // triggered late a chance to finish before forcing the rest.
-      await new Promise((r) => setTimeout(r, 900))
-
-      // Suppress the transition while forcing the stragglers, so opacity
-      // lands on 1 immediately instead of easing over 0.6s. The override
-      // is removed again before serializing — the snapshot must not ship
-      // a style tag that disables the animation for real visitors.
-      const override = document.createElement('style')
-      override.textContent = '.reveal{transition:none !important}'
-      document.head.appendChild(override)
-
-      for (const el of document.querySelectorAll('.reveal:not(.is-visible)')) {
-        el.classList.add('is-visible')
+      if (!metaCache[file]) {
+        const source = await readFile(join(src, file), 'utf8').catch(() => null)
+        metaCache[file] = source ? parseDocumentTitle(source) : null
       }
-      await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))
-      override.remove()
-      await new Promise((r) => setTimeout(r, 50))
-    })
+      meta = metaCache[file]
+      if (!meta) {
+        problems.push(`${route}: could not read useDocumentTitle from ${file}`)
+        continue
+      }
+    }
 
-    const hidden = await page.evaluate(
-      () => [...document.querySelectorAll('.reveal')].filter((el) => parseFloat(getComputedStyle(el).opacity) < 0.9).length,
-    )
-    if (hidden > 0) problems.push(`${route}: ${hidden} element(s) still at opacity 0`)
-
-    const raw = await page.evaluate(() => '<!doctype html>\n' + document.documentElement.outerHTML)
-    const html = toProductionOrigin(raw)
-
-    if (html.includes('localhost')) problems.push(`${route}: localhost URL survived rewriting`)
-    // Asset references must stay origin-less so previews and local runs
-    // load their own build, not production's.
-    const absoluteAssets = (html.match(new RegExp(`${origin}/assets/`, 'g')) || []).length
-    if (absoluteAssets) problems.push(`${route}: ${absoluteAssets} asset URL(s) hardcoded to the production domain`)
-    const hreflangCount = (html.match(/rel="alternate"/g) || []).length
-    if (hreflangCount > 3) problems.push(`${route}: ${hreflangCount} hreflang tags (expected at most 3)`)
-    const titleCount = (html.match(/<title>/g) || []).length
-    if (titleCount !== 1) problems.push(`${route}: ${titleCount} <title> tags`)
-
+    const html = buildHtml(shell, { route, meta, origin })
     const outDir = route === '/' ? dist : join(dist, route)
     await mkdir(outDir, { recursive: true })
     await writeFile(join(outDir, 'index.html'), html, 'utf8')
     written += 1
-    process.stdout.write(`  ${route}\n`)
   }
 
-  await browser.close()
-  server.close()
-
-  console.log(`\nPrerendered ${written}/${routes.length} routes.`)
+  console.log(`Prerendered ${written}/${routes.length} routes.`)
   if (problems.length) {
-    console.log('\nWarnings:')
+    console.log('\nRoutes left on the default shell:')
     for (const p of problems) console.log(`  - ${p}`)
   }
 }
