@@ -167,8 +167,45 @@
   scroll-margin-top: 100px;
 }
 
+/* Explicit placement so the DOM can put the form before the secondary
+   cards (which is the order mobile needs) while the two-column desktop
+   layout still shows contact details and those cards stacked together
+   on the left, with the form alongside. */
+.contact-info {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.contact-form-wrap {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.contact-extras {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: var(--space-lg);
+}
+
 @media (max-width: 900px) {
   .contact-main__grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-info,
+  .contact-form-wrap,
+  .contact-extras {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* Form first in the single column. Stacked in document order it began
+     more than two screens down, behind the hero and the contact
+     details. Phone and email are not lost by moving it up: the sticky
+     bottom bar keeps Call one tap away on every screen, and they follow
+     immediately below. */
+  .contact-form-wrap {
+    order: -1;
+    margin-bottom: var(--space-xl);
   }
 }

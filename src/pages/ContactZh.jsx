@@ -94,6 +94,18 @@ export default function ContactZh() {
               <li>电话</li>
             </ul>
 
+          </Reveal>
+
+          <Reveal delay={0.1} id="consultation" className="contact-form-wrap">
+            <SectionHeading eyebrow="咨询" title="预约咨询" />
+            <ConsultationForm />
+          </Reveal>
+
+          {/* Below the form on purpose, matching the English page: on
+              mobile these blocks otherwise sit between a visitor and the
+              form, and the attorney-referral card is for a different
+              audience. Desktop placement is unchanged by Contact.css. */}
+          <Reveal className="contact-extras">
             <div className="contact-info__attorney-card">
               <BriefcaseIcon />
               <div>
@@ -108,11 +120,6 @@ export default function ContactZh() {
             <WeChatCard />
 
             <p className="contact-info__disclaimer">{disclaimerZh}</p>
-          </Reveal>
-
-          <Reveal delay={0.1} id="consultation" className="contact-form-wrap">
-            <SectionHeading eyebrow="咨询" title="预约咨询" />
-            <ConsultationForm />
           </Reveal>
         </div>
       </section>

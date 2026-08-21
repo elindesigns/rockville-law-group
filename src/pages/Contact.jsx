@@ -99,6 +99,21 @@ export default function Contact() {
               ))}
             </ul>
 
+          </Reveal>
+
+          <Reveal delay={0.1} id="consultation" className="contact-form-wrap">
+            <SectionHeading eyebrow="Consultation" title="Schedule a Consultation" zh="预约咨询" />
+            <ConsultationForm />
+          </Reveal>
+
+          {/* Below the form on purpose. When the grid stacks on mobile
+              these three blocks sit between a visitor and the thing they
+              came to do: the attorney-referral card alone is aimed at a
+              different audience entirely, and together they pushed the
+              form more than three screens down. Desktop keeps them in
+              the left column via the grid placement in Contact.css, so
+              the two-column layout is unchanged. */}
+          <Reveal className="contact-extras">
             <div className="contact-info__attorney-card">
               <BriefcaseIcon />
               <div>
@@ -113,11 +128,6 @@ export default function Contact() {
             <WeChatCard />
 
             <p className="contact-info__disclaimer">{disclaimer}</p>
-          </Reveal>
-
-          <Reveal delay={0.1} id="consultation" className="contact-form-wrap">
-            <SectionHeading eyebrow="Consultation" title="Schedule a Consultation" zh="预约咨询" />
-            <ConsultationForm />
           </Reveal>
         </div>
       </section>
