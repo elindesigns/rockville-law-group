@@ -24,7 +24,7 @@ const CATEGORIES = [
   },
   {
     title: '合同与交易',
-    desc: '商业合同、企业融资事务，以及并购交易——这些协议决定着一家企业的日常运作与发展方向。',
+    desc: '商业合同、企业融资事务，以及并购交易，这些协议决定着一家企业的日常运作与发展方向。',
   },
   {
     title: '争议与解散',
@@ -35,7 +35,7 @@ const CATEGORIES = [
 const FAQS = [
   {
     q: '应该选择哪种公司类型？',
-    a: '合适的公司架构——有限责任公司（LLC）、股份有限公司（Corporation）、合伙企业，或其他形式——取决于具体业务、股东情况及经营目标。通过咨询可以进一步明确适合具体业务的选项。',
+    a: '合适的公司架构，有限责任公司（LLC）、股份有限公司（Corporation）、合伙企业，或其他形式，取决于具体业务、股东情况及经营目标。通过咨询可以进一步明确适合具体业务的选项。',
   },
   {
     q: '签约前可以先请律师审核合同吗？',
@@ -43,14 +43,14 @@ const FAQS = [
   },
   {
     q: '合伙或股东出现争议时会怎样处理？',
-    a: '具体情况因公司章程、各方关系及诉求不同而有很大差异——处理方式可能从协商到诉讼不等。通过咨询是评估具体情况的最佳方式。',
+    a: '具体情况因公司章程、各方关系及诉求不同而有很大差异，处理方式可能从协商到诉讼不等。通过咨询是评估具体情况的最佳方式。',
   },
 ]
 
 export default function BusinessLawZh() {
   useDocumentTitle(
     '纽约商业律师 | Rockville Law Group',
-    '公司设立、合同事务、并购交易，以及合伙与股东争议——由精通英文与普通话的纽约律师 Li Weng 为您讲解商业与公司法相关事宜。',
+    '公司设立、合同事务、并购交易，以及合伙与股东争议，由精通英文与普通话的纽约律师 Li Weng 为您讲解商业与公司法相关事宜。',
     { lang: 'zh-Hans', alternatePath: '/business-law' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -87,7 +87,7 @@ export default function BusinessLawZh() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="相关业务" title="商业交易中的证券事务" />
           <p className="lede lede--wide">
-            部分商业交易——例如融资、引入新投资人，或调整股权结构——也会涉及证券法相关事务。
+            部分商业交易，例如融资、引入新投资人，或调整股权结构，也会涉及证券法相关事务。
             <Link to="/zh/ipo-securities">Rockville Law Group 的证券法业务</Link>
             与商业法业务协同办理此类事宜。
           </p>

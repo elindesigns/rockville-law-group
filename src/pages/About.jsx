@@ -19,7 +19,7 @@ const BREADCRUMB_ITEMS = [
 
 export default function About() {
   useDocumentTitle(
-    'Li Weng — New York Attorney | Rockville Law Group',
+    'Li Weng, New York Attorney | Rockville Law Group',
     "Li Weng is the founding attorney of Rockville Law Group LLC in Flushing, New York, with 14+ years of experience in immigration, family, estate planning, and business law. Admitted in New York and D.C.; fluent in English and Mandarin Chinese.",
     { lang: 'en-US', alternatePath: '/zh/about' },
   )

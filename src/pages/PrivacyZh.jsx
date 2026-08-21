@@ -14,7 +14,7 @@ const BREADCRUMB_ITEMS = [
 export default function PrivacyZh() {
   useDocumentTitle(
     '隐私政策 | Rockville Law Group',
-    'Rockville Law Group 如何处理通过本网站提交的信息——预约咨询表单及律师出庭代理申请表单所收集的内容、使用方式，以及如何就隐私问题与我们联系。',
+    'Rockville Law Group 如何处理通过本网站提交的信息，预约咨询表单及律师出庭代理申请表单所收集的内容、使用方式，以及如何就隐私问题与我们联系。',
     { lang: 'zh-Hans', alternatePath: '/privacy' },
   )
   useStructuredData(breadcrumbSchema(BREADCRUMB_ITEMS))
@@ -37,7 +37,7 @@ export default function PrivacyZh() {
           <div className="article-block">
             <h2 className="article-block__heading">我们收集的信息</h2>
             <p className="article-body-text">
-              当您提交预约咨询表单或律师出庭代理申请表单时，我们会收集您填写的信息——通常包括姓名、电子邮箱、电话号码，以及关于您事务或请求的简要说明。本网站无需注册账户，也不会收集任何付款信息。
+              当您提交预约咨询表单或律师出庭代理申请表单时，我们会收集您填写的信息，通常包括姓名、电子邮箱、电话号码，以及关于您事务或请求的简要说明。本网站无需注册账户，也不会收集任何付款信息。
             </p>
           </div>
 

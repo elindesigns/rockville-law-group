@@ -27,7 +27,7 @@ export const attorney = {
   yearsExperience: '14+',
   bio: [
     'Li Weng is the founding partner of Rockville Law Group LLC, a New York firm representing individuals, families, and businesses across immigration, family law, estate planning, and business and securities matters. She has practiced law for more than 14 years, including experience advising on cross-border and international matters.',
-    'Before relocating to the United States, Li practiced law in Wuhan, China, advising individuals and businesses on cross-border legal and financial planning. She went on to earn her LL.M. from the University of Texas at Austin and has since built a practice grounded in that international perspective, representing clients across immigration, family law, estate planning, and business matters. For clients with ties to China, that background means working with an attorney who understands both legal systems firsthand — not just the language.',
+    'Before relocating to the United States, Li practiced law in Wuhan, China, advising individuals and businesses on cross-border legal and financial planning. She went on to earn her LL.M. from the University of Texas at Austin and has since built a practice grounded in that international perspective, representing clients across immigration, family law, estate planning, and business matters. For clients with ties to China, that background means working with an attorney who understands both legal systems firsthand, not just the language.',
     'Li is fluent in both English and Mandarin Chinese and offers consultations in person and by phone.',
   ],
   // Bar / federal court ADMISSIONS ONLY. Do not add a jurisdiction here
@@ -87,7 +87,7 @@ export const offices = [
     zip: '11354',
     address: '36-16 Main St, Suite 803, Flushing, NY 11354',
     description:
-      "In the heart of downtown Flushing, Queens — one of New York City's most vibrant Asian-American communities — with convenient access to the Flushing–Main Street subway and LIRR station.",
+      "In the heart of downtown Flushing, Queens, one of New York City's most vibrant Asian-American communities, with convenient access to the Flushing–Main Street subway and LIRR station.",
     descriptionZh: '位于皇后区法拉盛市中心，纽约市最具活力的亚裔社区之一，交通便利，靠近法拉盛地铁站及长岛铁路车站。',
     // The firm's Google Business Profile CID — the stable numeric id
     // for its Maps listing. Prefer this over any text query: a CID

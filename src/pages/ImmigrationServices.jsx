@@ -32,14 +32,14 @@ const OTHER_MATTERS = [
     title: 'Immigration Court & Removal Defense',
     zh: '移民法庭与遣返辩护',
     description:
-      'Representation before an immigration judge — including responding to a Notice to Appear, identifying available forms of relief, and defensive asylum.',
+      'Representation before an immigration judge, including responding to a Notice to Appear, identifying available forms of relief, and defensive asylum.',
     to: '/immigration-court',
     cta: 'Explore Immigration Court',
   },
   {
     title: 'Immigration Appeals',
     zh: '移民上诉',
-    description: "When a case doesn't go as hoped, there may be options to appeal — including to the Board of Immigration Appeals.",
+    description: "When a case doesn't go as hoped, there may be options to appeal, including to the Board of Immigration Appeals.",
     to: '/immigration-court#appeals',
     cta: 'Explore Immigration Appeals',
   },
@@ -66,7 +66,7 @@ const FAQS = [
 export default function ImmigrationServices() {
   useDocumentTitle(
     'Immigration Services in New York | Rockville Law Group',
-    'An overview of family-based green cards, asylum, EB-1A, and employment-based green cards at Rockville Law Group in New York — with a dedicated guide to eligibility, process, and FAQs for each.',
+    'An overview of family-based green cards, asylum, EB-1A, and employment-based green cards at Rockville Law Group in New York, with a dedicated guide to eligibility, process, and FAQs for each.',
     { lang: 'en-US', alternatePath: '/zh/immigration-services' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -81,7 +81,7 @@ export default function ImmigrationServices() {
           <p className="zh-label service-hero__zh">专注移民法律服务</p>
           <p className="lede service-hero__lede">
             Rockville Law Group concentrates on family-based green cards, asylum, EB-1A, and employment-based green
-            cards — representing individuals, families, and employment-based clients through each stage of the
+            cards, representing individuals, families, and employment-based clients through each stage of the
             process. Each area below has its own guide covering eligibility, process, and common questions.
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function ImmigrationServices() {
       {/* The full visa-type directory (components/PracticeAreas.jsx +
           data/practiceAreas.js) used to render here. It was removed: it
           repeated, at length, the exact subjects of this hub's own child
-          pages — asylum, EB-2/EB-3, the F-preference categories — so the
+          pages (asylum, EB-2/EB-3, the F-preference categories) so the
           hub competed with the pages it exists to funnel into. The
           Chinese hub never included it, and reads better for it.
 

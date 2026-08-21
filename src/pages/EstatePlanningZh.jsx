@@ -18,7 +18,7 @@ const BREADCRUMB_ITEMS = [
 const CATEGORIES = [
   {
     title: '遗嘱与信托',
-    desc: '遗嘱与信托是大多数遗产规划的核心文件——说明个人资产应如何分配，而信托还会进一步规定资产在此过程中应如何管理。',
+    desc: '遗嘱与信托是大多数遗产规划的核心文件，说明个人资产应如何分配，而信托还会进一步规定资产在此过程中应如何管理。',
   },
   {
     title: '医疗指示与监护规划',
@@ -33,7 +33,7 @@ const CATEGORIES = [
 const FAQS = [
   {
     q: '已经有信托了，还需要遗嘱吗？',
-    a: '通常仍然需要——遗嘱与信托往往承担不同的功能，许多遗产规划会同时使用两者。具体应如何组合，取决于个人的资产状况与规划目标。',
+    a: '通常仍然需要，遗嘱与信托往往承担不同的功能，许多遗产规划会同时使用两者。具体应如何组合，取决于个人的资产状况与规划目标。',
   },
   {
     q: '医疗指示与监护（Guardianship）有什么区别？',
@@ -41,7 +41,7 @@ const FAQS = [
   },
   {
     q: '什么时候应该开始做遗产规划？',
-    a: '并没有统一的最佳时间——结婚、生育子女或购置房产等重要人生阶段，通常是许多人开始制定或重新审视遗产规划的契机。通过咨询可以进一步明确适合自身情况的安排。',
+    a: '并没有统一的最佳时间，结婚、生育子女或购置房产等重要人生阶段，通常是许多人开始制定或重新审视遗产规划的契机。通过咨询可以进一步明确适合自身情况的安排。',
   },
 ]
 
@@ -52,7 +52,7 @@ export default function EstatePlanningZh() {
     // literal rendering of "estate planning" and pulls far less search
     // traffic on its own, so it stays in the description instead.
     '纽约遗嘱与信托律师 | 遗产规划 | Rockville Law Group',
-    '遗嘱、信托、医疗指示与遗产管理——Rockville Law Group 提供中英文遗产规划咨询，办公室位于纽约法拉盛。',
+    '遗嘱、信托、医疗指示与遗产管理，Rockville Law Group 提供中英文遗产规划咨询，办公室位于纽约法拉盛。',
     { lang: 'zh-Hans', alternatePath: '/estate-planning' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -90,7 +90,7 @@ export default function EstatePlanningZh() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="律师的作用" title="为什么法律协助会有帮助" />
           <p className="lede lede--wide">
-            遗产规划文件需要相互配合，并符合纽约州法律，才能真正实现个人的意愿——若在起草遗嘱或信托时未充分考虑家庭的具体情况，日后可能会引发困惑或不符合预期的结果。法律协助可以帮助确认哪些文件适合具体情况，并在需要时协助家庭落实遗产规划。
+            遗产规划文件需要相互配合，并符合纽约州法律，才能真正实现个人的意愿，若在起草遗嘱或信托时未充分考虑家庭的具体情况，日后可能会引发困惑或不符合预期的结果。法律协助可以帮助确认哪些文件适合具体情况，并在需要时协助家庭落实遗产规划。
           </p>
         </div>
       </section>

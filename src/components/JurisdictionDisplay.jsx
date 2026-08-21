@@ -42,7 +42,7 @@ export default function JurisdictionDisplay() {
         <p className="jurisdiction-display__note">
           {isZh
             ? '以上为可代理出庭的法院范围（针对符合条件的案件），此列表并不代表在该地区持有执业资格。'
-            : 'Appearance in these courts on qualifying matters — this list does not indicate bar admission.'}
+            : 'Appearance in these courts on qualifying matters. This list does not indicate bar admission.'}
         </p>
       </Reveal>
     </div>

@@ -14,7 +14,7 @@ const practiceLinks = [
   { label: 'Business & Corporate Law', zh: '商业与公司法', to: '/business-law' },
   { label: 'Securities Law', zh: '证券法', to: '/ipo-securities' },
   { label: 'Escrow Services', zh: '托管服务', to: '/escrow-services' },
-  { label: 'For Attorneys — Hearing Coverage', zh: '律师出庭代理', to: '/for-attorneys' },
+  { label: 'For Attorneys: Hearing Coverage', zh: '律师出庭代理', to: '/for-attorneys' },
   { label: 'Resources & Guides', zh: '资源与指南', to: '/resources' },
 ]
 
@@ -48,7 +48,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__top">
         <div className="footer__brand">
-          <Link to={isZh ? '/zh' : '/'} className="footer__brand-mark" aria-label={`${firm.legalName} — home`}>
+          <Link to={isZh ? '/zh' : '/'} className="footer__brand-mark" aria-label={`${firm.legalName}, home`}>
             <img src={logoMark} alt="" width={44} height={44} className="footer__seal" />
             <span className="footer__wordmark">Rockville Law Group</span>
           </Link>

@@ -19,12 +19,12 @@ const CATEGORIES = [
   {
     title: 'Custody, Support & Parentage',
     zh: '监护权、抚养费与亲子关系',
-    desc: 'Child custody and child support matters, paternity, and father’s rights — helping parents understand their options and obligations, whether a matter is contested or by agreement.',
+    desc: 'Child custody and child support matters, paternity, and father’s rights. Helping parents understand their options and obligations, whether a matter is contested or by agreement.',
   },
   {
     title: 'Family Formation & Agreements',
     zh: '家庭组建与协议',
-    desc: 'Adoption, prenuptial and marital agreements, and family law matters for same-sex couples and families — planning ahead or formalizing a family relationship.',
+    desc: 'Adoption, prenuptial and marital agreements, and family law matters for same-sex couples and families, planning ahead or formalizing a family relationship.',
   },
   {
     title: 'Protective & Guardianship Matters',
@@ -36,22 +36,22 @@ const CATEGORIES = [
 const FAQS = [
   {
     q: 'Does Rockville Law Group handle contested custody cases?',
-    a: 'Yes. Rockville Law Group represents parents in both contested and uncontested custody and support matters. What approach makes sense depends heavily on the specific family situation — a consultation is the best way to talk through options.',
+    a: 'Yes. Rockville Law Group represents parents in both contested and uncontested custody and support matters. What approach makes sense depends heavily on the specific family situation. A consultation is the best way to talk through options.',
   },
   {
     q: 'What is the difference between custody and guardianship?',
-    a: 'Custody generally concerns a parent’s rights and responsibilities toward their own child. Guardianship or conservatorship is a separate legal process that gives a person authority over a child or an incapacitated adult who is not their own — the requirements and procedures differ.',
+    a: 'Custody generally concerns a parent’s rights and responsibilities toward their own child. Guardianship or conservatorship is a separate legal process that gives a person authority over a child or an incapacitated adult who is not their own. The requirements and procedures differ.',
   },
   {
     q: 'Do prenuptial agreements need to be complicated?',
-    a: 'Not necessarily — the right scope depends on the couple’s specific assets, goals, and circumstances. A consultation can help clarify what a particular agreement should and shouldn’t address.',
+    a: 'Not necessarily. The right scope depends on the couple’s specific assets, goals, and circumstances. A consultation can help clarify what a particular agreement should and shouldn’t address.',
   },
 ]
 
 export default function FamilyLaw() {
   useDocumentTitle(
     'Family Law Attorney in New York | Rockville Law Group',
-    'Family law representation in New York — child custody and support, paternity, adoption, prenuptial agreements, and guardianship — from attorney Li Weng in Flushing, New York.',
+    'Family law representation in New York (child custody and support, paternity, adoption, prenuptial agreements, and guardianship) from attorney Li Weng in Flushing, New York.',
     { lang: 'en-US', alternatePath: '/zh/family-law' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -93,7 +93,7 @@ export default function FamilyLaw() {
           <SectionHeading eyebrow="Why It Matters" title="Why Legal Representation Can Help" zh="法律协助的作用" />
           <p className="lede lede--wide">
             Family law matters affect the people closest to you, and the right outcome depends on the specific
-            facts of a case — the applicable New York law, the family's history, and what each party is seeking.
+            facts of a case. The applicable New York law, the family's history, and what each party is seeking.
             Legal representation can help identify the available options, prepare and file the necessary
             paperwork, and advocate for a client's position, whether the matter is resolved by agreement or
             requires a court to decide. No attorney can guarantee a particular result.

@@ -20,17 +20,17 @@ const CRITERIA = [
   {
     title: 'A One-Time Major Award',
     zh: '一次性重大奖项',
-    desc: 'Evidence of a single major, internationally recognized award — such as a Nobel Prize or an Olympic medal — can independently establish extraordinary ability. Very few applicants qualify this way.',
+    desc: 'Evidence of a single major, internationally recognized award, such as a Nobel Prize or an Olympic medal, can independently establish extraordinary ability. Very few applicants qualify this way.',
   },
   {
     title: 'Meeting Multiple Criteria',
     zh: '满足多项标准',
-    desc: "Most applicants instead need to show they meet at least three of ten regulatory criteria — for example, nationally or internationally recognized awards, published material about the applicant's work, judging the work of others in the field, or a leading role in distinguished organizations. Meeting three criteria is a threshold, not an automatic approval.",
+    desc: "Most applicants instead need to show they meet at least three of ten regulatory criteria, for example, nationally or internationally recognized awards, published material about the applicant's work, judging the work of others in the field, or a leading role in distinguished organizations. Meeting three criteria is a threshold, not an automatic approval.",
   },
   {
     title: 'Final Merits Review',
     zh: '最终综合评估',
-    desc: 'USCIS also considers the record as a whole to determine whether it demonstrates sustained national or international acclaim and that the person is among the small percentage who has risen to the top of their field — a second, holistic step beyond checking boxes.',
+    desc: 'USCIS also considers the record as a whole to determine whether it demonstrates sustained national or international acclaim and that the person is among the small percentage who has risen to the top of their field. A second, holistic step beyond checking boxes.',
   },
 ]
 
@@ -66,24 +66,24 @@ const FAQS = [
   {
     q: 'Do I need a job offer for EB-1A?',
     qZh: 'EB-1A 是否需要雇主担保？',
-    a: 'No. EB-1A does not require a job offer or an employer sponsor — an eligible individual may file a self-petition on their own behalf.',
+    a: 'No. EB-1A does not require a job offer or an employer sponsor. An eligible individual may file a self-petition on their own behalf.',
   },
   {
     q: 'Does having a strong résumé guarantee EB-1A approval?',
     qZh: '履历出色是否等于一定能获批？',
-    a: 'No. EB-1A has a demanding legal standard, and USCIS evaluates the full record — not just a list of accomplishments — to determine whether it reflects sustained national or international acclaim. A consultation can help assess how a specific background may fit the criteria.',
+    a: 'No. EB-1A has a demanding legal standard, and USCIS evaluates the full record, not just a list of accomplishments, to determine whether it reflects sustained national or international acclaim. A consultation can help assess how a specific background may fit the criteria.',
   },
   {
     q: 'How many of the ten criteria do I need to meet?',
     qZh: '需要满足十项标准中的几项？',
-    a: 'Most applicants need to meet at least three of the ten regulatory criteria, though meeting three is a threshold rather than an automatic approval — USCIS also considers the record as a whole in a final merits review.',
+    a: 'Most applicants need to meet at least three of the ten regulatory criteria, though meeting three is a threshold rather than an automatic approval, USCIS also considers the record as a whole in a final merits review.',
   },
 ]
 
 export default function Eb1a() {
   useDocumentTitle(
     'EB-1A Lawyer in New York | Rockville Law Group',
-    'EB-1A eligibility, evidence, and the self-petition process — for individuals with extraordinary ability. Bilingual immigration counsel in Flushing, New York.',
+    'EB-1A eligibility, evidence, and the self-petition process, for individuals with extraordinary ability. Bilingual immigration counsel in Flushing, New York.',
     { lang: 'en-US', alternatePath: '/zh/eb1a' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -110,7 +110,7 @@ export default function Eb1a() {
           <p className="lede lede--wide">
             EB-1A is a first-preference employment-based green card category for people with extraordinary ability in
             the sciences, arts, education, business, or athletics. Unlike most employment-based categories, EB-1A
-            does not require a job offer or an employer sponsor — an eligible individual may self-petition. It is
+            does not require a job offer or an employer sponsor. An eligible individual may self-petition. It is
             designed for a small group of people who have risen to the top of their field, not simply for strong or
             accomplished professionals generally.
           </p>
@@ -137,7 +137,7 @@ export default function Eb1a() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="Evidence Considerations" title="Building the Record" zh="证据准备" />
           <p className="lede lede--wide">
-            EB-1A petitions are decided heavily on the strength and specificity of supporting evidence — third-party
+            EB-1A petitions are decided heavily on the strength and specificity of supporting evidence, third-party
             documentation, expert letters that explain the significance of the applicant's work rather than simply
             praising it, and objective indicators such as citation counts, media coverage, or the circumstances of an
             award. General claims of accomplishment, without corroborating evidence, are usually not enough.
@@ -166,7 +166,7 @@ export default function Eb1a() {
           <p className="lede lede--wide">
             Because EB-1A is evaluated against a demanding legal standard, the way evidence is organized and
             explained often matters as much as the underlying accomplishments. Legal guidance can help identify which
-            criteria a specific record can realistically support and how to present that evidence — but no attorney
+            criteria a specific record can realistically support and how to present that evidence, but no attorney
             can guarantee that USCIS will approve a given petition.
           </p>
         </div>

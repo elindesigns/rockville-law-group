@@ -57,7 +57,7 @@ const FAQS = [
 export default function EmploymentBasedGreenCardsZh() {
   useDocumentTitle(
     '纽约职业移民律师 | Rockville Law Group',
-    '劳工证（PERM）、EB-2 及 EB-3 职业移民绿卡办理流程——由精通英文与普通话的纽约移民律师 Li Weng 为雇员及担保雇主讲解。',
+    '劳工证（PERM）、EB-2 及 EB-3 职业移民绿卡办理流程，由精通英文与普通话的纽约移民律师 Li Weng 为雇员及担保雇主讲解。',
     { lang: 'zh-Hans', alternatePath: '/employment-based-green-cards' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -71,7 +71,7 @@ export default function EmploymentBasedGreenCardsZh() {
           <h1 className="service-hero__title">职业移民</h1>
           <p className="lede service-hero__lede">
             职业移民绿卡允许符合条件的申请人凭借其工作、技能，或雇主的担保，成为美国永久居民。Rockville Law Group
-            为雇员——以及在适当情形下的担保雇主——提供劳工证申请、移民申请到绿卡各阶段的法律协助。
+            为雇员，以及在适当情形下的担保雇主，提供劳工证申请、移民申请到绿卡各阶段的法律协助。
           </p>
         </div>
       </section>
@@ -129,7 +129,7 @@ export default function EmploymentBasedGreenCardsZh() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="律师的作用" title="为什么法律协助很重要" />
           <p className="lede lede--wide">
-            职业移民案件涉及雇主、雇员及政府部门之间的多方协调，且常常面临较长的签证等待期。律师可以协助判断适用类别、准备劳工证或移民申请，并回应补充证据通知——但没有任何律师可以保证劳工证或移民申请一定会获批。
+            职业移民案件涉及雇主、雇员及政府部门之间的多方协调，且常常面临较长的签证等待期。律师可以协助判断适用类别、准备劳工证或移民申请，并回应补充证据通知，但没有任何律师可以保证劳工证或移民申请一定会获批。
           </p>
         </div>
       </section>

@@ -30,7 +30,7 @@ const FAQS = [
   },
   {
     q: 'Are remote appearances available?',
-    a: "Remote appearance is available for qualifying matters, subject to the specific court's rules and authorization — see the note on remote hearings above for details.",
+    a: "Remote appearance is available for qualifying matters, subject to the specific court's rules and authorization, see the note on remote hearings above for details.",
   },
   {
     q: 'How do I request coverage?',
@@ -51,7 +51,7 @@ export default function ForAttorneys() {
     // "Per diem" is the term attorneys actually use for this service;
     // searches for "hearing coverage" are read by Google as consumer
     // removal-defense intent, which is not this page's audience.
-    'Per Diem Immigration Attorney — Hearing Coverage | Rockville Law Group',
+    'Per Diem Immigration Attorney. Hearing Coverage | Rockville Law Group',
     'Per diem immigration court appearances for attorneys: individual, master calendar, and BIA hearings, with remote appearance for qualifying matters. Covering SDNY, EDNY, and other courts.',
     { lang: 'en-US', alternatePath: '/zh/attorney-hearing-coverage' },
   )
@@ -67,7 +67,7 @@ export default function ForAttorneys() {
           <p className="zh-label zh-label--on-ink for-attorneys-hero__zh">需要移民法庭出庭协助？</p>
           <p className="lede lede--wide for-attorneys-hero__lede">
             Rockville Law Group provides per diem special appearance coverage for individual hearings, master
-            calendar hearings, and BIA matters — including in SDNY and EDNY — for attorneys who need another
+            calendar hearings, and BIA matters, including in SDNY and EDNY, for attorneys who need another
             immigration attorney to appear on a specific hearing.
           </p>
           <div className="for-attorneys-hero__actions">

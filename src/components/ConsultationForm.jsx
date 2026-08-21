@@ -59,7 +59,7 @@ export default function ConsultationForm() {
     const data = new FormData(e.target)
     const name = data.get('name') || ''
     const matter = data.get('matter') || (isZh ? '未注明' : 'Not specified')
-    const subject = isZh ? `咨询预约请求 — ${matter}` : `Consultation Request — ${matter}`
+    const subject = isZh ? `咨询预约请求, ${matter}` : `Consultation Request, ${matter}`
 
     trackEvent('consumer_form_submit', { matter })
 
@@ -113,7 +113,7 @@ export default function ConsultationForm() {
           <>
             <h3>Your request has been received</h3>
             <p>
-              Thank you for reaching out — we'll be in touch soon. For a faster response, you can also call us
+              Thank you for reaching out. We'll be in touch soon. For a faster response, you can also call us
               directly at <a href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}>{contact.phone}</a>.
             </p>
           </>
@@ -155,7 +155,7 @@ export default function ConsultationForm() {
           <>
             <h3>您的邮件应用程序应已打开</h3>
             <p>
-              此表格会为您准备一封已填好内容的邮件——请从邮件应用程序中发送，以便我们直接收到您的请求。若没有自动打开邮件应用程序，也可以直接联系我们：
+              此表格会为您准备一封已填好内容的邮件，请从邮件应用程序中发送，以便我们直接收到您的请求。若没有自动打开邮件应用程序，也可以直接联系我们：
               <a href={`mailto:${contact.email}`}>{contact.email}</a> 或{' '}
               <a href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}>{contact.phone}</a>。
             </p>
@@ -164,7 +164,7 @@ export default function ConsultationForm() {
           <>
             <h3>Your email app should now be open</h3>
             <p>
-              This form prepares an email addressed to us with your details already filled in — send it from there to
+              This form prepares an email addressed to us with your details already filled in. Send it from there to
               reach us directly. If nothing opened, you can reach us directly at{' '}
               <a href={`mailto:${contact.email}`}>{contact.email}</a> or{' '}
               <a href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}>{contact.phone}</a>.
@@ -236,7 +236,7 @@ export default function ConsultationForm() {
         <textarea
           id="c-description"
           name="description"
-          placeholder={isZh ? '简单描述一两句即可，暂时不需要详细内容。' : 'A sentence or two is fine — no need for details yet.'}
+          placeholder={isZh ? '简单描述一两句即可，暂时不需要详细内容。' : 'A sentence or two is fine. No need for details yet.'}
         />
       </div>
 

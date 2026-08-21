@@ -87,7 +87,7 @@ export default function Contact() {
             </ul>
 
             {/* Stated visibly because openingHoursSpecification is
-                emitted in the LegalService schema — structured data has
+                emitted in the LegalService schema, structured data has
                 to match what a visitor can actually see on the page. */}
             <h3 className="contact-info__subheading">Office Hours</h3>
             <p className="contact-info__hours">{hours.label}</p>

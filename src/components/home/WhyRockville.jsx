@@ -30,14 +30,14 @@ const POINTS = [
     zh: '移民家庭遗产商法一体化',
     title: 'Immigration, Family, Estate & Business Law Together',
     description:
-      'Related needs — a will alongside a green card case, a business matter alongside a family petition — can be handled together, instead of starting over elsewhere.',
+      'Related needs (a will alongside a green card case, a business matter alongside a family petition) can be handled together, instead of starting over elsewhere.',
   },
   {
     kicker: 'An Appearing Practice',
     zh: '实际出庭经验',
     title: 'Regular Courtroom Experience',
     description:
-      'Li Weng appears in immigration court, in federal court in New York and Maryland, and in New York and D.C. state courts — and also covers immigration hearings for other attorneys.',
+      'Li Weng appears in immigration court, in federal court in New York and Maryland, and in New York and D.C. state courts, and also covers immigration hearings for other attorneys.',
   },
   {
     kicker: 'Built for Access',

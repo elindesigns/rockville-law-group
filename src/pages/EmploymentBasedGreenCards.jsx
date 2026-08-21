@@ -45,7 +45,7 @@ const PROCESS = [
   {
     step: '02',
     title: 'Immigrant Petition (Form I-140)',
-    desc: 'The employer — or, for a National Interest Waiver, the employee — files a petition establishing eligibility for the category.',
+    desc: 'The employer (or, for a National Interest Waiver, the employee) files a petition establishing eligibility for the category.',
   },
   {
     step: '03',
@@ -80,7 +80,7 @@ const FAQS = [
 export default function EmploymentBasedGreenCards() {
   useDocumentTitle(
     'Employment-Based Green Card Lawyer in New York | Rockville Law Group',
-    'PERM labor certification, EB-2, and EB-3 green cards explained by a bilingual immigration attorney in Flushing, New York — for employees and sponsoring employers beginning the employment-based process.',
+    'PERM labor certification, EB-2, and EB-3 green cards explained by a bilingual immigration attorney in Flushing, New York, for employees and sponsoring employers beginning the employment-based process.',
     { lang: 'en-US', alternatePath: '/zh/employment-based-green-cards' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -95,8 +95,8 @@ export default function EmploymentBasedGreenCards() {
           <p className="zh-label service-hero__zh">职业绿卡</p>
           <p className="lede service-hero__lede">
             Employment-based green cards allow qualifying individuals to become lawful permanent residents based on
-            their work, skills, or a sponsoring employer. Rockville Law Group advises employees — and, where
-            appropriate, sponsoring employers — through the labor certification, petition, and green card process.
+            their work, skills, or a sponsoring employer. Rockville Law Group advises employees, and, where
+            appropriate, sponsoring employers, through the labor certification, petition, and green card process.
           </p>
         </div>
       </section>
@@ -152,7 +152,7 @@ export default function EmploymentBasedGreenCards() {
             <Link to="/eb1a">EB-1A</Link> is a separate employment-based category reserved for individuals who can
             demonstrate extraordinary ability and sustained acclaim in their field, and it does not require a
             sponsoring employer. For most employees whose green card depends on a job offer and an employer's
-            sponsorship, EB-2 or EB-3 — not EB-1A — is the applicable path.
+            sponsorship, EB-2 or EB-3, not EB-1A, is the applicable path.
           </p>
         </div>
       </section>
@@ -163,7 +163,7 @@ export default function EmploymentBasedGreenCards() {
           <p className="lede lede--wide">
             Employment-based cases involve coordination between the employer and employee, government agencies, and
             often lengthy visa backlogs. Legal guidance can help identify the right category, prepare a labor
-            certification or petition, and respond to requests for evidence — though no attorney can guarantee that a
+            certification or petition, and respond to requests for evidence, though no attorney can guarantee that a
             labor certification or petition will be approved.
           </p>
         </div>
@@ -187,7 +187,7 @@ export default function EmploymentBasedGreenCards() {
           <Reveal className="court-connector card">
             <div>
               <h3>Related Reading</h3>
-              <p>Adjustment of Status vs. Consular Processing — which applies once your petition is approved.</p>
+              <p>Adjustment of Status vs. Consular Processing, which applies once your petition is approved.</p>
             </div>
             <Button to="/resources/adjustment-of-status-vs-consular-processing" variant="outline">
               Adjustment of Status vs. Consular Processing <ArrowIcon width={16} height={16} />

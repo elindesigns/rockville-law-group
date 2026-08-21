@@ -50,13 +50,13 @@ const SERVICES_ZH = {
 const OTHER_MATTERS = [
   {
     title: '移民法庭与遣返辩护',
-    description: '代理当事人出席移民法官的听证——包括针对出庭通知书（Notice to Appear）的应对、评估可能适用的救济方式，以及法庭辩护式庇护申请。',
+    description: '代理当事人出席移民法官的听证，包括针对出庭通知书（Notice to Appear）的应对、评估可能适用的救济方式，以及法庭辩护式庇护申请。',
     to: '/zh/immigration-court',
     cta: '了解移民法庭代理',
   },
   {
     title: '移民上诉',
-    description: '案件结果不如预期时，可能仍有上诉的空间——包括向移民上诉委员会（BIA）提出上诉。',
+    description: '案件结果不如预期时，可能仍有上诉的空间，包括向移民上诉委员会（BIA）提出上诉。',
     to: '/zh/immigration-court#appeals',
     cta: '了解移民上诉',
   },
@@ -80,7 +80,7 @@ const FAQS = [
 export default function ImmigrationServicesZh() {
   useDocumentTitle(
     '纽约移民服务 | Rockville Law Group',
-    '亲属移民、庇护、EB-1A 杰出人才移民、职业移民及移民法庭代理——纽约法拉盛，可中文咨询。',
+    '亲属移民、庇护、EB-1A 杰出人才移民、职业移民及移民法庭代理，纽约法拉盛，可中文咨询。',
     { lang: 'zh-Hans', alternatePath: '/immigration-services' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -93,7 +93,7 @@ export default function ImmigrationServicesZh() {
           <span className="eyebrow">移民服务</span>
           <h1 className="service-hero__title">移民法律服务</h1>
           <p className="lede service-hero__lede">
-            Rockville Law Group 专注于亲属移民、庇护、EB-1A 杰出人才移民及职业移民——为个人、家庭及职业申请人提供各阶段的法律代理。以下每个领域均有专属页面，详细说明申请资格、办理流程及常见问题。
+            Rockville Law Group 专注于亲属移民、庇护、EB-1A 杰出人才移民及职业移民，为个人、家庭及职业申请人提供各阶段的法律代理。以下每个领域均有专属页面，详细说明申请资格、办理流程及常见问题。
           </p>
         </div>
       </section>

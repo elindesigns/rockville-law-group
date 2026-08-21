@@ -19,7 +19,7 @@ const BREADCRUMB_ITEMS = [
 export default function PracticeAreasHub() {
   useDocumentTitle(
     'Practice Areas | Rockville Law Group',
-    "Compare Rockville Law Group's six practice areas — immigration, family law, estate planning, business, securities, and escrow — to find where your matter fits.",
+    "Compare Rockville Law Group's six practice areas (immigration, family law, estate planning, business, securities, and escrow) to find where your matter fits.",
     { lang: 'en-US', alternatePath: '/zh/practice-areas' },
   )
   useStructuredData(breadcrumbSchema(BREADCRUMB_ITEMS))
@@ -34,7 +34,7 @@ export default function PracticeAreasHub() {
           <p className="zh-label service-hero__zh">业务领域</p>
           <p className="lede service-hero__lede">
             Rockville Law Group is a New York law firm serving individuals, families, and businesses. The firm
-            practices across immigration, family, estate planning, and business and securities law — each area
+            practices across immigration, family, estate planning, and business and securities law. Each area
             below has its own guide to how the firm can help.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function PracticeAreasHub() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="Attorney" title="One Firm, Multiple Practice Areas" zh="一家律所，多元业务领域" align="center" />
           <p className="lede lede--wide practice-hub__attorney-lede">
-            Immigration, family, estate planning, and business matters often overlap — a green card case that also
+            Immigration, family, estate planning, and business matters often overlap. A green card case that also
             calls for a will, a business matter that touches a family petition. Because Rockville Law Group
             practices across all of them, related needs can be handled together, instead of starting over with
             someone new.

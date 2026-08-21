@@ -39,7 +39,7 @@ const FAQS = [
     q: '可以在哪些法院代理出庭？',
     a: '美国纽约南区联邦地区法院（SDNY）、美国纽约东区联邦地区法院（EDNY）、马里兰州联邦法院、纽约州法院，以及哥伦比亚特区法院。请参见上方"执业资格与出庭法院"部分，了解出庭法院与执业资格之间的区别。',
   },
-  { q: '是否提供远程出庭服务？', a: '远程出庭适用于符合条件的案件，具体须遵循相关法院的规则及授权——我们会在审核每一份申请时确认相关细节。' },
+  { q: '是否提供远程出庭服务？', a: '远程出庭适用于符合条件的案件，具体须遵循相关法院的规则及授权，我们会在审核每一份申请时确认相关细节。' },
   {
     q: '如何申请代理？',
     a: `请填写下方的申请表格，或直接致电 ${contact.phone}，或发送邮件至 ${contact.email} 与我们联系。代理安排需逐案确认，须视代理范围、时间安排及可行性而定。`,
@@ -71,7 +71,7 @@ export default function AttorneyHearingCoverageZh() {
           <h1 className="for-attorneys-hero__title">需要移民法庭出庭代理？</h1>
           <p className="lede lede--wide for-attorneys-hero__lede">
             Rockville Law Group 为律师提供移民法庭出庭代理（special appearance），涵盖主审听证、主日历听证及 BIA
-            事务——包括 SDNY（纽约南区联邦法院）及 EDNY（纽约东区联邦法院）在内的法院。
+            事务，包括 SDNY（纽约南区联邦法院）及 EDNY（纽约东区联邦法院）在内的法院。
           </p>
           <div className="for-attorneys-hero__actions">
             <Button href="#request-coverage" variant="primary">

@@ -58,7 +58,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__inner">
-        <Link to={isZh ? '/zh' : '/'} className="header__brand" aria-label={`${firm.legalName} — home`}>
+        <Link to={isZh ? '/zh' : '/'} className="header__brand" aria-label={`${firm.legalName}, home`}>
           <img src={logoMark} alt="" width={40} height={40} className="header__seal" />
           <span className="header__wordmark">Rockville Law Group</span>
         </Link>
@@ -88,7 +88,7 @@ export default function Header() {
         </div>
 
         {/* Always-visible language toggle. The full switcher lives in
-            .header__actions, which is hidden below 1320px — so on every
+            .header__actions, which is hidden below 1320px, so on every
             phone, tablet and small laptop the only way to reach the
             other language was to open the menu or scroll to the footer.
             A Chinese-speaking visitor landing on an English page should

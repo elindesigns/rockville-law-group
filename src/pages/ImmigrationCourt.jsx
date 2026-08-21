@@ -24,7 +24,7 @@ const AFTER_NTA = [
   {
     title: 'The Notice to Appear',
     zh: '出庭通知书',
-    desc: 'A Notice to Appear (NTA) is the charging document that starts removal proceedings, listing the allegations and the immigration law provisions the government says apply. Receiving one does not mean removal is guaranteed — it means a case will be decided by an immigration judge.',
+    desc: 'A Notice to Appear (NTA) is the charging document that starts removal proceedings, listing the allegations and the immigration law provisions the government says apply. Receiving one does not mean removal is guaranteed. It means a case will be decided by an immigration judge.',
   },
   {
     title: 'Possible Forms of Relief',
@@ -34,7 +34,7 @@ const AFTER_NTA = [
   {
     title: 'If a Hearing Is Missed',
     zh: '缺席聆讯的后果',
-    desc: 'Missing a scheduled hearing can result in an in absentia removal order — a decision made without the person present. Deadlines to ask the court to reopen a case after a missed hearing are generally short, so prompt legal advice matters.',
+    desc: 'Missing a scheduled hearing can result in an in absentia removal order. A decision made without the person present. Deadlines to ask the court to reopen a case after a missed hearing are generally short, so prompt legal advice matters.',
   },
 ]
 
@@ -47,24 +47,24 @@ const FAQS = [
   {
     q: 'What happens if I miss my immigration court hearing?',
     qZh: '缺席移民法庭聆讯会怎样？',
-    a: 'Missing a hearing can result in an in absentia removal order — a decision made without you present, which can also affect eligibility for future relief. If a hearing has already been missed, prompt legal advice is important, since deadlines to request reopening the case are short.',
+    a: 'Missing a hearing can result in an in absentia removal order. A decision made without you present, which can also affect eligibility for future relief. If a hearing has already been missed, prompt legal advice is important, since deadlines to request reopening the case are short.',
   },
   {
     q: 'How long do removal proceedings take?',
     qZh: '遣返程序需要多长时间？',
-    a: "Timelines vary widely depending on the immigration court's caseload, the forms of relief being pursued, and the complexity of the case — proceedings can take anywhere from several months to a few years.",
+    a: "Timelines vary widely depending on the immigration court's caseload, the forms of relief being pursued, and the complexity of the case, proceedings can take anywhere from several months to a few years.",
   },
   {
     q: "Can I appeal an immigration judge's decision?",
     qZh: '可以对移民法官的裁决提出上诉吗？',
-    a: 'In many cases, yes — generally by filing a Notice of Appeal with the Board of Immigration Appeals within 30 days of the decision. Not every issue is appealable, and a consultation can help clarify the options after a specific ruling.',
+    a: 'In many cases, yes, generally by filing a Notice of Appeal with the Board of Immigration Appeals within 30 days of the decision. Not every issue is appealable, and a consultation can help clarify the options after a specific ruling.',
   },
 ]
 
 export default function ImmigrationCourt() {
   useDocumentTitle(
     'Immigration Court Lawyer in New York | Rockville Law Group',
-    'Representation in immigration court from attorney Li Weng — removal defense, master calendar and individual hearings, and BIA appeals. Learn what to expect and how immigration court differs from USCIS.',
+    'Representation in immigration court from attorney Li Weng, removal defense, master calendar and individual hearings, and BIA appeals. Learn what to expect and how immigration court differs from USCIS.',
     { lang: 'en-US', alternatePath: '/zh/immigration-court' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -129,7 +129,7 @@ export default function ImmigrationCourt() {
           <Reveal>
             <SealMark tone="paper" size={32} className="court-pullquote__seal" />
             <p className="court-pullquote__text">
-              Every hearing follows its own rules — and its own timeline. Knowing what to expect is most of the
+              Every hearing follows its own rules, and its own timeline. Knowing what to expect is most of the
               battle.
             </p>
           </Reveal>
@@ -140,7 +140,7 @@ export default function ImmigrationCourt() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="A Common Question" title="Immigration Court vs. USCIS" zh="移民法庭与 USCIS 的区别" />
           <p className="lede lede--wide">
-            Immigration court — part of the Executive Office for Immigration Review (EOIR) — is separate from U.S.
+            Immigration court, part of the Executive Office for Immigration Review (EOIR), is separate from U.S.
             Citizenship and Immigration Services (USCIS). USCIS handles applications such as green cards,
             naturalization, and visa petitions. Immigration court handles removal proceedings and related forms of
             relief, decided by an immigration judge rather than a USCIS officer.
@@ -157,7 +157,7 @@ export default function ImmigrationCourt() {
           />
           <p className="lede lede--wide">
             Removal proceedings begin when the Department of Homeland Security files a Notice to Appear, placing a
-            person in immigration court. Rockville Law Group represents individuals in these proceedings —
+            person in immigration court. Rockville Law Group represents individuals in these proceedings,
             reviewing the government's allegations, identifying potential forms of relief, and appearing at
             hearings before the immigration judge.
           </p>
@@ -180,7 +180,7 @@ export default function ImmigrationCourt() {
           <p className="lede lede--wide">
             When an immigration judge rules against a client, there may be options to challenge that decision. An
             appeal to the Board of Immigration Appeals (BIA) generally must be filed within 30 days of the judge's
-            decision. The BIA reviews the immigration judge's decision on the existing record — a different process
+            decision. The BIA reviews the immigration judge's decision on the existing record. A different process
             from a hearing, and not every issue is appealable. Rockville Law Group advises clients on whether an
             appeal or another form of post-decision relief may be available.
           </p>

@@ -10,7 +10,7 @@ const AUDIENCES = [
     title: 'Individuals & Families',
     zh: '个人与家庭',
     description:
-      'Immigration, family law, and estate planning matters affecting you and the people you love — from family-based petitions to wills and custody matters.',
+      'Immigration, family law, and estate planning matters affecting you and the people you love, from family-based petitions to wills and custody matters.',
     cta: { label: 'Explore Practice Areas', to: '/practice-areas' },
   },
   {
@@ -32,7 +32,7 @@ const AUDIENCES = [
 const AUDIENCES_ZH = [
   {
     title: '个人与家庭',
-    description: '移民、家庭法及遗产规划相关事务，涉及您与所爱之人——从亲属移民申请，到遗嘱与监护权安排。',
+    description: '移民、家庭法及遗产规划相关事务，涉及您与所爱之人，从亲属移民申请，到遗嘱与监护权安排。',
     cta: { label: '查看全部业务领域', to: '/zh/practice-areas' },
   },
   {

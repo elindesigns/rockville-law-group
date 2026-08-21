@@ -14,7 +14,7 @@ const BREADCRUMB_ITEMS = [
 export default function Privacy() {
   useDocumentTitle(
     'Privacy Policy | Rockville Law Group',
-    'How Rockville Law Group handles information submitted through this website — what the consultation and attorney-coverage forms collect, how it is used, and how to reach us with privacy questions.',
+    'How Rockville Law Group handles information submitted through this website, what the consultation and attorney-coverage forms collect, how it is used, and how to reach us with privacy questions.',
     { lang: 'en-US', alternatePath: '/zh/privacy' },
   )
   useStructuredData(breadcrumbSchema(BREADCRUMB_ITEMS))
@@ -40,7 +40,7 @@ export default function Privacy() {
             <h2 className="article-block__heading">Information We Collect</h2>
             <p className="article-body-text">
               When you submit the consultation request form or the attorney hearing-coverage request form, we
-              collect the information you enter — typically your name, email, phone number, and a brief description
+              collect the information you enter, typically your name, email, phone number, and a brief description
               of your matter or request. This website does not require you to create an account, and it does not
               collect payment information.
             </p>
@@ -50,7 +50,7 @@ export default function Privacy() {
             <h2 className="article-block__heading">How Form Submissions Are Handled</h2>
             <p className="article-body-text">
               Form submissions on this website are delivered through Formspree, a third-party form-processing
-              service, or — if a form is not yet connected to that service — as a pre-filled email that you send
+              service, or, if a form is not yet connected to that service, as a pre-filled email that you send
               yourself from your own email application. Either way, the information you submit is used only to
               respond to your request.
             </p>

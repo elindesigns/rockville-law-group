@@ -22,12 +22,12 @@ const CATEGORIES = [
   {
     title: 'Business & Transaction Escrow',
     zh: '商业与交易托管',
-    desc: 'Escrow arrangements for mergers, acquisitions, stock purchases, and other business agreements — holding funds or documents until closing conditions, such as due diligence or indemnification holdbacks, are satisfied.',
+    desc: 'Escrow arrangements for mergers, acquisitions, stock purchases, and other business agreements, holding funds or documents until closing conditions, such as due diligence or indemnification holdbacks, are satisfied.',
   },
   {
     title: 'Real Estate Escrow',
     zh: '房地产托管',
-    desc: 'Serving as escrow agent for real estate transactions — holding earnest money, deeds, and closing funds until financing, inspection, and other contract contingencies are resolved.',
+    desc: 'Serving as escrow agent for real estate transactions, holding earnest money, deeds, and closing funds until financing, inspection, and other contract contingencies are resolved.',
   },
 ]
 
@@ -35,7 +35,7 @@ const PROCESS = [
   {
     step: '01',
     title: 'Escrow Agreement',
-    desc: 'The terms of the escrow — what is being held, the conditions for release, and each party’s responsibilities — are set out in writing as part of the underlying transaction.',
+    desc: 'The terms of the escrow (what is being held, the conditions for release, and each party’s responsibilities) are set out in writing as part of the underlying transaction.',
   },
   {
     step: '02',
@@ -45,7 +45,7 @@ const PROCESS = [
   {
     step: '03',
     title: 'Conditions Verified',
-    desc: 'The escrow agent confirms that the agreed-upon conditions — financing, inspection, closing requirements, or other contingencies — have been satisfied.',
+    desc: 'The escrow agent confirms that the agreed-upon conditions (financing, inspection, closing requirements, or other contingencies) have been satisfied.',
   },
   {
     step: '04',
@@ -61,21 +61,21 @@ const FAQS = [
   },
   {
     q: 'What is escrow and how does it work?',
-    a: 'Escrow is an arrangement where a neutral third party holds funds, documents, or property on behalf of the parties to a transaction, releasing them only once agreed-upon conditions have been satisfied. It protects both sides — neither party has to hand over money or documents before the deal is actually ready to close.',
+    a: 'Escrow is an arrangement where a neutral third party holds funds, documents, or property on behalf of the parties to a transaction, releasing them only once agreed-upon conditions have been satisfied. It protects both sides, neither party has to hand over money or documents before the deal is actually ready to close.',
   },
   {
     q: 'Is escrow only used in real estate transactions?',
-    a: 'No. Escrow comes up in real estate closings, but it is also common in business transactions — mergers, acquisitions, stock purchases, and other agreements where funds or documents need to be held until closing conditions are met.',
+    a: 'No. Escrow comes up in real estate closings, but it is also common in business transactions, mergers, acquisitions, stock purchases, and other agreements where funds or documents need to be held until closing conditions are met.',
   },
   {
     q: 'How do I set up an escrow arrangement?',
-    a: `Escrow is typically set up as part of a larger transaction. The most direct way to discuss whether it fits a specific deal is to reach out directly — by phone at ${contact.phone} or by email at ${contact.email} — or schedule a consultation.`,
+    a: `Escrow is typically set up as part of a larger transaction. The most direct way to discuss whether it fits a specific deal is to reach out directly, by phone at ${contact.phone} or by email at ${contact.email}, or schedule a consultation.`,
     aNode: (
       <>
         Escrow is typically set up as part of a larger transaction. The most direct way to discuss whether it fits
-        a specific deal is to reach out directly — by phone at{' '}
+        a specific deal is to reach out directly, by phone at{' '}
         <a href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}>{contact.phone}</a> or by email at{' '}
-        <a href={`mailto:${contact.email}`}>{contact.email}</a> — or schedule a consultation.
+        <a href={`mailto:${contact.email}`}>{contact.email}</a>, or schedule a consultation.
       </>
     ),
   },
@@ -84,7 +84,7 @@ const FAQS = [
 export default function EscrowServices() {
   useDocumentTitle(
     'Escrow Services Attorney in New York | Rockville Law Group',
-    'Escrow agent services for business and real estate transactions — holding funds, deeds, or documents until closing conditions are met. Flushing, New York.',
+    'Escrow agent services for business and real estate transactions, holding funds, deeds, or documents until closing conditions are met. Flushing, New York.',
     { lang: 'en-US', alternatePath: '/zh/escrow-services' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -98,7 +98,7 @@ export default function EscrowServices() {
           <h1 className="service-hero__title">Escrow Services for Business & Real Estate Transactions</h1>
           <p className="zh-label service-hero__zh">托管服务</p>
           <p className="lede service-hero__lede">
-            Escrow protects both sides of a transaction — funds, documents, or property are held by a neutral third
+            Escrow protects both sides of a transaction, funds, documents, or property are held by a neutral third
             party until agreed-upon conditions are met. Rockville Law Group serves as escrow agent for business and
             real estate transactions in New York.
           </p>
@@ -140,7 +140,7 @@ export default function EscrowServices() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="A Related Practice" title="Escrow in Business Transactions" zh="商业交易中的托管事务" />
           <p className="lede lede--wide">
-            Escrow arrangements often come up alongside business transactions — a merger, an acquisition, or a large
+            Escrow arrangements often come up alongside business transactions. A merger, an acquisition, or a large
             contract.{' '}
             <Link to="/business-law">Rockville Law Group's business law practice</Link> works alongside its escrow
             services on these matters.
@@ -166,7 +166,7 @@ export default function EscrowServices() {
           <Reveal className="court-connector card">
             <div>
               <h3>Setting up an escrow arrangement for a transaction?</h3>
-              <p>Escrow is usually arranged as part of a larger deal — a consultation is the most direct way to talk through the details.</p>
+              <p>Escrow is usually arranged as part of a larger deal. A consultation is the most direct way to talk through the details.</p>
             </div>
             <Button to="/contact#consultation" variant="outline">
               Schedule a Consultation <ArrowIcon width={16} height={16} />

@@ -33,8 +33,8 @@ export default function AttorneyCoverageForm() {
     const hearingType = data.get('hearingType') || (isZh ? '未注明' : 'Not specified')
     const court = data.get('court') || ''
     const subject = isZh
-      ? `出庭代理申请 — ${hearingType}${court ? `（${court}）` : ''}`
-      : `Hearing Coverage Request — ${hearingType}${court ? ` (${court})` : ''}`
+      ? `出庭代理申请: ${hearingType}${court ? `（${court}）` : ''}`
+      : `Hearing Coverage Request: ${hearingType}${court ? ` (${court})` : ''}`
 
     trackEvent('attorney_form_submit', { hearingType })
 
@@ -99,7 +99,7 @@ export default function AttorneyCoverageForm() {
           <>
             <h3>Your request has been received</h3>
             <p>
-              Thank you for the request — we'll follow up to confirm availability and scope. Submitting does not
+              Thank you for the request. We'll follow up to confirm availability and scope. Submitting does not
               confirm coverage. For a faster response, you can also call us directly at{' '}
               <a href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}>{contact.phone}</a>.
             </p>
@@ -142,7 +142,7 @@ export default function AttorneyCoverageForm() {
           <>
             <h3>您的邮件应用程序应已打开</h3>
             <p>
-              此表格会为您准备一封已填好申请内容的邮件——请从邮件应用程序中发送，以便我们直接收到您的请求。提交并不代表代理请求已被接受，具体安排须逐案确认。若没有自动打开邮件应用程序，也可以直接联系我们：
+              此表格会为您准备一封已填好申请内容的邮件，请从邮件应用程序中发送，以便我们直接收到您的请求。提交并不代表代理请求已被接受，具体安排须逐案确认。若没有自动打开邮件应用程序，也可以直接联系我们：
               <a href={`mailto:${contact.email}`}>{contact.email}</a> 或{' '}
               <a href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}>{contact.phone}</a>。
             </p>
@@ -151,7 +151,7 @@ export default function AttorneyCoverageForm() {
           <>
             <h3>Your email app should now be open</h3>
             <p>
-              This form prepares an email addressed to us with the request details already filled in — send it from
+              This form prepares an email addressed to us with the request details already filled in. Send it from
               there to reach us directly. Submitting does not confirm coverage; availability is confirmed only once
               discussed directly. If nothing opened, you can reach us at{' '}
               <a href={`mailto:${contact.email}`}>{contact.email}</a> or{' '}
@@ -240,7 +240,7 @@ export default function AttorneyCoverageForm() {
         <textarea
           id="a-logistics"
           name="logistics"
-          placeholder={isZh ? '任何有助于评估请求的信息——例如当事人使用的语言、排庭时间、预计听证时长等。' : "Anything helpful for scoping the request — e.g. respondent's language, docket time, expected length."}
+          placeholder={isZh ? '任何有助于评估请求的信息，例如当事人使用的语言、排庭时间、预计听证时长等。' : "Anything helpful for scoping the request, e.g. respondent's language, docket time, expected length."}
         />
       </div>
 

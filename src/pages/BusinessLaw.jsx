@@ -26,7 +26,7 @@ const CATEGORIES = [
   {
     title: 'Contracts & Transactions',
     zh: '合同与交易',
-    desc: 'Business contracts, business finance matters, and mergers and acquisitions — the agreements that govern how a business operates and grows.',
+    desc: 'Business contracts, business finance matters, and mergers and acquisitions. The agreements that govern how a business operates and grows.',
   },
   {
     title: 'Disputes & Dissolution',
@@ -38,7 +38,7 @@ const CATEGORIES = [
 const FAQS = [
   {
     q: 'What business entity should I form?',
-    a: 'The right structure — an LLC, corporation, partnership, or another entity — depends on the specific business, its owners, and its goals. A consultation can help clarify the options for a particular business.',
+    a: 'The right structure (an LLC, corporation, partnership, or another entity) depends on the specific business, its owners, and its goals. A consultation can help clarify the options for a particular business.',
   },
   {
     q: 'Do you review contracts before I sign them?',
@@ -46,14 +46,14 @@ const FAQS = [
   },
   {
     q: 'What happens in a partnership or shareholder dispute?',
-    a: 'These disputes vary widely depending on the governing documents, the relationship between the parties, and what each side is seeking — options can range from negotiation to litigation. A consultation is the best way to evaluate a specific situation.',
+    a: 'These disputes vary widely depending on the governing documents, the relationship between the parties, and what each side is seeking, options can range from negotiation to litigation. A consultation is the best way to evaluate a specific situation.',
   },
 ]
 
 export default function BusinessLaw() {
   useDocumentTitle(
     'Business Lawyer in New York | Rockville Law Group',
-    'Business and corporate law in New York — formation, contracts, mergers and acquisitions, and partnership and shareholder disputes — from attorney Li Weng in Flushing, New York.',
+    'Business and corporate law in New York (formation, contracts, mergers and acquisitions, and partnership and shareholder disputes) from attorney Li Weng in Flushing, New York.',
     { lang: 'en-US', alternatePath: '/zh/business-law' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -93,7 +93,7 @@ export default function BusinessLaw() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="A Related Practice" title="Securities Matters in Business Transactions" zh="交易中的证券事务" />
           <p className="lede lede--wide">
-            Some business transactions — raising capital, bringing on new investors, or restructuring ownership —
+            Some business transactions (raising capital, bringing on new investors, or restructuring ownership)
             also involve securities law considerations.{' '}
             <Link to="/ipo-securities">Rockville Law Group's securities law practice</Link> works alongside its
             business law practice on these matters.
@@ -105,7 +105,7 @@ export default function BusinessLaw() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="A Related Practice" title="Escrow in Business Transactions" zh="商业交易中的托管事务" />
           <p className="lede lede--wide">
-            Business transactions — a merger, an acquisition, or a large contract — often call for a neutral third
+            Business transactions (a merger, an acquisition, or a large contract) often call for a neutral third
             party to hold funds or documents until closing conditions are met.{' '}
             <Link to="/escrow-services">Rockville Law Group's escrow services</Link> work alongside its business law
             practice on these matters.

@@ -19,7 +19,7 @@ const BREADCRUMB_ITEMS = [
 export default function PracticeAreasHubZh() {
   useDocumentTitle(
     '业务领域 | Rockville Law Group',
-    '移民、家庭法、遗产规划、商业与公司法、证券法及托管服务——六大业务领域，各设专属页面。',
+    '移民、家庭法、遗产规划、商业与公司法、证券法及托管服务，六大业务领域，各设专属页面。',
     { lang: 'zh-Hans', alternatePath: '/practice-areas' },
   )
   useStructuredData(breadcrumbSchema(BREADCRUMB_ITEMS))
@@ -33,7 +33,7 @@ export default function PracticeAreasHubZh() {
           <h1 className="service-hero__title">业务领域</h1>
           <p className="zh-label service-hero__zh">Practice Areas</p>
           <p className="lede service-hero__lede">
-            Rockville Law Group 是一家位于纽约的律师事务所，为个人、家庭及企业提供法律服务。执业领域涵盖移民法、家庭法、遗产规划及商业与证券法——以下每个领域均有专属页面，说明具体服务内容。
+            Rockville Law Group 是一家位于纽约的律师事务所，为个人、家庭及企业提供法律服务。执业领域涵盖移民法、家庭法、遗产规划及商业与证券法，以下每个领域均有专属页面，说明具体服务内容。
           </p>
         </div>
       </section>
@@ -66,7 +66,7 @@ export default function PracticeAreasHubZh() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="律师" title="一家律所，多元业务领域" align="center" />
           <p className="lede lede--wide practice-hub__attorney-lede">
-            移民、家庭、遗产规划与商业法律事务之间常常相互关联——例如一宗绿卡申请可能同时涉及遗嘱安排，一项商业事务也可能牵涉家庭事务。由于 Rockville Law Group
+            移民、家庭、遗产规划与商业法律事务之间常常相互关联，例如一宗绿卡申请可能同时涉及遗嘱安排，一项商业事务也可能牵涉家庭事务。由于 Rockville Law Group
             同时执业于以上各领域，相关需求可以一并处理，无需另寻他人重新说明背景。
           </p>
           <div className="practice-hub__attorney-cta">

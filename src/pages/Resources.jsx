@@ -18,7 +18,7 @@ const BREADCRUMB_ITEMS = [
 export default function Resources() {
   useDocumentTitle(
     'Immigration Law Resources & Guides | Rockville Law Group',
-    'Practical guides on family-based green cards, immigration court, and hearing coverage — written to help you understand your situation before a consultation.',
+    'Practical guides on family-based green cards, immigration court, and hearing coverage, written to help you understand your situation before a consultation.',
   )
   useStructuredData(breadcrumbSchema(BREADCRUMB_ITEMS))
 
@@ -31,7 +31,7 @@ export default function Resources() {
           <h1 className="service-hero__title">Guides &amp; Resources</h1>
           <p className="zh-label service-hero__zh">资源与指南</p>
           <p className="lede service-hero__lede">
-            Practical explanations of how specific immigration processes generally work — written to help you
+            Practical explanations of how specific immigration processes generally work, written to help you
             understand a situation before a consultation, not to replace one.
           </p>
         </div>

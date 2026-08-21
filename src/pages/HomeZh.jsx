@@ -200,7 +200,7 @@ export default function HomeZh() {
               <span className="eyebrow">遗产规划</span>
               <h3 className="matterZh__title">为您的家庭做好规划</h3>
               <p className="matterZh__desc">
-                遗嘱、信托、医疗指示，以及遗产管理——Rockville Law Group 协助个人及家庭为最重要的人与事提前做好安排。
+                遗嘱、信托、医疗指示，以及遗产管理，Rockville Law Group 协助个人及家庭为最重要的人与事提前做好安排。
               </p>
               <div className="matterZh__actions">
                 <Button to="/zh/estate-planning" variant="primary" size="sm">
@@ -212,7 +212,7 @@ export default function HomeZh() {
               </div>
             </Reveal>
 
-            {/* 托管服务 rather than a second 证券法 card — 证券法 is already
+            {/* 托管服务 rather than a second 证券法 card, 证券法 is already
                 cross-linked from the 商业与公司法 card above, and 托管服务 was
                 the only practice area with no presence on this page. */}
             <Reveal as="article" delay={0.18} className="card matterZh__card">

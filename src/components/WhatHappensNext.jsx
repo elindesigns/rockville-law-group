@@ -17,7 +17,7 @@ import './WhatHappensNext.css'
 const STEPS = [
   {
     title: 'You get in touch',
-    desc: 'Use the form, call, or email — whichever you prefer. A short summary of the situation is enough to start; there is no need for documents or detail yet.',
+    desc: 'Use the form, call, or email, whichever you prefer. A short summary of the situation is enough to start; there is no need for documents or detail yet.',
   },
   {
     title: 'We follow up',

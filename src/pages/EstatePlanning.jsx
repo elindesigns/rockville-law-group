@@ -19,12 +19,12 @@ const CATEGORIES = [
   {
     title: 'Wills & Trusts',
     zh: '遗嘱与信托',
-    desc: 'Wills and trusts are the core documents in most estate plans — setting out how a person’s assets should be distributed and, in the case of a trust, how they should be managed along the way.',
+    desc: 'Wills and trusts are the core documents in most estate plans, setting out how a person’s assets should be distributed and, in the case of a trust, how they should be managed along the way.',
   },
   {
     title: 'Health Care & Incapacity Planning',
     zh: '医疗指示与监护规划',
-    desc: 'Health care directives and guardianship or conservatorship planning address who can make decisions — medical or financial — if a person becomes unable to make them personally.',
+    desc: 'Health care directives and guardianship or conservatorship planning address who can make decisions, medical or financial, if a person becomes unable to make them personally.',
   },
   {
     title: 'Estate Administration',
@@ -36,7 +36,7 @@ const CATEGORIES = [
 const FAQS = [
   {
     q: 'Do I need a will if I already have a trust?',
-    a: 'Often, yes — a will and a trust generally serve different purposes, and many estate plans use both together. Whether a particular combination makes sense depends on the specific assets and goals involved.',
+    a: 'Often, yes. A will and a trust generally serve different purposes, and many estate plans use both together. Whether a particular combination makes sense depends on the specific assets and goals involved.',
   },
   {
     q: 'What is the difference between a health care directive and guardianship?',
@@ -44,14 +44,14 @@ const FAQS = [
   },
   {
     q: 'When should someone start estate planning?',
-    a: 'There is no single right time — significant life events such as marriage, having children, or acquiring property are common reasons people put a plan in place or revisit an existing one. A consultation can help clarify what makes sense for a specific situation.',
+    a: 'There is no single right time, significant life events such as marriage, having children, or acquiring property are common reasons people put a plan in place or revisit an existing one. A consultation can help clarify what makes sense for a specific situation.',
   },
 ]
 
 export default function EstatePlanning() {
   useDocumentTitle(
     'Estate Planning Lawyer in New York | Rockville Law Group',
-    'Estate planning in New York — wills, trusts, health care directives, guardianship, and estate administration — from attorney Li Weng in Flushing, New York.',
+    'Estate planning in New York (wills, trusts, health care directives, guardianship, and estate administration) from attorney Li Weng in Flushing, New York.',
     { lang: 'en-US', alternatePath: '/zh/estate-planning' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -65,7 +65,7 @@ export default function EstatePlanning() {
           <h1 className="service-hero__title">Estate Planning Lawyer in Flushing, Queens</h1>
           <p className="zh-label service-hero__zh">遗产规划</p>
           <p className="lede service-hero__lede">
-            Estate planning puts a person's own wishes in writing — for their assets, their health care, and the
+            Estate planning puts a person's own wishes in writing, for their assets, their health care, and the
             people who may need to act on their behalf. Rockville Law Group helps individuals and families in New
             York put these plans in place, and helps families administer an estate when the time comes.
           </p>
@@ -93,7 +93,7 @@ export default function EstatePlanning() {
           <SectionHeading eyebrow="Why It Matters" title="Why Legal Guidance May Help" zh="法律协助的作用" />
           <p className="lede lede--wide">
             Estate planning documents have to work together and comply with New York law to actually accomplish
-            what a person intends — a will or trust drafted without attention to a specific family's circumstances
+            what a person intends. A will or trust drafted without attention to a specific family's circumstances
             can create confusion or unintended results later. Legal guidance can help identify which documents fit
             a specific situation, and help a family carry out an estate plan when the time comes.
           </p>

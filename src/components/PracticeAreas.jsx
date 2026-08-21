@@ -33,7 +33,7 @@ function CategoryBox({ category, delay }) {
             onClick={() => setExpanded((v) => !v)}
             aria-expanded={expanded}
           >
-            {expanded ? 'Show Less' : `Learn More — ${category.items.length} Visa Types`}
+            {expanded ? 'Show Less' : `Learn More: ${category.items.length} Visa Types`}
             <ChevronIcon className="practice-category__toggle-icon" aria-hidden="true" />
           </button>
           <div className="practice-category__items-panel">

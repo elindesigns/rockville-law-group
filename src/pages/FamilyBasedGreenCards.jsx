@@ -21,7 +21,7 @@ const PATHWAYS = [
   {
     title: 'Marriage to a U.S. Citizen or Green Card Holder',
     zh: '婚姻绿卡',
-    desc: "Spouses of U.S. citizens are classified as immediate relatives, generally without an annual numerical cap on visas. Spouses of lawful permanent residents fall into a preference category and may face a waiting period. In both cases, the marriage must be genuine — entered into to build a life together, not primarily to obtain an immigration benefit.",
+    desc: "Spouses of U.S. citizens are classified as immediate relatives, generally without an annual numerical cap on visas. Spouses of lawful permanent residents fall into a preference category and may face a waiting period. In both cases, the marriage must be genuine, entered into to build a life together, not primarily to obtain an immigration benefit.",
   },
   {
     title: 'Parents, Children & Siblings',
@@ -54,7 +54,7 @@ const PROCESS = [
   {
     step: 'Decision',
     title: 'Interview & Decision',
-    desc: 'Most cases include an interview — with USCIS for adjustment of status, or at a consulate abroad — before a final decision on the green card.',
+    desc: 'Most cases include an interview (with USCIS for adjustment of status, or at a consulate abroad) before a final decision on the green card.',
   },
 ]
 
@@ -62,7 +62,7 @@ const FAQS = [
   {
     q: 'Can I get a green card by marrying a U.S. citizen?',
     qZh: '与美国公民结婚可以获得绿卡吗？',
-    a: 'Marriage to a U.S. citizen can make you eligible to apply for a green card as an immediate relative, provided the marriage is genuine and the other requirements are met. USCIS reviews these cases carefully, and approval is never guaranteed — a consultation can help clarify where a specific situation stands.',
+    a: 'Marriage to a U.S. citizen can make you eligible to apply for a green card as an immediate relative, provided the marriage is genuine and the other requirements are met. USCIS reviews these cases carefully, and approval is never guaranteed. A consultation can help clarify where a specific situation stands.',
   },
   {
     q: 'What is the difference between adjustment of status and consular processing?',
@@ -79,7 +79,7 @@ const FAQS = [
 export default function FamilyBasedGreenCards() {
   useDocumentTitle(
     'Family-Based Green Card Lawyer in New York | Rockville Law Group',
-    'Guidance on marriage-based and family preference green cards — petitions, adjustment of status, and consular processing — from a bilingual immigration attorney in Flushing, New York.',
+    'Guidance on marriage-based and family preference green cards (petitions, adjustment of status, and consular processing) from a bilingual immigration attorney in Flushing, New York.',
     { lang: 'en-US', alternatePath: '/zh/family-based-green-cards' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -108,7 +108,7 @@ export default function FamilyBasedGreenCards() {
             for a green card. Immigration law divides these relationships into two groups: immediate relatives of
             U.S. citizens, who are not subject to an annual numerical limit, and family preference categories, which
             are subject to per-country quotas that can create a waiting period before a visa becomes available. Which
-            group applies — and how long the process takes — depends on the specific relationship and the
+            group applies, and how long the process takes, depends on the specific relationship and the
             petitioner's status.
           </p>
         </div>
@@ -149,7 +149,7 @@ export default function FamilyBasedGreenCards() {
         <div className="container container--narrow">
           <SectionHeading eyebrow="Complications to Watch For" title="When Legal Guidance May Help" zh="需要法律协助的情形" />
           <p className="lede lede--wide">
-            Many family-based petitions proceed in a straightforward way. Others become more complicated — a prior
+            Many family-based petitions proceed in a straightforward way. Others become more complicated. A prior
             immigration violation, a previous marriage that was not properly terminated, a request for additional
             evidence, or bona fides questions at the interview are all situations where legal guidance can matter.
             Because eligibility depends heavily on individual facts, general information online is not a substitute
@@ -176,7 +176,7 @@ export default function FamilyBasedGreenCards() {
           <Reveal className="court-connector card">
             <div>
               <h3>Related Reading</h3>
-              <p>Can You Get a Green Card Through Marriage? — a closer look at the process, including the conditional two-year card.</p>
+              <p>Can You Get a Green Card Through Marriage?. A closer look at the process, including the conditional two-year card.</p>
             </div>
             <Button to="/resources/green-card-through-marriage" variant="outline">
               Green Cards Through Marriage <ArrowIcon width={16} height={16} />

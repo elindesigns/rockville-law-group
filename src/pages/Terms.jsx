@@ -49,8 +49,8 @@ export default function Terms() {
           <div className="article-block">
             <h2 className="article-block__heading">No Guarantee of Outcome</h2>
             <p className="article-body-text">
-              Every legal matter depends on its own facts. Nothing on this website — including case types discussed,
-              practice area descriptions, or attorney background — is a guarantee, warranty, or prediction of the
+              Every legal matter depends on its own facts. Nothing on this website, including case types discussed,
+              practice area descriptions, or attorney background, is a guarantee, warranty, or prediction of the
               outcome of any matter.
             </p>
           </div>

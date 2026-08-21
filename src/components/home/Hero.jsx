@@ -23,7 +23,7 @@ export default function Hero() {
 
           <p className="lede hero__lede">
             Representing individuals, families, and businesses in New York across immigration, family law, estate
-            planning, and business matters — with professional collaboration available for attorneys.
+            planning, and business matters, with professional collaboration available for attorneys.
           </p>
 
           <div className="hero__actions">

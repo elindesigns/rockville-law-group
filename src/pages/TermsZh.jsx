@@ -46,7 +46,7 @@ export default function TermsZh() {
           <div className="article-block">
             <h2 className="article-block__heading">不保证结果</h2>
             <p className="article-body-text">
-              每一宗法律事务均取决于其自身的具体事实。本网站上的任何内容——包括所述案件类型、业务领域说明或律师背景——均不构成对任何事务结果的保证、担保或预测。
+              每一宗法律事务均取决于其自身的具体事实。本网站上的任何内容，包括所述案件类型、业务领域说明或律师背景，均不构成对任何事务结果的保证、担保或预测。
             </p>
           </div>
 

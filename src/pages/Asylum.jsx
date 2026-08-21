@@ -26,7 +26,7 @@ const TRACKS = [
   {
     title: 'Defensive Asylum',
     zh: '法庭辩护式庇护',
-    desc: 'A person already in removal proceedings raises asylum as a defense before an immigration judge. The judge — not a USCIS asylum officer — decides the claim after a hearing in immigration court, with the government represented as well.',
+    desc: 'A person already in removal proceedings raises asylum as a defense before an immigration judge. The judge, not a USCIS asylum officer, decides the claim after a hearing in immigration court, with the government represented as well.',
   },
 ]
 
@@ -57,12 +57,12 @@ const FAQS = [
   {
     q: 'What is the difference between affirmative and defensive asylum?',
     qZh: '主动申请与法庭辩护式庇护有何不同？',
-    a: "Affirmative asylum is filed directly with USCIS by someone not already in removal proceedings. Defensive asylum is raised as a defense before an immigration judge by someone who is already in proceedings — including, in some cases, after an affirmative claim is referred to court. The setting, decision-maker, and process differ between the two.",
+    a: "Affirmative asylum is filed directly with USCIS by someone not already in removal proceedings. Defensive asylum is raised as a defense before an immigration judge by someone who is already in proceedings, including, in some cases, after an affirmative claim is referred to court. The setting, decision-maker, and process differ between the two.",
   },
   {
     q: 'Is there a deadline to apply for asylum?',
     qZh: '申请庇护是否有时间限制？',
-    a: 'Applicants generally must file within one year of their last arrival in the United States. Limited exceptions exist for changed circumstances or extraordinary circumstances that caused the delay — a consultation can help evaluate whether an exception may apply to a specific situation.',
+    a: 'Applicants generally must file within one year of their last arrival in the United States. Limited exceptions exist for changed circumstances or extraordinary circumstances that caused the delay. A consultation can help evaluate whether an exception may apply to a specific situation.',
   },
   {
     q: 'Does asylum guarantee I can stay in the United States?',
@@ -79,7 +79,7 @@ const FAQS = [
 export default function Asylum() {
   useDocumentTitle(
     'Asylum Lawyer in New York | Rockville Law Group',
-    'Affirmative and defensive asylum representation from a bilingual immigration attorney in Flushing, New York — explaining eligibility, process, and what to expect in immigration court.',
+    'Affirmative and defensive asylum representation from a bilingual immigration attorney in Flushing, New York, explaining eligibility, process, and what to expect in immigration court.',
     { lang: 'en-US', alternatePath: '/zh/asylum' },
   )
   useStructuredData([breadcrumbSchema(BREADCRUMB_ITEMS), faqPageSchema(FAQS)])
@@ -94,7 +94,7 @@ export default function Asylum() {
           <p className="zh-label service-hero__zh">庇护申请</p>
           <p className="lede service-hero__lede">
             Asylum offers protection to people who cannot safely return to their home country because of
-            persecution. Rockville Law Group represents individuals through the asylum process — both affirmatively
+            persecution. Rockville Law Group represents individuals through the asylum process, both affirmatively
             with USCIS and defensively in immigration court.
           </p>
         </div>
@@ -107,8 +107,8 @@ export default function Asylum() {
             Asylum may be available to someone who has been persecuted, or has a well-founded fear of future
             persecution, in their home country on account of race, religion, nationality, political opinion, or
             membership in a particular social group. If granted, asylum allows a person to remain lawfully in the
-            United States and, after one year, apply for a green card. Asylum is a form of discretionary relief —
-            meeting the general definition does not, by itself, guarantee a grant.
+            United States and, after one year, apply for a green card. Asylum is a form of discretionary relief.
+            Meeting the general definition does not, by itself, guarantee a grant.
           </p>
         </div>
       </section>
@@ -151,7 +151,7 @@ export default function Asylum() {
             Asylum claims that are denied affirmatively, or that arise after a Notice to Appear has been issued, are
             generally decided in{' '}
             <Link to="/immigration-court">immigration court</Link> rather than by USCIS. Representation in these
-            proceedings looks different from the affirmative process — it involves formal hearings before an
+            proceedings looks different from the affirmative process. It involves formal hearings before an
             immigration judge, with the government represented as well. Rockville Law Group represents clients in
             both settings.
           </p>
@@ -164,7 +164,7 @@ export default function Asylum() {
           <p className="lede lede--wide">
             Asylum cases turn on detailed facts, corroborating evidence, and strict deadlines. Legal representation
             can help identify the strongest legal theory for a claim, gather supporting evidence, and prepare
-            testimony — but no attorney can guarantee the outcome of an asylum case.
+            testimony, but no attorney can guarantee the outcome of an asylum case.
           </p>
         </div>
       </section>

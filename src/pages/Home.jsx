@@ -17,7 +17,7 @@ import { legalServiceSchema, websiteSchema } from '../lib/structuredData.js'
 export default function Home() {
   useDocumentTitle(
     'New York Law Firm | Rockville Law Group',
-    'A law firm in Flushing, Queens handling immigration, family law, estate planning, business, securities, and escrow matters — in English and Mandarin Chinese.',
+    'A law firm in Flushing, Queens handling immigration, family law, estate planning, business, securities, and escrow matters. Consultations in English and Mandarin Chinese.',
     { lang: 'en-US', alternatePath: '/zh' },
   )
   useStructuredData([legalServiceSchema(), websiteSchema()])
@@ -29,24 +29,24 @@ export default function Home() {
       <MainPracticeAreas />
       <AttorneyTeaser />
 
-      {/* Two featured matters, not one per practice area — all six are
+      {/* Two featured matters, not one per practice area, all six are
           already listed with descriptions and CTAs in MainPracticeAreas
           directly above, so repeating each one full-bleed just made the
           page longer without adding information. These two carry the
           firm's two broadest audiences (individual/family and business)
           and cross-link the narrower areas from their own pages. */}
       <MatterTeaser
-        eyebrow="Matter — Immigration Law"
+        eyebrow="Matter: Immigration Law"
         title="Representation in Immigration Matters"
         zh="移民法"
         markZh="移民"
-        description="Family-based green cards, asylum, EB-1A petitions, and employment-based immigration — through to representation before an immigration judge. Rockville Law Group handles immigration matters from the first filing to the final hearing."
+        description="Family-based green cards, asylum, EB-1A petitions, and employment-based immigration, through to representation before an immigration judge. Rockville Law Group handles immigration matters from the first filing to the final hearing."
         cta={{ label: 'Explore Immigration Law', to: '/immigration-services' }}
         secondaryCta={{ label: 'Immigration Court', to: '/immigration-court' }}
       />
 
       <MatterTeaser
-        eyebrow="Matter — Business & Corporate Law"
+        eyebrow="Matter: Business & Corporate Law"
         title="Business & Corporate Counsel"
         zh="商业与公司法"
         markZh="商法"
