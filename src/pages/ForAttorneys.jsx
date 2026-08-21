@@ -51,7 +51,7 @@ export default function ForAttorneys() {
     // "Per diem" is the term attorneys actually use for this service;
     // searches for "hearing coverage" are read by Google as consumer
     // removal-defense intent, which is not this page's audience.
-    'Per Diem Immigration Attorney. Hearing Coverage | Rockville Law Group',
+    'Per Diem Immigration Attorney: Hearing Coverage | Rockville Law Group',
     'Per diem immigration court appearances for attorneys: individual, master calendar, and BIA hearings, with remote appearance for qualifying matters. Covering SDNY, EDNY, and other courts.',
     { lang: 'en-US', alternatePath: '/zh/attorney-hearing-coverage' },
   )
