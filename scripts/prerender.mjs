@@ -126,7 +126,45 @@ async function main() {
 
   const shell = await readFile(join(dist, 'index.html'))
   const server = await serve(shell)
-  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage'] })
+
+  // Chromium needs system libraries (libnss3 and friends) that are not
+  // guaranteed to exist in every CI image — Vercel's build container has
+  // broken this exact pattern for other projects. A missing browser
+  // should not fail the deploy: the SPA build in dist/ is already valid
+  // and is what the site shipped before prerendering existed. So warn
+  // loudly, leave that build in place, and carry on.
+  //
+  // Set PRERENDER_STRICT=1 to turn this into a hard failure instead.
+  let browser
+  try {
+    browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage'] })
+  } catch (err) {
+    server.close()
+    const message = [
+      '',
+      '='.repeat(72),
+      'PRERENDER SKIPPED — could not launch Chromium.',
+      '',
+      `  ${err.message.split('\n')[0]}`,
+      '',
+      'dist/ still contains a valid single-page build, so the deploy is',
+      'usable, but every route will serve the same title and an empty body',
+      'to crawlers and social scrapers.',
+      '',
+      'Verify after deploying:',
+      '  curl -s https://www.rockvillelawgroup.com/estate-planning | grep -o "<title>[^<]*"',
+      '  Expect: Estate Planning Lawyer in New York',
+      '  If it says "New York Law Firm", prerendering did not run.',
+      '='.repeat(72),
+      '',
+    ].join('\n')
+    if (process.env.PRERENDER_STRICT === '1') {
+      throw new Error(message)
+    }
+    console.warn(message)
+    return
+  }
+
   const page = await browser.newPage()
   await page.setViewport({ width: 1280, height: 900 })
 
