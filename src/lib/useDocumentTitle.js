@@ -82,6 +82,14 @@ export default function useDocumentTitle(title, description, options = {}) {
     const previousHtmlLang = document.documentElement.lang
     document.documentElement.lang = lang
 
+    // Take ownership of any hreflang links already in the document.
+    // Prerendered pages ship with their own set baked into the HTML
+    // (scripts/prerender.mjs), and this effect only ever removes the
+    // elements it created — so without this, the build-time tags would
+    // survive alongside the runtime ones, and would still be there after
+    // navigating to a page they no longer describe.
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove())
+
     let hreflangEls = []
     if (alternatePath) {
       const otherLang = lang === 'zh-Hans' ? 'en-US' : 'zh-Hans'
