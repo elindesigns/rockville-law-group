@@ -23,7 +23,7 @@ const BREADCRUMB_ITEMS = [
 const HEARING_TYPES_ZH = ['主审听证', '主日历听证', 'BIA 听证']
 
 const PROCESS_ZH = [
-  { step: '01', title: '提交代理申请', desc: '通过下方申请表格，或直接以电话、邮件的方式，告知我们听证的基本信息。' },
+  { step: '01', title: '提交代理申请', desc: '通过本页的申请表格，或直接以电话、邮件的方式，告知我们听证的基本信息。' },
   { step: '02', title: '提供听证相关信息', desc: '法院、听证类型、日期，以及评估该请求所需的相关后勤信息。' },
   { step: '03', title: 'Rockville Law Group 审核', desc: '我们会确认时间是否可行，以及该案件是否属于我们可以代理的范围。' },
   { step: '04', title: '讨论代理范围与可行性', desc: '在确认之前，我们会与您沟通具体的后勤安排、代理范围，以及需要厘清的问题。' },
@@ -42,10 +42,10 @@ const FAQS = [
   { q: '是否提供远程出庭服务？', a: '远程出庭适用于符合条件的案件，具体须遵循相关法院的规则及授权，我们会在审核每一份申请时确认相关细节。' },
   {
     q: '如何申请代理？',
-    a: `请填写下方的申请表格，或直接致电 ${contact.phone}，或发送邮件至 ${contact.email} 与我们联系。代理安排需逐案确认，须视代理范围、时间安排及可行性而定。`,
+    a: `请填写本页的申请表格，或直接致电 ${contact.phone}，或发送邮件至 ${contact.email} 与我们联系。代理安排需逐案确认，须视代理范围、时间安排及可行性而定。`,
     aNode: (
       <>
-        请填写下方的申请表格，或直接致电{' '}
+        请填写本页的申请表格，或直接致电{' '}
         <a href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}>{contact.phone}</a>，或发送邮件至{' '}
         <a href={`mailto:${contact.email}`}>{contact.email}</a>{' '}
         与我们联系。代理安排需逐案确认，须视代理范围、时间安排及可行性而定。
@@ -96,6 +96,16 @@ export default function AttorneyHearingCoverageZh() {
             ))}
           </ul>
           <p className="field-note for-attorneys__caveat">{remoteCaveatZh}</p>
+        </div>
+      </section>
+
+      {/* Moved up to match the English page: it was the last section,
+          nearly seven screens down on a phone. Admissions, process,
+          credentials and the FAQ follow directly below. */}
+      <section id="request-coverage" className="section section--deep for-attorneys__form-section">
+        <div className="container container--narrow">
+          <SectionHeading eyebrow="申请代理" title="申请出庭代理" lede="请提供基本信息，Rockville Law Group 将与您联系，讨论具体的可行性与代理范围。" align="center" />
+          <AttorneyCoverageForm />
         </div>
       </section>
 
@@ -168,12 +178,6 @@ export default function AttorneyHearingCoverageZh() {
         </div>
       </section>
 
-      <section id="request-coverage" className="section section--deep for-attorneys__form-section">
-        <div className="container container--narrow">
-          <SectionHeading eyebrow="申请代理" title="申请出庭代理" lede="请提供基本信息，Rockville Law Group 将与您联系，讨论具体的可行性与代理范围。" align="center" />
-          <AttorneyCoverageForm />
-        </div>
-      </section>
     </>
   )
 }

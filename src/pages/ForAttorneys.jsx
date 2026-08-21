@@ -34,10 +34,10 @@ const FAQS = [
   },
   {
     q: 'How do I request coverage?',
-    a: `Use the request form below, or reach out directly by phone at ${contact.phone} or by email at ${contact.email}. Coverage is confirmed case by case, subject to scope, timing, and availability.`,
+    a: `Use the request form on this page, or reach out directly by phone at ${contact.phone} or by email at ${contact.email}. Coverage is confirmed case by case, subject to scope, timing, and availability.`,
     aNode: (
       <>
-        Use the request form below, or reach out directly by phone at{' '}
+        Use the request form on this page, or reach out directly by phone at{' '}
         <a href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}>{contact.phone}</a> or by email at{' '}
         <a href={`mailto:${contact.email}`}>{contact.email}</a>. Coverage is confirmed case by case, subject to
         scope, timing, and availability.
@@ -93,6 +93,25 @@ export default function ForAttorneys() {
             ))}
           </ul>
           <p className="field-note for-attorneys__caveat">{hearingCoverage.remoteCaveat}</p>
+        </div>
+      </section>
+
+      {/* The form used to be the last section, roughly eight and a half
+          screens down on a phone. An attorney has what they need to send
+          a request by this point: the hero names the service and the
+          courts, and the list above names the hearing types. Admissions,
+          process, credentials and the FAQ follow directly below for
+          anyone who wants to vet the firm before submitting. */}
+      <section id="request-coverage" className="section section--deep for-attorneys__form-section">
+        <div className="container container--narrow">
+          <SectionHeading
+            eyebrow="Request Coverage"
+            title="Request Hearing Coverage"
+            zh="申请出庭代理"
+            lede="Share the basics and Rockville Law Group will follow up to discuss availability and scope."
+            align="center"
+          />
+          <AttorneyCoverageForm />
         </div>
       </section>
 
@@ -196,18 +215,6 @@ export default function ForAttorneys() {
         </div>
       </section>
 
-      <section id="request-coverage" className="section section--deep for-attorneys__form-section">
-        <div className="container container--narrow">
-          <SectionHeading
-            eyebrow="Request Coverage"
-            title="Request Hearing Coverage"
-            zh="申请出庭代理"
-            lede="Share the basics and Rockville Law Group will follow up to discuss availability and scope."
-            align="center"
-          />
-          <AttorneyCoverageForm />
-        </div>
-      </section>
     </>
   )
 }
